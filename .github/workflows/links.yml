@@ -1,0 +1,21 @@
+name: Links
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 8 * * 6'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.4
+          bundler-cache: true
+      - run: bundle exec jekyll build
+      - uses: anishathalye/proof-html@v2
+        with:
+          directory: ./_site
+          tokens: |
+            {"https://github.com": "${{ secrets.GITHUB_TOKEN }}"}

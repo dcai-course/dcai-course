@@ -1,0 +1,22 @@
+# Setup
+title: 'Introduction to Data-Centric AI'
+url: https://dcai.csail.mit.edu
+
+# Settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
+permalink: /:title/
+future: true
+# safe: true # breaks local rendering if enabled
+timezone: America/New_York
+
+# Excludes
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - Dockerfile
+  - docker-compose.yml
