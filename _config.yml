@@ -34,5 +34,6 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - vendor
   - Dockerfile
   - docker-compose.yml
