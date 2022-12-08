@@ -40,8 +40,8 @@ exercises in Python / Jupyter Notebook. You can work on these on your own, in
 groups, and/or in office hours. This is a not-for-credit IAP class.
 
 **Dates**: Tuesday, January 17 -- Friday, January 27, 2023<br>
-**Lecture**: [35-225](http://whereis.mit.edu/?go=35), 1pm--2pm<br>
-**Office hours**: [2-132](http://whereis.mit.edu/?go=2), 3pm--5pm (every day, after lecture)
+**Lecture**: [35-225](https://whereis.mit.edu/?go=35), 1pm--2pm<br>
+**Office hours**: [2-132](https://whereis.mit.edu/?go=2), 3pm--5pm (every day, after lecture)
 
 # About the class
 
