@@ -24,7 +24,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
   font-weight: bold;
-  /*text-decoration: underline;*/
   line-height: 1.25;
   font-size: 1rem;
 }
@@ -119,12 +118,12 @@ pre code {
 
 a {
   color: #8a0a0a;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #fff;
-  background-color: #8a0a0a;
+  color: #bd0d0d;
+  transition: color 0.2s;
 }
 
 img, video {
