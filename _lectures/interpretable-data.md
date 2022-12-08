@@ -1,7 +1,7 @@
 ---
 layout: lecture
-title: "Data-Centric AI vs Model-Centric AI"
-date: 2023-01-17
+title: "Interpretable Features of Data"
+date: 2023-01-24
 ready: false
 video:
   aspect: 56.25

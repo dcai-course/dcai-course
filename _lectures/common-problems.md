@@ -1,7 +1,7 @@
 ---
 layout: lecture
-title: "Data-Centric AI vs Model-Centric AI"
-date: 2023-01-17
+title: "Common Problems in Real-World ML Data"
+date: 2023-01-23
 ready: false
 video:
   aspect: 56.25

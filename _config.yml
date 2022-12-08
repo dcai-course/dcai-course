@@ -6,6 +6,10 @@ url: https://dcai.csail.mit.edu
 nav:
   - name: Lectures
     url: /lectures/
+  - name: Labs
+    url: https://github.com/dcai-course/dcai-lab
+  - name: Resources
+    url: /resources/
 
 collections:
   lectures:

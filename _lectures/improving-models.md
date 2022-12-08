@@ -1,7 +1,7 @@
 ---
 layout: lecture
-title: "Data-Centric AI vs Model-Centric AI"
-date: 2023-01-17
+title: "Improving ML Models by Improving the Training Data"
+date: 2023-01-25
 ready: false
 video:
   aspect: 56.25

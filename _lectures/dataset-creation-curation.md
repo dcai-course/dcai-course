@@ -1,7 +1,7 @@
 ---
 layout: lecture
-title: "Data-Centric AI vs Model-Centric AI"
-date: 2023-01-17
+title: "Dataset Creation and Curation"
+date: 2023-01-19
 ready: false
 video:
   aspect: 56.25

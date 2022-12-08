@@ -1,7 +1,7 @@
 ---
 layout: lecture
-title: "Data-Centric AI vs Model-Centric AI"
-date: 2023-01-17
+title: "Data Engineering"
+date: 2023-01-27
 ready: false
 video:
   aspect: 56.25
