@@ -2,6 +2,12 @@
 title: 'Introduction to Data-Centric AI'
 url: https://dcai.csail.mit.edu
 
+nav:
+  - name: Lectures
+    url: /lectures/
+  - name: About
+    url: /about/
+
 # Settings
 markdown: kramdown
 kramdown:
@@ -12,6 +18,9 @@ permalink: /:title/
 future: true
 # safe: true # breaks local rendering if enabled
 timezone: America/New_York
+
+analytics:
+  tracking_id: "G-42TY6091V2"
 
 # Excludes
 exclude:
