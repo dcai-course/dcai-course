@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<h1 class="title">{{ page.title }}</h1>
+
+{% if page.video.id %}
+  <div class="youtube-wrapper" style="padding-bottom: {{ page.video.aspect }}%;">
+    <iframe src="https://www.youtube.com/embed/{{ page.video.id }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+{% elsif page.video %}
+  <p class="center gap accent"><strong>Lecture video coming soon!</strong></p>
+{% endif %}
+
+{{ content }}
+
+<hr>
+
+<div class="small center">
+<p><a href="https://github.com/dcai-course/dcai-course/blob/master/{{ page.path }}">Edit this page</a>.</p>
+<p>Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a>.</p>
+</div>

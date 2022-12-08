@@ -1,0 +1,24 @@
+---
+layout: page
+title: "Lectures"
+---
+
+<ul class="double-spaced">
+  {% assign lectures = site['lectures'] | sort: 'date' %}
+  {% for lecture in lectures %}
+    <li>
+      <strong>{{ lecture.date | date: '%-m/%d' }}</strong>:
+      {% if lecture.ready %}
+        <a href="{{ lecture.url }}">{{ lecture.title }}</a>
+      {% else %}
+        {{ lecture.title }} [coming soon]
+      {% endif %}
+      {% if lecture.details %}
+        <br>
+        ({{ lecture.details }})
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+Video recordings of the lectures are available <a href="https://www.youtube.com/@dcai-course">on YouTube</a>.

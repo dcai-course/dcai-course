@@ -5,8 +5,10 @@ url: https://dcai.csail.mit.edu
 nav:
   - name: Lectures
     url: /lectures/
-  - name: About
-    url: /about/
+
+collections:
+  lectures:
+    output: true
 
 # Settings
 markdown: kramdown
