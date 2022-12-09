@@ -46,7 +46,7 @@ groups, and/or in office hours. This is a not-for-credit IAP class.
 # About the class
 
 **Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Curtis](https://www.curtisnorthcutt.com/), [Jonas](https://people.csail.mit.edu/jonasmueller/), [Cody](https://www.codycoleman.com/), [Ola](https://olazytek.mit.edu/), and [Sharon](https://sharonzhou.me/).<br>
-**Questions**: Email us at [dcai@mit.edu](mailto:dcai@mit.edu).
+**Questions**: Post on [Piazza](https://piazza.com/mit/spring2023/6dcai) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).
 
 # Prerequisites
 
