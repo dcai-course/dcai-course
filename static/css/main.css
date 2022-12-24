@@ -229,6 +229,7 @@ hr {
 #top-nav a {
   color: #fff;
   text-decoration: none;
+  transition: none;
 }
 
 #top-nav a:hover {
