@@ -8,9 +8,9 @@ Typical machine learning classes teach techniques to produce effective models fo
 
 This is the first-ever course on DCAI. This class covers algorithms to find and fix common issues in ML data and to construct better datasets, concentrating on data used in supervised learning tasks like classification. All material taught in this course is highly practical, focused on impactful aspects of real-world ML applications, rather than mathematical details of how particular models work.  You can take this course to learn practical techniques not covered in most ML classes, which will help mitigate the “garbage in, garbage out” problem that plagues many real-world ML applications.
 
-![XKCD 2494: Flawed Data](https://imgs.xkcd.com/comics/flawed_data_2x.png)
+![Flawed Data](/static/assets/flawed_data.png)
 
-<p class="small center">XKCD 2494: Flawed Data</p>
+<p class="small center">Flawed Data, inspired by <a href="https://xkcd.com/2494/">XKCD 2494</a></p>
 
 # Registration
 
