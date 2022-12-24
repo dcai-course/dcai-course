@@ -32,25 +32,26 @@ Sign up for the IAP class by filling out this [registration form](https://forms.
 {% endfor %}
 </ul>
 
-Video recordings of the lectures are available <a href="https://www.youtube.com/@dcai-course">on YouTube</a>.
+Video recordings of the lectures will be available <a href="https://www.youtube.com/@dcai-course">on YouTube</a>.
 
 Each lecture has an accompanying [lab
-assignment](https://github.com/dcai-course/dcai-lab), hands-on programming
-exercises in Python / Jupyter Notebook. You can work on these on your own, in
-groups, and/or in office hours. This is a not-for-credit IAP class.
+assignment](https://github.com/dcai-course/dcai-lab), a hands-on programming
+exercise in Python / Jupyter Notebook. You can work on these on your own, in
+groups, and/or in office hours. This is a not-for-credit IAP class, so you
+don't need to hand in homework.
+
+# General information
 
 **Dates**: Tuesday, January 17 -- Friday, January 27, 2023<br>
 **Lecture**: [35-225](https://whereis.mit.edu/?go=35), 1pm--2pm<br>
 **Office hours**: [2-132](https://whereis.mit.edu/?go=2), 3pm--5pm (every day, after lecture)
-
-# About the class
 
 **Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Curtis](https://www.curtisnorthcutt.com/), [Jonas](https://people.csail.mit.edu/jonasmueller/), [Cody](https://www.codycoleman.com/), [Ola](https://olazytek.mit.edu/), and [Sharon](https://sharonzhou.me/).<br>
 **Questions**: Post on [Piazza](https://piazza.com/mit/spring2023/6dcai) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).
 
 # Prerequisites
 
-Anyone is welcome to take this course, regardless of background. However, to
+Anyone is welcome to take this course, regardless of background. To
 get the most out of this course, we recommend that you:
 
 - Completed an introductory course in machine learning (like [6.036 / 6.390](https://introml.mit.edu/)). To learn this on your own, check out [Andrew Ng's ML course](https://www.coursera.org/learn/machine-learning), [fast.ai's ML course](https://course.fast.ai/), or [dive into deep learning](https://d2l.ai/).
