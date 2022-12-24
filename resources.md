@@ -4,7 +4,7 @@ title: "Resources"
 ---
 
 These are various resources and readings related to machine learning and
-data-centric AI that you might find interesting:
+data-centric AI that are recommended by the course staff:
 
 - [Unbiggen AI](https://spectrum.ieee.org/andrew-ng-data-centric-ai)
 - [Andrew Ng Launches A Campaign For Data-Centric AI](https://www.forbes.com/sites/gilpress/2021/06/16/andrew-ng-launches-a-campaign-for-data-centric-ai/)
