@@ -17,3 +17,13 @@ docker-compose up --build
 
 Then, navigate to <http://localhost:4000> on your host machine to view the
 website. Jekyll will re-build the website as you make changes to files.
+
+## Acknowledgements
+
+The design for this class website is based on [Missing
+Semester](https://github.com/missing-semester/missing-semester). Used with
+permission.
+
+## License
+
+All the contents in this course, including the website source code, lecture notes, exercises, and lecture videos are licensed under Attribution-NonCommercial-ShareAlike 4.0 International [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). See [here](https://dcai.csail.mit.edu/license) for more information on contributions or translations.
