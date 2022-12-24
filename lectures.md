@@ -24,4 +24,6 @@ title: "Lectures"
 **Lecture**: [35-225](https://whereis.mit.edu/?go=35), 1pm--2pm<br>
 **Office hours**: [2-132](https://whereis.mit.edu/?go=2), 3pm--5pm (every day, after lecture)
 
-Video recordings of the lectures will be available <a href="https://www.youtube.com/@dcai-course">on YouTube</a>.
+{% comment %}
+Video recordings of the lectures are available <a href="https://www.youtube.com/@dcai-course">on YouTube</a>.
+{% endcomment %}
