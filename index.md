@@ -10,7 +10,7 @@ This is the first-ever course on DCAI. This class covers algorithms to find and
 
 ![Flawed Data](/static/assets/flawed_data.png)
 
-<p class="small center">Flawed Data, inspired by <a href="https://xkcd.com/2494/">XKCD 2494</a></p>
+<p class="small center">Inspired by <a href="https://xkcd.com/2494/">XKCD 2494</a> &ldquo;Flawed Data&rdquo;</p>
 
 # Registration
 
