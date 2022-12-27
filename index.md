@@ -14,7 +14,7 @@ This is the first-ever course on DCAI. This class covers algorithms to find and
 
 # Registration
 
-Sign up for the IAP class by filling out this [registration form](https://forms.gle/iYB9bQeDgwVySpCp8).
+Sign up for the IAP class by filling out this [**registration form**](https://forms.gle/iYB9bQeDgwVySpCp8).
 
 # Syllabus
 
