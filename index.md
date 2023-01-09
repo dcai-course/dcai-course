@@ -45,7 +45,7 @@ don't need to hand in homework.
 # General information
 
 **Dates**: Tuesday, January 17 -- Friday, January 27, 2023<br>
-**Lecture**: [35-225](https://whereis.mit.edu/?go=35), 1pm--2pm<br>
+**Lecture**: [6-120](https://whereis.mit.edu/?go=6), 1pm--2pm<br>
 **Office hours**: [2-132](https://whereis.mit.edu/?go=2), 3pm--5pm (every day, after lecture)
 
 **Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Curtis](https://www.curtisnorthcutt.com/), [Jonas](https://people.csail.mit.edu/jonasmueller/), [Cody](https://www.codycoleman.com/), [Ola](https://olazytek.mit.edu/), and [Sharon](https://twitter.com/realSharonZhou).<br>
