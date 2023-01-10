@@ -3,7 +3,9 @@ layout: page
 title: "Resources"
 ---
 
-Various resources related to machine learning and data-centric AI that we recommend.
+General resources related to machine learning and data-centric AI that we
+recommend. For additional resources on the topics covered in lectures,
+see the references in individual lecture notes.
 
 # Open-Source Software Tools
 
