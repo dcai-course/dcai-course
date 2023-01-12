@@ -1,6 +1,6 @@
 ---
 layout: lecture
-title: "Data Engineering"
+title: "Data Privacy and Security"
 date: 2023-01-27
 ready: false
 video:
