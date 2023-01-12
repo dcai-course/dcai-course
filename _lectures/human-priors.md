@@ -1,6 +1,6 @@
 ---
 layout: lecture
-title: "Data Augmentation for Model Correction"
+title: "Encoding Human Priors: Data Augmentation and Prompt Engineering"
 date: 2023-01-26
 ready: false
 video:
