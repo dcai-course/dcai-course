@@ -1,6 +1,6 @@
 ---
 layout: lecture
-title: "Common Problems in Real-World ML Data"
+title: "Class Imbalance and Distribution Shift"
 date: 2023-01-23
 ready: false
 video:
