@@ -1,7 +1,7 @@
 version: "3"
 services:
   server:
-    image: missing-semester:latest
+    image: dcai-course:latest
     build:
       dockerfile: Dockerfile
       context: .
