@@ -49,7 +49,8 @@ don't need to hand in homework.
 **Office hours**: [2-132](https://whereis.mit.edu/?go=2), 3pm--5pm (every day, after lecture)
 
 **Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Curtis](https://www.curtisnorthcutt.com/), [Jonas](https://people.csail.mit.edu/jonasmueller/), [Cody](https://www.codycoleman.com/), [Ola](https://olazytek.mit.edu/), and [Sharon](https://twitter.com/realSharonZhou).<br>
-**Questions**: Post on [Piazza](https://piazza.com/mit/spring2023/6dcai) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).
+**Questions**: Post on [Piazza](https://piazza.com/mit/spring2023/6dcai) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).<br>
+**Twitter**: Follow us at [@dcai_course](https://twitter.com/dcai_course).
 
 # Prerequisites
 
