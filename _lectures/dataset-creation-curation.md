@@ -19,9 +19,11 @@ Creating a dataset for supervised learning requires the collection of examples a
 This lecture only covers a small part of complex topics like dataset collection/curation and labeling datasets with human workers. A more substantive overview is provided in the *Human-in-the-Loop ML* textbook [[MM21]](#MM21).
 
 
+<!---
+
 # Adjusting the ML task to be more appropriate
 
-TODO: curtis section.
+TODO: fill in details.
 
 - Overview the dataset curation tasks we’ll cover in this lecture as a way to situate ‘what dataset curation is’
 
@@ -36,6 +38,7 @@ eg. multi-class classification of images vs tagging.
     - confident learning joint distribution
     - cross-correlation
 
+--->
 
 # Sourcing data
 
