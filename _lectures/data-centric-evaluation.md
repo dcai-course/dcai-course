@@ -2,7 +2,7 @@
 layout: lecture
 title: "Data-centric Evaluation of ML Models"
 date: 2023-01-25
-ready: false
+ready: true
 video:
   aspect: 56.25
   # id: Wz50FvGG6xU
