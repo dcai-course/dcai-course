@@ -82,7 +82,7 @@ For unbiased evaluation without any overfitting, the examples used for evaluatio
 
 In a 2018 study [[H18]](#H18), commercial face recognition services were found to have error rates of 0.8% for photos of light-skinned men but 34.7% for dark-skinned women. Similar inequities are present in medical applications of ML [[VFK21]](#VFK21).
 
-These are examples where a trained model performed poorly on some particular *data slice*, a subset of the dataset that shares a common characteristic [[]](#). Examples include data captured using one sensor vs. another, or factors in human-centric data like race, gender, socioeconomics, age, or location. Slices are also referred to as: *cohorts*, *subpopulations*, or *subgroups* of the data. 
+These are examples where a trained model performed poorly on some particular *data slice*, a subset of the dataset that shares a common characteristic. Examples include data captured using one sensor vs. another, or factors in human-centric data like race, gender, socioeconomics, age, or location. Slices are also referred to as: *cohorts*, *subpopulations*, or *subgroups* of the data. 
 Often we do **not** want model predictions to depend on which slice a datapoint belongs to. **Can you guess if this can be solved by just deleting slice information from our feature values before model training?**
 
 Even when it is explicitly omitted, slice information can be correlated with other feature values still being used as predictors. Thus we should at least consider slice information when  evaluating models rather than disregarding it entirely. A simple way to break down how well the model performs for each slice is to average the per-example $\text{Loss}$ over the subset of held-out data belonging to the slice.
