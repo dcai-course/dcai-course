@@ -3,12 +3,17 @@ layout: lecture
 title: "Label Errors"
 date: 2023-01-18
 ready: true
+panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1773586c-361c-40d9-b972-af85012d2b78"
 video:
   aspect: 56.25
   # id: Wz50FvGG6xU
 ---
 
-Detailed lecture notes coming soon. Slides will be available immediately after lecture, and the lecture video will be available a couple hours after lecture.
+Detailed lecture notes coming soon. For now, check out the video (above) and slides (below).
+
+# Resources
+
+- Slides [[pdf](/lectures/files/lec2.pdf), [pptx](/lectures/files/lec2.pptx)]
 
 # Lab
 
