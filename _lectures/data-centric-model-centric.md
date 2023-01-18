@@ -3,12 +3,17 @@ layout: lecture
 title: "Data-Centric AI vs Model-Centric AI"
 date: 2023-01-17
 ready: true
+panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=edd1be69-b3de-4302-ac2b-af85012d2b18"
 video:
   aspect: 56.25
   # id: Wz50FvGG6xU
 ---
 
-A link to the slides will be posted after the lecture.
+Detailed lecture notes coming soon. For now, check out the video (above) and slides (below).
+
+# Resources
+
+- Slides [[pdf](/lectures/files/lec1.pdf), [pptx](/lectures/files/lec1.pptx)]
 
 # Lab
 
