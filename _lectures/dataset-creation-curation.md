@@ -10,7 +10,7 @@ video:
 
 Creating a dataset for supervised learning requires the collection of examples and labels. This lecture will focus on classication tasks, but these ideas are applicable to other supervised learning tasks as well (regression, image segmentation, entity recognition, etc). This lecture covers three themes:
 
-1. Concerns whether our ML task is properly framed to begin with (e.g. are we predicting appropriately defined  classes in classification).
+1. Concerns whether our ML task is properly framed to begin with (e.g. are we predicting appropriately defined classes in classification).
 
 2. Concerns when sourcing data (e.g. selection bias).
 
@@ -68,11 +68,18 @@ Spurious correlations can be present in a dataset due to *selection bias* [[NBA1
 
 - Response bias (e.g. survey response rates, prompting bias in the questions asked or multiple-choice answer options)
 
-- Availability bias -- using data that happens to be convenient rather than most representative (e.g. only surveying interviewees in a particular location).
+- Availability bias -- using data that happens to be convenient rather than most representative (e.g. only surveying interviewees that are my friends).
 
 - Long tail bias -- in applications with many different possible rare scenarios, collection mechanisms may prevent some from appearing in the dataset (e.g. autonomous vehicle gets bumped into wrong side of road).
 
+### Dealing with selection bias in collected data
 
+Once allowed to creep into your data, selection bias can be *hard* to mitigate via modeling. 
+One strategy to at least better evaluate models trained on biased data is to hold out a validation set most representative of conditions expected during deployment:
+
+- If data are collected over time in a changing environment, one might hold out the most recent data as the validation set.
+- If data are collected from multiple locations and new locations will be encountered during deployment, one might reserve all data from some locations for validation.
+- If data contain important but rare events, one might over-sample these when randomly selecting validation data.
 
 # How much data will we need to collect?
 
@@ -263,6 +270,10 @@ This simple likelihood is shared across annotators and only involves a single sh
 
 CROWDLAB uses a similar weighted aggregation to estimate the overall quality of each annotator. Here the annotator's deviations from consensus labels are adjusted by our confidence in these consensus labels based in part on the classifier's probabilistic predictions. See the CROWDLAB paper for details [[GTM22]](#GTM22).
 
+# Lab
+
+A hands-on lab assignment to accompany this lecture is available in the [dcai-lab repository](https://github.com/dcai-course/dcai-lab).
+The assignment, found in the notebook [dataset_curation/Lab -- Dataset Curation with Multiple Annotators](https://github.com/dcai-course/dcai-lab/blob/master/dataset_curation/Lab%20-%20Dataset%20Curation.ipynb), is to analyze an already collected dataset labeled by multiple annotators.
 
 # References
 
