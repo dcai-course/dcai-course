@@ -279,8 +279,8 @@ The assignment, found in the notebook [dataset_curation/Lab -- Dataset Curation 
 
 <a name="MM21"></a> [MM21] Munro, R., Monarch, R. [Human-in-the-Loop Machine Learning: Active Learning and Annotation for Human-centered AI](https://books.google.com/books/about/Human_in_the_Loop_Machine_Learning.html?id=LCh0zQEACAAJ). 2021.
 
-<a name="GTM22"></a> [GTM22] Goh, H. W., Tkachenko, U., and Mueller, J. [Utilizing supervised models to infer consensus labels and their quality from data with multiple annotators
-](https://arxiv.org/abs/2210.06812). *NeurIPS 2022 Human in the Loop Learning Workshop*, 2022.
+<a name="GTM22"></a> [GTM22] Goh, H. W., Tkachenko, U., and Mueller, J. [CROWDLAB: Supervised learning to infer consensus labels
+and quality scores for data with multiple annotators](https://people.csail.mit.edu/jonasmueller/info/crowdlab.pdf). *NeurIPS 2022 Human in the Loop Learning Workshop*, 2022.
 
 <a name="PCC18"></a> [PCC18] Paun, S., et al. [Comparing Bayesian Models of Annotation](https://aclanthology.org/Q18-1040.pdf). *Transactions of the Association for Computational Linguistics*, 2018.
 
