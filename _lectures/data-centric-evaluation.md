@@ -172,6 +172,9 @@ In classification, the influence function can be computed in reasonable $O(n \lo
 
 ![K Nearest Neighbors Applied to Deep Embeddings of the Data](/static/assets/embedneighbors.png)
 
+# Lab
+
+A hands-on lab assignment to accompany this lecture is available in the [dcai-lab repository](https://github.com/dcai-course/dcai-lab). The assignment, found in the notebook [data_centric_evaluation/Lab – Data-Centric Evaluation.ipynb](https://github.com/dcai-course/dcai-lab/blob/master/data_centric_evaluation/Lab%20-%20Data-Centric%20Evaluation.ipynb), is to try improving the performance of a given model solely by improving its training data via some of the various strategies covered here.
 
 # References
 
