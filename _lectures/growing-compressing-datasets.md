@@ -1,7 +1,7 @@
 ---
 layout: lecture
 title: "Growing or Compressing Datasets"
-date: 2023-01-20
+date: 2023-01-25
 ready: false
 video:
   aspect: 56.25
