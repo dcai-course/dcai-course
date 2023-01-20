@@ -198,7 +198,7 @@ In classification, the influence function can be computed in reasonable $O(n \lo
 
 <span id="C22"></span> [C22] [Clustering](https://scikit-learn.org/stable/modules/clustering.html). *scikit-learn documentation*, 2022.
 
-<span id="E22"></span> [E22] Eyuboglu et al. [Discovering the systematic errors made by machine learning models](http://ai.stanford.edu/blog/domino/). *ICLR*, 2022.
+<span id="E22"></span> [E22] Eyuboglu et al. [Discovering the systematic errors made by machine learning models](https://ai.stanford.edu/blog/domino/). *ICLR*, 2022.
 
 <span id="S22"></span> [S22] Sabini, M. [Boosting Model Performance Through Error Analysis](https://landing.ai/boosting-model-performance-through-error-analysis/). *Landing.ai Blog*, 2022.
 
