@@ -277,22 +277,22 @@ The assignment, found in the notebook [dataset_curation/Lab -- Dataset Curation 
 
 # References
 
-<a name="MM21"></a> [MM21] Munro, R., Monarch, R. [Human-in-the-Loop Machine Learning: Active Learning and Annotation for Human-centered AI](https://books.google.com/books/about/Human_in_the_Loop_Machine_Learning.html?id=LCh0zQEACAAJ). 2021.
+<span id="MM21"></span> [MM21] Munro, R., Monarch, R. [Human-in-the-Loop Machine Learning: Active Learning and Annotation for Human-centered AI](https://books.google.com/books/about/Human_in_the_Loop_Machine_Learning.html?id=LCh0zQEACAAJ). 2021.
 
-<a name="GTM22"></a> [GTM22] Goh, H. W., Tkachenko, U., and Mueller, J. [CROWDLAB: Supervised learning to infer consensus labels
+<span id="GTM22"></span> [GTM22] Goh, H. W., Tkachenko, U., and Mueller, J. [CROWDLAB: Supervised learning to infer consensus labels
 and quality scores for data with multiple annotators](https://people.csail.mit.edu/jonasmueller/info/crowdlab.pdf). *NeurIPS 2022 Human in the Loop Learning Workshop*, 2022.
 
-<a name="PCC18"></a> [PCC18] Paun, S., et al. [Comparing Bayesian Models of Annotation](https://aclanthology.org/Q18-1040.pdf). *Transactions of the Association for Computational Linguistics*, 2018.
+<span id="PCC18"></span> [PCC18] Paun, S., et al. [Comparing Bayesian Models of Annotation](https://aclanthology.org/Q18-1040.pdf). *Transactions of the Association for Computational Linguistics*, 2018.
 
 
-<a name="NBA17"></a> [NBA17] Nunan, D., Bankhead, C., Aronson J. K. [Catalogue of Bias](https://catalogofbias.org/biases/selection-bias/), 2017.
+<span id="NBA17"></span> [NBA17] Nunan, D., Bankhead, C., Aronson J. K. [Catalogue of Bias](https://catalogofbias.org/biases/selection-bias/), 2017.
 
-<a name="BGP18"></a> [BGP18] Beery, S., Van Horn, G., and Perona, P. [Recognition in terra incognita](https://arxiv.org/abs/1807.04975). *European Conference on Computer Vision*, 2018.
+<span id="BGP18"></span> [BGP18] Beery, S., Van Horn, G., and Perona, P. [Recognition in terra incognita](https://arxiv.org/abs/1807.04975). *European Conference on Computer Vision*, 2018.
 
 
-<a name="RRB20"></a> [RRB20] Rosenfeld, J., Rosenfeld, A., and Belinkov, Y. [A constructive prediction of the generalization error across scales](https://arxiv.org/abs/1909.12673). *International Conference on Learning Representations*, 2020.
+<span id="RRB20"></span> [RRB20] Rosenfeld, J., Rosenfeld, A., and Belinkov, Y. [A constructive prediction of the generalization error across scales](https://arxiv.org/abs/1909.12673). *International Conference on Learning Representations*, 2020.
 
-[LTH22] Liang, W., et al. [Advances, challenges and opportunities in creating data for trustworthy AI](https://www.nature.com/articles/s42256-022-00516-1). *Nature Machine Intelligence*, 2022.
+<span id="LTH22"></span> [LTH22] Liang, W., et al. [Advances, challenges and opportunities in creating data for trustworthy AI](https://www.nature.com/articles/s42256-022-00516-1). *Nature Machine Intelligence*, 2022.
 
 
 

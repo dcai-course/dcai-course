@@ -174,42 +174,42 @@ In classification, the influence function can be computed in reasonable $O(n \lo
 
 # References
 
-<a name="R08"></a> [R08] Rifkin, R. [MIT 9.520 Class Notes on Multiclass Classification](https://www.mit.edu/~9.520/spring09/Classes/multiclass.pdf). 2008.
+<span id="R08"></span> [R08] Rifkin, R. [MIT 9.520 Class Notes on Multiclass Classification](https://www.mit.edu/~9.520/spring09/Classes/multiclass.pdf). 2008.
 
-<a name="HTF17"></a> [HTF17] Hastie, T., Tibshirani, R. Friedman, J. [The Elements of Statistical Learning](https://hastie.su.domains/Papers/ESLII.pdf). 2017.
+<span id="HTF17"></span> [HTF17] Hastie, T., Tibshirani, R. Friedman, J. [The Elements of Statistical Learning](https://hastie.su.domains/Papers/ESLII.pdf). 2017.
 
-<a name="Z15"></a> [Z15] Zheng, A. [Evaluating Machine Learning Models](https://www.oreilly.com/content/evaluating-machine-learning-models/). 2015.
+<span id="Z15"></span> [Z15] Zheng, A. [Evaluating Machine Learning Models](https://www.oreilly.com/content/evaluating-machine-learning-models/). 2015.
 
-<a name="VC22"></a> [VC22]  Varoquaux, G., Colliot, O. [Evaluating machine learning models and their diagnostic value](https://hal.science/hal-03682454/file/main.pdf). *Machine Learning for Brain Disorders*, 2022.
+<span id="VC22"></span> [VC22]  Varoquaux, G., Colliot, O. [Evaluating machine learning models and their diagnostic value](https://hal.science/hal-03682454/file/main.pdf). *Machine Learning for Brain Disorders*, 2022.
 
-<a name="KN22"></a> [KN22] Kapoor, S., Narayanan, A. [Leakage and the Reproducibility Crisis in ML-based Science](https://reproducible.cs.princeton.edu/). 2022.
+<span id="KN22"></span> [KN22] Kapoor, S., Narayanan, A. [Leakage and the Reproducibility Crisis in ML-based Science](https://reproducible.cs.princeton.edu/). 2022.
 
-<a name="O19"></a> [O19] Open Data Science. [How to Fix Data Leakage — Your Model’s Greatest Enemy](https://odsc.medium.com/how-to-fix-data-leakage-your-models-greatest-enemy-e34fa26abac5). *Medium*, 2019.
+<span id="O19"></span> [O19] Open Data Science. [How to Fix Data Leakage — Your Model’s Greatest Enemy](https://odsc.medium.com/how-to-fix-data-leakage-your-models-greatest-enemy-e34fa26abac5). *Medium*, 2019.
 
-<a name="NAM21"></a> [NAM21] Northcutt, C. G., Athalye, A., Mueller, J. [Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks](https://arxiv.org/abs/2103.14749). *NeurIPS Track on Datasets and Benchmarks*, 2021.
+<span id="NAM21"></span> [NAM21] Northcutt, C. G., Athalye, A., Mueller, J. [Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks](https://arxiv.org/abs/2103.14749). *NeurIPS Track on Datasets and Benchmarks*, 2021.
 
-<a name="H18"></a> [H18] Hardesty, L. [Study finds gender and skin-type bias in commercial artificial-intelligence systems](https://news.mit.edu/2018/study-finds-gender-skin-type-bias-artificial-intelligence-systems-0212). *MIT News*, 2018.
+<span id="H18"></span> [H18] Hardesty, L. [Study finds gender and skin-type bias in commercial artificial-intelligence systems](https://news.mit.edu/2018/study-finds-gender-skin-type-bias-artificial-intelligence-systems-0212). *MIT News*, 2018.
 
-<a name="VFK21"></a> [VFK21] Vokinger, K. N., Feuerriegel, S., Kesselheim, A. S., [Mitigating bias in machine learning for medicine](https://www.nature.com/articles/s43856-021-00028-w). *Communications Medicine*, 2021.
+<span id="VFK21"></span> [VFK21] Vokinger, K. N., Feuerriegel, S., Kesselheim, A. S., [Mitigating bias in machine learning for medicine](https://www.nature.com/articles/s43856-021-00028-w). *Communications Medicine*, 2021.
 
-<a name="CJS18"></a> [CJS18] Chen, I. Johansson, F. D., Sontag, D. [Why Is My Classifier Discriminatory?](https://arxiv.org/abs/1805.12002). *NeurIPS*, 2018.
+<span id="CJS18"></span> [CJS18] Chen, I. Johansson, F. D., Sontag, D. [Why Is My Classifier Discriminatory?](https://arxiv.org/abs/1805.12002). *NeurIPS*, 2018.
 
-<a name="KGZ19"></a> [KGZ19] Kim, M. P., Ghorbani, A., Zou, J. [Multiaccuracy: Black-Box Post-Processing for Fairness in Classification](https://arxiv.org/abs/1805.12317). *AIES*, 2019.
+<span id="KGZ19"></span> [KGZ19] Kim, M. P., Ghorbani, A., Zou, J. [Multiaccuracy: Black-Box Post-Processing for Fairness in Classification](https://arxiv.org/abs/1805.12317). *AIES*, 2019.
 
-<a name="C22"></a> [C22] [Clustering](https://scikit-learn.org/stable/modules/clustering.html). *scikit-learn documentation*, 2022.
+<span id="C22"></span> [C22] [Clustering](https://scikit-learn.org/stable/modules/clustering.html). *scikit-learn documentation*, 2022.
 
-<a name="E22"></a> [E22] Eyuboglu et al. [Discovering the systematic errors made by machine learning models](http://ai.stanford.edu/blog/domino/). *ICLR*, 2022.
+<span id="E22"></span> [E22] Eyuboglu et al. [Discovering the systematic errors made by machine learning models](http://ai.stanford.edu/blog/domino/). *ICLR*, 2022.
 
-<a name="S22"></a> [S22] Sabini, M. [Boosting Model Performance Through Error Analysis](https://landing.ai/boosting-model-performance-through-error-analysis/). *Landing.ai Blog*, 2022.
+<span id="S22"></span> [S22] Sabini, M. [Boosting Model Performance Through Error Analysis](https://landing.ai/boosting-model-performance-through-error-analysis/). *Landing.ai Blog*, 2022.
 
-<a name="KM22"></a> [KM22] Kuan, J., Mueller, J. [Back to the Basics: Revisiting Out-of-Distribution Detection Baselines](https://arxiv.org/abs/2207.03061). *ICML Workshop on Principles of Distribution Shift*, 2022.
+<span id="KM22"></span> [KM22] Kuan, J., Mueller, J. [Back to the Basics: Revisiting Out-of-Distribution Detection Baselines](https://arxiv.org/abs/2207.03061). *ICML Workshop on Principles of Distribution Shift*, 2022.
 
-<a name="TMN22"></a> [TMN22] Tkachenko, U., Mueller, J., Northcutt, C. [A Simple Adjustment Improves Out-of-Distribution Detection for Any Classifier](https://pub.towardsai.net/a-simple-adjustment-improves-out-of-distribution-detection-for-any-classifier-5e96bbb2d627). *Towards AI*, 2022.
+<span id="TMN22"></span> [TMN22] Tkachenko, U., Mueller, J., Northcutt, C. [A Simple Adjustment Improves Out-of-Distribution Detection for Any Classifier](https://pub.towardsai.net/a-simple-adjustment-improves-out-of-distribution-detection-for-any-classifier-5e96bbb2d627). *Towards AI*, 2022.
 
-<a name="J21"></a> [J21] Jia et al. [Scalability vs. Utility: Do We Have to Sacrifice One for the Other in Data Importance Quantification?](https://arxiv.org/abs/1911.07128) *CVPR*, 2021.
+<span id="J21"></span> [J21] Jia et al. [Scalability vs. Utility: Do We Have to Sacrifice One for the Other in Data Importance Quantification?](https://arxiv.org/abs/1911.07128) *CVPR*, 2021.
 
-<a name="W21"></a> [W21] Warnes, Z. [Efficient Data Valuation with Exact Shapley Values](https://arxiv.org/abs/1911.07128). *Towards Data Science*, 2021.
+<span id="W21"></span> [W21] Warnes, Z. [Efficient Data Valuation with Exact Shapley Values](https://arxiv.org/abs/1911.07128). *Towards Data Science*, 2021.
 
-<a name="N20"></a> [N20] Nguyenova, L. [A little closer to Cook’s distance](https://lymielynn.medium.com/a-little-closer-to-cooks-distance-e8cc923a3250). *Medium*, 2020.
+<span id="N20"></span> [N20] Nguyenova, L. [A little closer to Cook’s distance](https://lymielynn.medium.com/a-little-closer-to-cooks-distance-e8cc923a3250). *Medium*, 2020.
 
-<a name="K18"></a> [K18]  Kristiansen, S. [Nearest Neighbors with Keras and CoreML](https://medium.com/@sorenlind/nearest-neighbors-with-keras-and-coreml-755e76fedf36). *Medium*, 2018.
+<span id="K18"></span> [K18]  Kristiansen, S. [Nearest Neighbors with Keras and CoreML](https://medium.com/@sorenlind/nearest-neighbors-with-keras-and-coreml-755e76fedf36). *Medium*, 2018.
