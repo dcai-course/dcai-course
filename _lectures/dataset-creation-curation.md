@@ -3,6 +3,7 @@ layout: lecture
 title: "Dataset Creation and Curation"
 date: 2023-01-19
 ready: true
+panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=98777e08-0f49-43ec-8580-af85012d2b92"
 video:
   aspect: 56.25
   # id: Wz50FvGG6xU
