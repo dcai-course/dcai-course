@@ -59,7 +59,7 @@ In practice always consider:
 
 We use the Loss function to evaluate model predictions for a new example $x$ against its given  label $y$ [[Z15](#Z15), [VC22](#VC22)]. The loss may be a function of either:
 
-1. The predicted class $\hat{y} \in \\{1,2, \dots, K\\}$ deemed most likely for $x$. Examples of such classfication losses include: accuracy, balanced accuracy, precision, recall,... These measure how often the class prediction from our model matches the observed label, and directly evaluate decisions made based on the model.
+1. The predicted class $\hat{y} \in \\{1,2, \dots, K\\}$ deemed most likely for $x$. Examples of such classification losses include: accuracy, balanced accuracy, precision, recall,... These measure how often the class prediction from our model matches the observed label, and directly evaluate decisions made based on the model.
 
 2. The predicted probabilities $[p_1, p_2, \dots, p_K] \in \mathbb{R}^K$ of each class for $x$. Examples of such classification losses include: log loss, AUROC, calibration error,... These measure how well the model estimates the proportion of times the observed label $y$ would take each class value, in a hypothetical experiment in which many examples with the same feature values $x$ could be sampled repeatedly. Predicted class probabilities are especially useful to determine optimal decisions from classifier outputs in asymmetric reward settings (e.g. if placing bets, or if false positives are much worse than false negatives).
 
