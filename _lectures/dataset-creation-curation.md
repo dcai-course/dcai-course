@@ -89,21 +89,16 @@ Consider an application where you want to train a classifier to achieve at least
 Here is a simple method to estimate this, assuming we already have some training data $D_\text{train}$ of sample size $n$ and a separate fixed size validation dataset $D_\text{val}$. 
 First decide on grid of random data subsets of say sizes: $n_1 = 0.1 \cdot n, n_2 = 0.2 \cdot n, n_3 = 0.3 \cdot n, ..., n_{10} = 1 \cdot n$. Then:
 
-For $j = 1,\dots, 10$:
-<ul>
-For $i = 1, 2, ..., T$:
-
-  <ul>
-    <br>
-    - Randomly sample dataset $D_{ij}$ of size $n_j$ from original training data 
-    <br>
-    &nbsp;&nbsp; (without replacement, and ideally stratified by class in classification).
-    <br>
-    - Train a copy of model on $D_{ij}$ and report its accuracy $a_{ij}$ on $D_\text{val}$.
-  </ul>
-
-</ul>
-
+<p>For $j = 1,\dots, 10$:</p>
+<div class="indent">
+  <p>For $i = 1, 2, ..., T$:</p>
+  <div class="indent">
+    <ul>
+      <li>Randomly sample dataset $D_{ij}$ of size $n_j$ from original training data (without replacement, and ideally stratified by class in classification).</li>
+      <li>Train a copy of model on $D_{ij}$ and report its accuracy $a_{ij}$ on $D_\text{val}$.</li>
+    </ul>
+  </div>
+</div>
 
 This produces a small set of pairs $ \\{ (n_j, a_{ij}) \\}$. Using this set, our goal is to predict what the accuracy $a’$ would be for a model trained on dataset of much larger sample size $n’ \gg n$ than our original training data $D_\text{train}$. 
 **Can you guess why using a K Nearest Neighbor or Linear Regression model to do this prediction is a bad idea?**  
