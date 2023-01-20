@@ -23,7 +23,7 @@ Most Machine Learning applications involve these steps:
 This lecture will focus on step 5, the foundation for *improving* ML performance.
 Topics covered include:
 
-- Evaluation of ML models (a prerequiste for improving them).
+- Evaluation of ML models (a prerequisite for improving them).
 - Handling poor model performance for some particular subpopulation.
 - Measuring the influence of individual datapoints on the model.
 
