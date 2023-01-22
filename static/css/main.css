@@ -202,6 +202,26 @@ hr {
   padding-left: 1rem;
 }
 
+.lecnote:before {
+  content: "NOTE";
+  background: #54008c;
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-right: -1em;
+  margin-top: -1em;
+  margin-bottom: .5em;
+  margin-left: 1em;
+  padding: .5em 1em;
+}
+
+.lecnote {
+  display: none;
+  border: 1px dashed #54008c;
+  padding: 1em;
+  margin: 1rem;
+}
+
 /* Elements */
 
 #content {
