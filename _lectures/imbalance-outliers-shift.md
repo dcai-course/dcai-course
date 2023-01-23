@@ -76,7 +76,7 @@ Outlier identification is of interest because outliers can cause issues during m
 
 {% include lecnote.html content="In 6.036, you learned some model-centric techniques to deal with outliers. For example, using L1 loss over L2 loss to be less sensitive to outliers. In this course, taking a data-centric view, we'll focus on identifying outliers." %}
 
-Once found, what do you do with outliers? It depends. For example, if you find outliers in the training set, you don't want to blindly discard them: they might be rare events rather than invalid data points.
+Once found, what do you do with outliers? It depends. For example, if you find outliers in the training set, you don't want to blindly discard them: they might be rare events rather than invalid data points. You could, for example, have a domain expert manually review outliers to check whether they are rare data or bad data.
 
 ## Problem setup
 
@@ -92,9 +92,9 @@ Being a bit more formal with terminology, here are two tasks of interest:
 
 Outlier detection is a heavily studied field, with many algorithms and lots of published research. Here, we cover a couple selected techniques.
 
-**[Tukey's fences](https://en.wikipedia.org/wiki/Outlier#Tukey's_fences).** A simple method for real-valued data. If $$Q_1$$ and $$Q_3$$ are the lower and upper quartiles, then this test says that any observation outside the following range is considered an outlier: $$[Q_1 - k(Q_1 - Q_3), Q_3 + k(Q_3 - Q_1)]$$. A multiplier of $$k=1.5$$ was proposed by John Tukey.
+**[Tukey's fences](https://en.wikipedia.org/wiki/Outlier#Tukey's_fences).** A simple method for scalar real-valued data. If $$Q_1$$ and $$Q_3$$ are the lower and upper quartiles, then this test says that any observation outside the following range is considered an outlier: $$[Q_1 - k(Q_1 - Q_3), Q_3 + k(Q_3 - Q_1)]$$. A multiplier of $$k=1.5$$ was proposed by John Tukey.
 
-**Z-score.** For one-dimensional or low-dimensional data, Assuming a Gaussian distribution of data: calculate the Z-score as $$z_i = \frac{x_i - \mu}{\sigma}$$, where $$\mu$$ is the mean of all the data and $$\sigma$$ is the standard deviation. An outlier is a data point that has a high-magnitude Z-score, $$\| z_i \| > z_{thr}$$. A commonly used threshold is $$z_{thr} = 3$$. You can apply this technique to individual features as well.
+**Z-score.** The Z-score is the number of standard deviations by which a value is above or below the mean. For one-dimensional or low-dimensional data, assuming a Gaussian distribution of data: calculate the Z-score as $$z_i = \frac{x_i - \mu}{\sigma}$$, where $$\mu$$ is the mean of all the data and $$\sigma$$ is the standard deviation. An outlier is a data point that has a high-magnitude Z-score, $$\| z_i \| > z_{thr}$$. A commonly used threshold is $$z_{thr} = 3$$. You can apply this technique to individual features as well.
 
 **[Isolation forest](https://ieeexplore.ieee.org/document/4781136).** This technique is related to decision trees. Intuitively, the method creates a "random decision tree" and scores data points according to how many nodes are required to isolate them. The algorithm recursively divides (a subset of) a dataset by randomly selecting a feature and a split value until the subset has only one instance. The idea is that outlier data points will require fewer splits to become isolated.
 
@@ -138,8 +138,10 @@ Concept shift occurs when $$p(y \mid \mathbf{x})$$ changes between train and tes
 
 {% include scaled_image.html alt="Concept shift" src="/lectures/files/imbalance-outliers-shift/concept-shift.svg" width="500" %}
 
-- Predicting a stock price based on company fundamentals, trained on data from 1975 and deployed in 2023
-- Making product recommendations based on web browsing behavior, trained on pre-pandemic data and deployed in March 2020
+It is tricky to come up with real-world examples of concept shift where there is absolutely no change in $$p(\mathbf{x})$$. Here are some examples of concept shift in the real world:
+
+- Predicting a stock price based on company fundamentals, trained on data from 1975 and deployed in 2023. Company fundamentals include statistics like [earnings per share](https://www.investopedia.com/terms/e/eps.asp). While these numbers ($$p(\mathbf{x})$$) themselves did change over time, so did the relationship between these numbers and valuation. The [P/E ratio](https://www.investopedia.com/terms/p/price-earningsratio.asp) (ratio of stock price, $$y$$, to earnings per share, $$\mathbf{x}$$) changed significantly over time. The S&P500 P/E ratio was 8.30 in 1975, while by 2023, it has risen to about 20. This is concept shift, where $$p(y \mid \mathbf{x})$$ has changed: people are valuing a company more highly (by more than a factor of 2x) for the same earnings per share.
+- Making purchase recommendations based on web browsing behavior, trained on pre-pandemic data and deployed in March 2020. While web browsing behavior ($$\mathbf{x}$$) did not change much (e.g., most individuals browsed the same websites, watched the same YouTube videos, etc.) before the pandemic vs during the pandemic, the relationship between browsing behavior and purchases did (e.g., someone who watched lots of travel videos on YouTube before the pandemic might buy plane or hotel tickets, while during the pandemic they might pay for nature documentary movies).
 
 ### Prior probability shift / label shift
 
