@@ -51,7 +51,7 @@ If not, there are techniques you can use to try to improve model performance on 
 
 **Over-sampling.** Related to sample weights, you can simply replicate datapoints in the minority class, even multiple times, to make the dataset more balanced. In simpler settings (e.g., least-squares regression, this might be equivalent to sample weights), in other settings (e.g., training a neural network with mini-batch gradient descent), this is not equivalent and often performs better than sample weights. This solution is often unstable, and it can result in overfitting.
 
-**Under-sampling.** Another way to balance a dataset is to _remove_ datapoints from the majority class. In some cases, it can work well, but in some situations, it can result in throwing away a lot of data when you have highly imbalanced datasets, resulting in poor performance.
+**Under-sampling.** Another way to balance a dataset is to _remove_ datapoints from the majority class. While discarding data might seem unintuitive, this approach can work surprisingly well in practice. In some situations, it can result in throwing away a lot of data when you have highly imbalanced datasets, resulting in poor performance.
 
 **[SMOTE](https://arxiv.org/abs/1106.1813) (Synthetic Minority Oversampling TEchnique).** Rather than over-sampling by copying datapoints, you can use dataset augmentation to create new examples of minority classes by combining or perturbing minority examples. The SMOTE algorithm is sensible for certain data types, where interpolation in feature space makes sense, but doesn't make sense for certain other data types: averaging pixel values of one picture of a dog with another picture of a dog is unlikely to produce a picture of a dog. Depending on the application, other data augmentation methods could work better.
 
@@ -140,7 +140,7 @@ Examples of covariate shift:
 
 ### Concept shift
 
-Concept shift occurs when $$p(y \mid \mathbf{x})$$ changes between train and test, but $$p(\mathbf{x})$$ does not. In other words, the input distribution does not change, but the relationship between inputs and outputs does.
+Concept shift occurs when $$p(y \mid \mathbf{x})$$ changes between train and test, but $$p(\mathbf{x})$$ does not. In other words, the input distribution does not change, but the relationship between inputs and outputs does. This can be one of the most difficult types of distribution shift to detect and correct.
 
 {% include scaled_image.html alt="Concept shift" src="/lectures/files/imbalance-outliers-shift/concept-shift.svg" width="500" %}
 
@@ -166,7 +166,9 @@ Some ways you can detect distribution shift in deployments:
 - Monitor the performance of your model. Monitor accuracy, precision, statistical measures, or other evaluation metrics. If these change over time, it may be due to distribution shift.
 - Monitor your data. You can detect data shift by comparing statistical properties of training data and data seen in a deployment.
 
-At a high level, distribution shift can be addressed by fixing the data and re-training the model.
+At a high level, distribution shift can be addressed by fixing the data and re-training the model. In some situations, the best solution is to collect a better training set.
+
+If unlabeled testing data are available while training, then one way to address covariate shift is to assign individual sample weights to training datapoints to weigh their feature-distribution such that the weighted distribution resembles the feature-distribution of test data. In this setting, even though test labels are unknown, label shift can similarly be addressed by employing shared sample weights for all training examples with the same class label, in order to make the weighted feature-distribution in training data resemble the feature distribution in the test data. However, concept shift cannot be addressed without knowledge of its form in this setting, because there is no way to quantify it from unlabeled test data.
 
 ## References
 
