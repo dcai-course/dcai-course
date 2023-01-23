@@ -1,6 +1,6 @@
 ---
 layout: lecture
-title: "Growing or Compressing Datasets"
+title: "Active Learning"
 date: 2023-01-24
 ready: false
 video:
