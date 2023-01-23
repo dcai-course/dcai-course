@@ -21,3 +21,5 @@ jobs:
             {"https://github.com": "${{ secrets.GITHUB_TOKEN }}"}
           ignore_url: |
             https://www.codycoleman.com/
+          ignore_url_re: |
+            ^https://machinelearningmastery.com/
