@@ -47,7 +47,7 @@ Once an evaluation metric has been chosen, you can try training a model in the s
 
 If not, there are techniques you can use to try to improve model performance on the minority classes.
 
-**Sample weights.** Many models can be fit to a dataset with per-sample weights. Instead of optimizing an objective function that's a uniform average of per-datapoint losses, this optimizes a weighted average of losses, putting more emphasis on certain datapoints. While simple and conceptually appealing, this often does not work well in practice.
+**Sample weights.** Many models can be fit to a dataset with per-sample weights. Instead of optimizing an objective function that's a uniform average of per-datapoint losses, this optimizes a weighted average of losses, putting more emphasis on certain datapoints. While simple and conceptually appealing, this often does not work well in practice. For classifiers trained using mini-batches, using sample weights results in varying the effective learning rate between mini-batches, which can make learning unstable.
 
 **Over-sampling.** Related to sample weights, you can simply replicate datapoints in the minority class, even multiple times, to make the dataset more balanced. In simpler settings (e.g., least-squares regression, this might be equivalent to sample weights), in other settings (e.g., training a neural network with mini-batch gradient descent), this is not equivalent and often performs better than sample weights. This solution is often unstable, and it can result in overfitting.
 
