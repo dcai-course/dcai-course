@@ -70,6 +70,8 @@ These techniques can be combined. For example, the SMOTE authors note that the c
 
 {% include scaled_image.html alt="Outlier" src="/lectures/files/imbalance-outliers-shift/outlier.svg" width="350" %}
 
+<p class="small center">An example of an outlier. Two classes in two-dimensional feature space are shown, labeled as "+" and "-", and an outlier is circled in red.</p>
+
 Outliers are datapoints that differ significantly from other datapoints. Causes include errors in measurement (e.g., a damaged air quality sensor), bad data collection (e.g., missing fields in a tabular dataset), malicious inputs (e.g., [adversarial examples](https://arxiv.org/abs/1312.6199)), and rare events (statistical outliers, e.g., an albino animal in an image classification dataset).
 
 Outlier identification is of interest because outliers can cause issues during model training, at inference time, or when applying statistical techniques to a dataset. Outliers can harm model training, and certain machine learning models (e.g., vanilla SVM) can be particularly sensitive to outliers in the training set. A model, at deployment time, may not produce reasonable output if given outlier data as input (a form of [distribution shift](#distribution-shift)). If data has outliers, data analysis techniques might yield bad results.
@@ -116,6 +118,8 @@ You'll notice that many outlier detection techniques involve computing a score f
 
 {% include scaled_image.html alt="Distribution shift" src="/lectures/files/imbalance-outliers-shift/distribution-shift.svg" width="450" %}
 
+<p class="small center">An example of extreme distribution shift (in particular, covariate shift / data shift) in a hand-written digit classification task. A classifier is trained on Arabic numerals labeled 0&ndash;9, while it is evaluated on the Roman numerals 0&ndash;9. It is likely to have extremely poor performance.</p>
+
 Distribution shift is a challenging problem that occurs when the joint distribution of inputs and outputs differs between training and test stages, i.e., $$p_\mathrm{train}(\mathbf{x}, y) \neq p_\mathrm{test}(\mathbf{x}, y)$$. This issue is present, to varying degrees, in nearly every practical ML application, in part because it is hard to perfectly reproduce testing conditions at training time.
 
 ## Types of distribution shift
@@ -125,6 +129,8 @@ Distribution shift is a challenging problem that occurs when the joint distribut
 Covariate shift occurs when $$p(\mathbf{x})$$ changes between train and test, but $$p(y \mid \mathbf{x})$$ does not. In other words, the distribution of inputs changes between train and test, but the relationship between inputs and outputs does not change.
 
 {% include scaled_image.html alt="Covariate shift" src="/lectures/files/imbalance-outliers-shift/covariate-shift.svg" width="500" %}
+
+<p class="small center">When the distribution of training data and test data differ significantly, a learned model can fit training data well but perform poorly on test data.</p>
 
 Examples of covariate shift:
 
@@ -137,6 +143,8 @@ Examples of covariate shift:
 Concept shift occurs when $$p(y \mid \mathbf{x})$$ changes between train and test, but $$p(\mathbf{x})$$ does not. In other words, the input distribution does not change, but the relationship between inputs and outputs does.
 
 {% include scaled_image.html alt="Concept shift" src="/lectures/files/imbalance-outliers-shift/concept-shift.svg" width="500" %}
+
+<p class="small center">Concept shift in a two-class dataset with two-dimensional features. Data points, drawn as "x"s are color-coded by class (red/green), and the decision boundary is shown in purple. The input distribution is exactly identical between train and test, but the relationship between input and output has changed.</p>
 
 It is tricky to come up with real-world examples of concept shift where there is absolutely no change in $$p(\mathbf{x})$$. Here are some examples of concept shift in the real world:
 
