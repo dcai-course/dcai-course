@@ -31,7 +31,7 @@ If you're splitting a dataset into train/test splits, make sure to use [stratifi
 
 With imbalanced data, standard metrics like accuracy might not make sense. For example, a classifier that always predicts "NOT FRAUD" would have 99.8% accuracy in detecting credit card fraud.
 
-There is no one-size-fits-all solution for choosing an evaluation metric: the choice should depend on the problem. For example, an evaluation metric for credit card fraud detection might be a weighted average of the precision and recall scores (the [F-beta score](https://machinelearningmastery.com/fbeta-measure-for-machine-learning/)), with the weights determined by weighing the relative costs of failing to block a fraudulent transaction and incorrectly blocking a genuine transaction:
+There is no one-size-fits-all solution for choosing an evaluation metric: the choice should depend on the problem. For example, an evaluation metric for credit card fraud detection might be a weighted average of the [precision and recall](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall) scores (the [F-beta score](https://machinelearningmastery.com/fbeta-measure-for-machine-learning/)), with the weights determined by weighing the relative costs of failing to block a fraudulent transaction and incorrectly blocking a genuine transaction:
 
 {% include lecnote.html content="precision = what proportion of positive identifications were actually positive = TP / (TP + FP). recall = what proportion of actual positives were identified correctly = TP / (TP + FN)." %}
 
