@@ -173,6 +173,7 @@ If unlabeled testing data are available while training, then one way to address 
 ## References
 
 - [Dataset Shift in Machine Learning (book)](https://direct.mit.edu/books/book/3841/Dataset-Shift-in-Machine-Learning)
+- [Environment and Distribution Shift](https://d2l.ai/chapter_linear-classification/environment-and-distribution-shift.html)
 
 # Lab
 
