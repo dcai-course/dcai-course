@@ -2,7 +2,7 @@
 layout: lecture
 title: "Class Imbalance, Outliers, and Distribution Shift"
 date: 2023-01-23
-ready: false
+ready: true
 video:
   aspect: 56.25
   # id: Wz50FvGG6xU
