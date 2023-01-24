@@ -3,6 +3,7 @@ layout: lecture
 title: "Class Imbalance, Outliers, and Distribution Shift"
 date: 2023-01-23
 ready: true
+panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c97d2732-19b5-461d-a961-af85012d2bcb"
 video:
   aspect: 56.25
   # id: Wz50FvGG6xU
