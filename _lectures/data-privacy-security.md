@@ -77,14 +77,14 @@ Different attacks consider different settings where the adversary has varying ac
 
 ## Shadow training ([Shokri et al., 2016][shokri-2016])
 
-This attack uses machine learning to break the privacy of machine learning, by training a model to infer whether or not a data point is in the training set of the target model. The approach trains an attack model $A$ that takes in a data point's class label $y$ and a taret model's output $\mathbf{y}$ and performs binary classification, whether or not the data point is in the training set: $A : (y, \mathbf{y}) \rightarrow \\{\mathrm{in}, \mathrm{out}\\}$. It collects a training dataset for this attack model with a collection of "shadow models".
+This attack uses machine learning to break the privacy of machine learning, by training a model to infer whether or not a data point is in the training set of the target model. The approach trains an attack model $A$ that takes in a data point's class label $y$ and a target model's output $\mathbf{y}$ and performs binary classification, whether or not the data point is in the training set: $A : (y, \mathbf{y}) \rightarrow \\{\mathrm{in}, \mathrm{out}\\}$. It collects a training dataset for this attack model with a collection of "shadow models".
 
 ### Step 1: collecting training data
 
 The attack assumes that the attacker has access to additional data $D_{\mathrm{shadow}}$ that fits the format of the target model. For example, if the target model is an image classifier, then the attacker needs to have access to a bunch of images. The attack trains "shadow models" on this dataset to produce training data for the attack model.
 
 1. Partition the dataset $D_{\mathrm{shadow}}$ into a $D_{\mathrm{in}}$ set and $D_{\mathrm{out}}$ set
-2. Guess a model architecture and train a shadow model $M_{\mathrm{shadow}}$ on $D_{\mathrm{in}}$
+2. Choose a model architecture and train a shadow model $M_{\mathrm{shadow}}$ on $D_{\mathrm{in}}$
 3. For each $(\mathbf{x}, y) \in D_{\mathrm{in}}$, compute $\mathbf{y} = M_{\mathrm{shadow}}(\mathbf{x})$, the model's output on $\mathbf{x}$, and use that to create a training data point $((y, \mathbf{y}), \mathrm{in})$.
 4. For each $(\mathbf{x}, y) \in D_{\mathrm{out}}$, compute $\mathbf{y} = M_{\mathrm{shadow}}(\mathbf{x})$, the model's output on $\mathbf{x}$, and use that to create a training data point $((y, \mathbf{y}), \mathrm{out})$.
 
@@ -141,6 +141,8 @@ Extraction attacks extract training data directly from a trained model. Neural n
 
 {% include scaled_image.html alt="Data extraction attack against GPT-2" src="/lectures/files/data-privacy-security/extraction.png" width="282" %}
 
+<p class="small center">This is a real-world example. Some text is obscured to protect the victim's privacy.</p>
+
 At its core, the attack works as follows:
 
 1. Sample many sequences from the model. These are sampled by initializing the model with a start-of-sentence token and repeatedly sampling in an autoregressive fashion.
@@ -190,9 +192,9 @@ for any set $S$ of possible outputs of $\mathcal{A}$, and any two data sets $\ma
 
 In the context of ML, the algorithm $\mathcal{A}$ is the model training algorithm, the input is the dataset $\mathcal{D}$, and the output of the algorithm, which is in $S$, and constrained by the definition of DP, is the _model_.
 
-A differentially-private training algorithm (like DP-SGD, [Abadi et al., 2016](https://arxiv.org/abs/1607.00133)) implies that the result (a trained model) does not change by much if a data point is added or removed, which intuitively provides some sort of privacy: the model can't depend too much on specific data points.
+A differentially-private training algorithm (like DP-SGD, [Abadi et al., 2016](https://arxiv.org/abs/1607.00133)) ensures that the result (a trained model) does not change by much if a data point is added or removed, which intuitively provides some sort of privacy: the model can't depend too much on specific data points.
 
-There are challenges with applying DP in practice. One challenge is that the definition of DP includes two parameters, $\epsilon$ and $\delta$, that can be hard to set. Applied to a particular dataset, it can be unintuitive to understand exactly what these parameters mean in terms of real-world privacy implications, and sometimes, choices of $\epsilon$ and $\delta$ that are good for privacy result in low-quality results (e.g., a model with poor performance).
+There are challenges with applying DP in practice. One challenge is that the definition of DP includes two parameters, $\epsilon$ and $\delta$, that can be hard to set. Applied to a particular dataset, it can be hard to understand exactly what these parameters mean in terms of real-world privacy implications, and sometimes, choices of $\epsilon$ and $\delta$ that are good for privacy result in low-quality results (e.g., a model with poor performance).
 
 # Resources
 
