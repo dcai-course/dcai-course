@@ -13,11 +13,11 @@ Machine learning models are sometimes trained on sensitive data, such as healthc
 A natural question arises: do these public models leak private information about the data on which they are trained? It turns out that they do, and this gives rise to a variety of attacks on ML models, including:
 
 - **Membership inference attacks:** given a datapoint, infer whether it was in the training set of an ML model. For example, consider an ML model trained on a dataset of patients with HIV. If an adversary is able to identify whether or not a particular person was included in the model's training set, then they'll be able to infer that person's HIV status (because the model is only trained on people with the condition).
-- **Reconstruction attacks:** given a model, reconstruct some of its training data. For example, consider a large language model (LLM) like [OpenAI Codex](https://arxiv.org/abs/2107.03374), the model that powers [GitHub Copilot](https://github.com/features/copilot). If the model is trained on a corpus of code including private repositories that contained production secrets like API keys, and an adversary is able to reconstruct some training data by probing the model, then the adversary might learn some private API keys.
+- **Data extraction attacks:** given a model, extract some of its training data. For example, consider a large language model (LLM) like [OpenAI Codex](https://arxiv.org/abs/2107.03374), the model that powers [GitHub Copilot](https://github.com/features/copilot). If the model is trained on a corpus of code including private repositories that contained production secrets like API keys, and an adversary is able to extract some training data by probing the model, then the adversary might learn some private API keys.
 
-There are many other types of attacks on data / ML models, including adversarial examples ([Szegedy et al., 2013](https://arxiv.org/abs/1312.6199)), data poisoning attacks ([Chen et al., 2017](https://arxiv.org/abs/1712.05526)), model inversion attacks ([Fredrikson et al., 2014](https://www.usenix.org/system/files/conference/usenixsecurity14/sec14-paper-fredrikson-privacy.pdf)), and model extraction attacks ([Tramèr et al., 2016](https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_tramer.pdf)). ML security is an active area of research, and there are many thousands of papers on the topic, as well as discoveries like [prompt injection](https://simonwillison.net/2022/Sep/12/prompt-injection/) that haven't even received a systematic treatment from researchers yet.
+There are many other types of attacks on data / ML models, including adversarial examples ([Szegedy et al., 2013](https://arxiv.org/abs/1312.6199)), data poisoning attacks ([Chen et al., 2017](https://arxiv.org/abs/1712.05526)), model inversion attacks ([Fredrikson et al., 2014](https://www.usenix.org/system/files/conference/usenixsecurity14/sec14-paper-fredrikson-privacy.pdf)), and model extraction attacks ([Tramèr et al., 2016](https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_tramer.pdf)). ML security is an active area of research, and there are many thousands of papers on the topic, as well as recently-discovered issues like [prompt injection in LLMs](https://simonwillison.net/2022/Sep/12/prompt-injection/) that haven't even received a systematic treatment from researchers yet.
 
-This lecture covers security-oriented thinking in the context of machine learning, and it focuses on inference and reconstruction attacks. Finally, it touches on defenses against privacy attacks, including empirical defenses and differential privacy.
+This lecture covers security-oriented thinking in the context of machine learning, and it focuses on inference and extraction attacks. Finally, it touches on defenses against privacy attacks, including empirical defenses and differential privacy.
 
 [shokri-2016]: https://arxiv.org/abs/1610.05820
 
@@ -30,9 +30,15 @@ To be able to reason about whether a system is secure, you must first define:
 - A _security goal_, which defines what the system is trying to accomplish. What should/shouldn't happen?
 - A _threat model_, which constrains the adversary. What can/can't the adversary do? What does the adversary know? What does the adversary not know? How much computing power does the adversary have? What aspects of the system does the adversary have access to?
 
-For any given system, specifying these fully can require a lot of thought. Let's build some intuition by doing some threat modeling.
+Once these are defined, then you can decide whether a system is secure by thinking about whether _any possible adversary_ (that follows the threat model) could violate the security goal of your system. Only if the answer is "no" is the system secure.
+
+Quantifying over all adversaries is one aspect of what makes security challenging, and why it's important to specify good threat models (without sufficiently constraining the adversary, most security goals cannot be achieved).
+
+For any given system, fully specifying a security goal and threat model can require a lot of thought. Let's build some intuition by doing some threat modeling.
 
 ## Image prediction API
+
+{% include scaled_image.html alt="Google Cloud Vision prediction" src="/lectures/files/data-privacy-security/gcv.png" width="415" %}
 
 Consider a cloud-based image prediction API like the [Google Cloud Vision API](https://cloud.google.com/vision), which takes in an image and returns a prediction of labels and associated probabilities. A security goal might include that an attacker should not be able to extract the ML model. The model is proprietary, and collecting a large dataset and training a model is expensive, so a cloud provider might not want an adversary to be able to extract model architecture/weights. In threat modeling, the cloud provider might assume that the adversary can:
 
@@ -65,7 +71,7 @@ The hospital might assume that the adversary can't:
 
 # Membership inference attacks
 
-Membership inference attacks determine whether a data point is in the training set of an ML model. Consider an ML model $M$ trained on a dataset $D$ of data points $(\mathbf{x}\_i, y\_i)$. The goal of a membership inference attack is to determine whether a data point $(\mathbf{x}, y)$ is in the training set of $M$, i.e., whether $(\mathbf{x}, y) \in D$, given access to $M$.
+Membership inference attacks determine whether a data point is in the training set of an ML model. Consider an ML model $M$ trained on a dataset $D$ of data points $(\mathbf{x}\_i, y\_i)$, where $M$ produces probability distributions over the set of labels, $M : \mathbf{x} \rightarrow \mathbf{y}$. The goal of a membership inference attack is to determine whether a data point $(\mathbf{x}, y)$ is in the training set of $M$, i.e., whether $(\mathbf{x}, y) \in D$, given access to $M$.
 
 Different attacks consider different settings where the adversary has varying access to $M$. In this lecture, we focus on _black-box_ access: the attacker has the ability to query $M$ for attacker-chosen inputs, and the attacker obtains the model output (e.g., predicted probabilities for all classes).
 
@@ -100,33 +106,51 @@ Unlike attacks based on training a binary classifier, metric-based attacks are a
 
 Given a data point $(\mathbf{x}, y)$, this simple heuristic returns $\mathrm{in}$ if the model's prediction $M(\mathbf{x})$ is correct (equal to $y$).
 
+Intuition: this exploits the gap between train and test accuracy, where the model will likely correctly classify most or all of its test data but a much smaller fraction of training data.
+
 ### Prediction loss based attack ([Yeom et al., 2017][yeom-2017])
 
 This approach assigns a score to a data point $(\mathbf{x}, y)$ using the model's loss for that particular data point, $L(M(\mathbf{x}), y)$. The score can be converted into a binary label $\mathrm{in}$ / $\mathrm{out}$ by thresholding at some chosen threshold $\tau$, outputting $\mathrm{in}$ if the loss is below the threshold.
 
 For this metric, one way to choose a threshold might be to use the average or maximum loss of the model on the training data (which might be reported by the publisher of the model).
 
+Intuition: this exploits the property that models are trained to minimize loss, and they can often achieve zero loss for training data.
+
 ### Prediction confidence based ([Salem et al., 2018][salem-2018])
 
-This approach assigns a score to a data point based on the model's confidence in its predicted class. One way to choose a threshold would be to use the model's average or minimum confidence on the training data, if available.
+This approach assigns a score to a data point based on the model's confidence in its predicted class, $\max(M(\mathbf{x}))$. One way to choose a threshold would be to use the model's average or minimum confidence on the training data, if available.
+
+Intuition: this exploits the property that models are often more confident about the predictions for training data (even when that prediction doesn't match the true label of the data point).
 
 ### Prediction entropy based ([Salem et al., 2018][salem-2018])
 
-This approach assigns a score to a data point based on the entropy of the model's output, $\mathbf{y} = M(\mathbf{x})$.
+This approach assigns a score to a data point based on the entropy $H(\mathbf{y})$ of the model's output, $\mathbf{y} = M(\mathbf{x})$:
+
+\\[
+H(\mathbf{y}) = - \sum_{i} \mathbf{y}[i] \cdot \log \\left( \mathbf{y}[i] \\right)
+\\]
+
+Intuition: similar to the above, this exploits the property that models are often more confident about predictions for training data.
 
 [yeom-2017]: https://arxiv.org/abs/1709.01604
 [salem-2018]: https://arxiv.org/abs/1806.01246
 
-# Reconstruction attacks
+# Data extraction attacks
 
-Reconstruction attacks extract training data directly from a trained model. Neural networks unintentionally memorize portions of their input data ([Carlini et al., 2019](https://www.usenix.org/system/files/sec19-carlini.pdf)), and there are techniques for extracting this data, for example, from large language models ([Carlini et al., 2021][carlini-2021]).
+Extraction attacks extract training data directly from a trained model. Neural networks unintentionally memorize portions of their input data ([Carlini et al., 2019](https://www.usenix.org/system/files/sec19-carlini.pdf)), and there are techniques for extracting this data, for example, from large language models ([Carlini et al., 2021][carlini-2021]).
+
+{% include scaled_image.html alt="Data extraction attack against GPT-2" src="/lectures/files/data-privacy-security/extraction.png" width="282" %}
 
 At its core, the attack works as follows:
 
 1. Sample many sequences from the model. These are sampled by initializing the model with a start-of-sentence token and repeatedly sampling in an autoregressive fashion.
-2. Perform a membership inference attack to determine which generated sequences were likely part of the training set. A simple membership inference attack uses the perplexity of a sequence to measure how well the LLM "predicts" the tokens in that sequence.
+2. Perform a membership inference attack to determine which generated sequences were likely part of the training set. A simple membership inference attack uses the _perplexity_ of a sequence to measure how well the LLM "predicts" the tokens in that sequence. Given a model $\hat{p}$ that predicts the probability of the next token and sequence of tokens $x_1, x_2, \ldots, x_n$, the perplexity is:
 
-The more refined version of this attack, presented in [Carlini et al., 2021][carlini-2021], is successful in extracting hundreds of memorized examples from GPT-2.
+\\[
+\mathcal{P} = \exp \\left( - \frac{1}{n} \sum_{i = 1}^{n} \log \hat{p}\\left( x_i \mid x_1, \ldots, x_{i-1} \\right) \\right)
+\\]
+
+The more refined version of this basic attack, presented in [Carlini et al., 2021][carlini-2021], is successful in extracting hundreds of memorized examples from GPT-2.
 
 [carlini-2021]: https://www.usenix.org/system/files/sec21-carlini-extracting.pdf
 
@@ -159,7 +183,7 @@ For the issue of data privacy in machine learning, one promising approach that a
 At a high level, DP is a definition of privacy that constrains how much an algorithm's output can depend on individual data points within its input dataset. A randomized algorithm $\mathcal{A}$ operating on a dataset $\mathcal{D}$ is $(\epsilon, \delta)$-differentially private if:
 
 \\[
-\mathrm{Pr}[\mathcal{A}(\mathcal{D}) \in S] \le e^{\epsilon} \cdot \mathrm{Pr}[\mathcal{A}(\mathcal{D}') \in S] + \delta
+\mathrm{Pr}[\mathcal{A}(\mathcal{D}) \in S] \le \exp(\epsilon) \cdot \mathrm{Pr}[\mathcal{A}(\mathcal{D}') \in S] + \delta
 \\]
 
 for any set $S$ of possible outputs of $\mathcal{A}$, and any two data sets $\mathcal{D}$, $\mathcal{D}'$ that differ in at most one element.
