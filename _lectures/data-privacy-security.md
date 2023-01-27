@@ -119,7 +119,7 @@ This approach assigns a score to a data point based on the entropy of the model'
 
 # Reconstruction attacks
 
-Reconstruction attacks extract training data directly from a trained model. Neural networks, including large language models, unintentionally memorize portions of their input data ([Carlini et al., 2019](https://www.usenix.org/system/files/sec19-carlini.pdf)), and there are techniques for extracting this data, for example, from large language models ([Carlini et al., 2021][carlini-2021]).
+Reconstruction attacks extract training data directly from a trained model. Neural networks unintentionally memorize portions of their input data ([Carlini et al., 2019](https://www.usenix.org/system/files/sec19-carlini.pdf)), and there are techniques for extracting this data, for example, from large language models ([Carlini et al., 2021][carlini-2021]).
 
 At its core, the attack works as follows:
 
