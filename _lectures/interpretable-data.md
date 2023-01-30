@@ -27,13 +27,13 @@ Consider the following examples of explanations on the [California Housing Datas
 
 Take a look at the image below, which visualizes a [decision tree model](https://scikit-learn.org/stable/modules/tree.html) trained for this purpose. Decision trees are usually considered very interpretable models, because you can follow their logic through a series of simple yes/no questions. Do you feel like this visualization offers you anything towards understanding how the model makes predictions about house prices?
 
-<p align="center"> <img src="files/interpretable-features/decision_tree.png" width="900" /> </p> 
+<p align="center"> <img src="/lectures/files/interpretable-features/decision_tree.png" width="900" /> </p> 
 
 The visualization above displays features generated from running a [principle component analysis](https://builtin.com/data-science/step-step-explanation-principal-component-analysis) on the original feature set. This is a powerful algorithm that reduces the size of a feature space and can improve generalizability of models, but also reduces the interpretability of their features.
 
 Next, consider the two images below, both offering *feature importance* explanations of models trained on the California Housing Dataset. The first was trained on a set of automatically engineered features, while the second uses the basic features that come with the dataset. Both models have similar performance (r<sup>2</sup> ~ 0.85), but you may find the second explanation much easier to reason about.
 
-<p align="center"> <img src="files/interpretable-features/engineered_importance.png" width="600" /> <img src="files/interpretable-features/interpret_importance.png" width="600" /> </p> 
+<p align="center"> <img src="/lectures/files/interpretable-features/engineered_importance.png" width="600" /> <img src="/lectures/files/interpretable-features/interpret_importance.png" width="600" /> </p> 
 
 ### Performance and Interpretability
 
@@ -58,7 +58,7 @@ There are many properties that relate to feature interpretability[^1]. A few to 
 
 The table below shows some examples of features and their properties.
 
-<p align="center"> <img src="files/interpretable-features/table.png" width="600" /> </p> 
+<p align="center"> <img src="/lectures/files/interpretable-features/table.png" width="600" /> </p> 
 
 ## How do we get interpretable features?
 
@@ -81,7 +81,7 @@ In this lecture, we introduce two systems for Collaborative Feature Engineering 
 
 Let's walk through an example, where our task is to differeniate paintings by two artistis with similar styles: Monet versus Sisley. 
 
-1. Show users one painting by each artist, and ask them to identify which artist they believe painted each:  <p align="center"> <img src="files/interpretable-features/monet_lillies.jpg" width="200" /> <img src="files/interpretable-features/sisley.jpg" width="200" /> </p>
+1. Show users one painting by each artist, and ask them to identify which artist they believe painted each:  <p align="center"> <img src="/lectures/files/interpretable-features/monet_lillies.jpg" width="200" /> <img src="/lectures/files/interpretable-features/sisley.jpg" width="200" /> </p>
 2. Ask for a natural-language description of why they chose their classification: 
 > The first painting is probably a Monet because it has lilies in it, and looks like Monet’s style. The second probably isn’t Monet because Monet doesn’t normally put people in his paintings. 
 3. Split up the description at conjuctions (and/or) and punctuation, and cluster the resulting phrases:
@@ -107,7 +107,7 @@ To generate more interpretable features even in situations where models require 
 
 Pyreal automatically "undoes" data transformations that reduce the interpretability of features at the explanation level, as well as adding additional transformations that can improve the interpretability of features in explanations. For example, consider the image below, showing an explanation before and after being transformed by Pyreal. In particular, notice that one-hot encoded features are combined into a single categorical feature (`ocean proximity`), less interpretable features are transformed to more readable versions (`lat/long` -> `city`), and features are unstandardized (`median income`). 
 
-<p align="center"> <img src="files/interpretable-features/pyreal_transforms.png" width="600" /> </p>
+<p align="center"> <img src="/lectures/files/interpretable-features/pyreal_transforms.png" width="600" /> </p>
 
 ### Interpretable Feature Generation
 
@@ -117,10 +117,10 @@ One example of such an algorithm is the Mind the Gap (MTG) algorithm[^7]. This a
 
 MTG begins by randomly assigning features to "feature groups", defined by one or more features concatenated with "AND" or "OR". It then determines which of these groups results in the largest "gap" between true and false instances, and iterates. For example, in the image below, The yellow and blue dots represent instances that are True or False for a given feature group. Here, the left feature group results in a bigger *gap* than the right feature group. Through this process, MTG creates a small set of features that maximally separate classes.
 
-<p align="center"> <img src="files/interpretable-features/gap_example.png" width="600" /> </p>
+<p align="center"> <img src="/lectures/files/interpretable-features/gap_example.png" width="600" /> </p>
 
 And here are some examples of the kinds of feature groups we could generate using MTG. For a specific set of values for each of these groups, we get a cluster that we could describe as "mammals". 
-<p align="center"> <img src="files/interpretable-features/mtg.png" width="600" /> </p>
+<p align="center"> <img src="/lectures/files/interpretable-features/mtg.png" width="600" /> </p>
 
 ## Conclusion
 The key takeaways from this lesson:
