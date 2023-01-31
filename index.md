@@ -72,11 +72,11 @@ TODO links, once we publish the class
 
 ## Acknowledgements
 
-We thank Elaine Mello and [MIT Open Learning](https://openlearning.mit.edu/)
-for making it possible for us to record lecture videos, and Kate Weishaar and
-[MIT Office of Experiential Learning](https://elo.mit.edu/) for supporting this
-class. Introduction to Data-Centric AI is part of [SIPB
-IAP](https://sipb.mit.edu/iap/).
+We thank Elaine Mello / [MIT Open Learning](https://openlearning.mit.edu/) for
+making it possible for us to record lecture videos, Kate Weishaar / [MIT Office
+of Experiential Learning](https://elo.mit.edu/) for supporting this class, and
+Ashay Athalye / [MIT SOUL](https://mitsoul.org/) for editing the lecture
+videos.
 
 ---
 
