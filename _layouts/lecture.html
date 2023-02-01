@@ -15,6 +15,10 @@ layout: default
   <p class="center gap accent"><strong>Lecture video coming soon!</strong></p>
 {% endif %}
 
+{% if page.slides %}
+  <p class="center"><strong>Slides: [{% for s in page.slides %}<a href="{{ s }}">{{ s | split: "." | last }}</a>{% if forloop.rindex > 1 %}, {% endif %}{% endfor %}]</strong></p>
+{% endif %}
+
 {{ content }}
 
 <hr>

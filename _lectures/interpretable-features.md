@@ -7,6 +7,9 @@ panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=96283f4a-e
 video:
   aspect: 56.25
   # id: Wz50FvGG6xU
+slides:
+  - /lectures/files/lec7.pdf
+  - /lectures/files/lec7.pptx
 ---
 
 # Introduction to Interpretable ML

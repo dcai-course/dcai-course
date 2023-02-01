@@ -7,13 +7,12 @@ panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1773586c-3
 video:
   aspect: 56.25
   # id: Wz50FvGG6xU
+slides:
+  - /lectures/files/lec2.pdf
+  - /lectures/files/lec2.pptx
 ---
 
-Detailed lecture notes coming soon. For now, check out the video (above) and slides (below).
-
-# Resources
-
-- Slides [[pdf](/lectures/files/lec2.pdf), [pptx](/lectures/files/lec2.pptx)]
+Detailed lecture notes coming soon. For now, check out the video and slides.
 
 # Lab
 
