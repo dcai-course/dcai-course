@@ -7,6 +7,9 @@ panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=896998a0-0
 video:
   aspect: 56.25
   # id: Wz50FvGG6xU
+slides:
+  - /lectures/files/lec6.pdf
+  - /lectures/files/lec6.pptx
 ---
 
 Detailed lecture notes and slides coming soon. For now, check out the lecture video.
