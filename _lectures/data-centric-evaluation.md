@@ -7,6 +7,9 @@ panopto: https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4985c10c-f2
 video:
   aspect: 56.25
   # id: Wz50FvGG6xU
+slides:
+  - /lectures/files/lec4.pdf
+  - /lectures/files/lec4.pptx
 ---
 
 Most Machine Learning applications involve these steps:
