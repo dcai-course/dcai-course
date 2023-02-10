@@ -6,7 +6,7 @@ ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=45670839-428a-449a-bdff-af85012d2c30"
 video:
   aspect: 56.25
-  # id: Wz50FvGG6xU
+  id: z44vZ_9av-M
 slides:
   - /lectures/files/lec8.pdf
   - /lectures/files/lec8.pptx

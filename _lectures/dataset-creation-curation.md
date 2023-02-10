@@ -6,7 +6,7 @@ ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=98777e08-0f49-43ec-8580-af85012d2b92"
 video:
   aspect: 56.25
-  # id: Wz50FvGG6xU
+  id: R9CHc1acGtk
 ---
 
 Creating a dataset for supervised learning requires the collection of examples and labels. This lecture will focus on classication tasks, but these ideas are applicable to other supervised learning tasks as well (regression, image segmentation, entity recognition, etc). This lecture covers three themes:

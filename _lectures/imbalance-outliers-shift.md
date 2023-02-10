@@ -6,7 +6,7 @@ ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c97d2732-19b5-461d-a961-af85012d2bcb"
 video:
   aspect: 56.25
-  # id: Wz50FvGG6xU
+  id: xnSFpswWm_k
 ---
 
 This lecture covers three common problems in real-world ML data: [class

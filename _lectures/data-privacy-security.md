@@ -5,7 +5,7 @@ date: 2023-01-27
 ready: true
 video:
   aspect: 56.25
-  # id: Wz50FvGG6xU
+  id: Cu-aSZqxkZw
 ---
 
 Machine learning models are sometimes trained on sensitive data, such as healthcare records, and often times, these _models_ are made publicly available, even though the data they are trained on is sensitive and not suitable for release. The model architecture/weights might be made available for download, or the model might be deployed as an inference endpoint, available for anyone to make predictions on any data in a black-box way.
