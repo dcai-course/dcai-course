@@ -36,7 +36,7 @@ Topics covered include:
 
 Here we focus on classification tasks, although the same ideas presented in this lecture are applicable to other supervised learning tasks as well. Let's quickly recap the standard classification setting with $K$ classes [[R08](#R08), [HTF17](#HTF17)].
 
-In classification, we have a training dataset $\mathcal{D}$ with $n$ examples:  $(x_i, y_i) \sim P_{XY}$ sampled from some underlying distribution (a.k.a. population) over features $X$ and class labels $Y$. Here $y_i \in \\{1, 2, \dots, K\\}$ denotes the *class label* of the $i$th example (one of $K$ possible classes) and $x_i$ are some feature measurements used to represent the $i$th example (e.g. pixel intensities of an image). 
+In classification, we have a training dataset $\mathcal{D}$ with $n$ examples:  $(x_i, y_i) \sim P_{XY}$ sampled from some underlying distribution (a.k.a. population) over features $X$ and class labels $Y$. Here $y_i \in \\{1, 2, \dots, K\\}$ denotes the *class label* of the $i$th example (one of $K$ possible classes) and $x_i$ are some feature measurements used to represent the $i$th example (e.g. pixel intensities of an image).
 
 **Goal:** Use $\mathcal{D}$ to train a model $M$, which given an example with *new* feature values $x$, produces a vector of predicted class probabilities $M(x) = [p_1,\dots, p_K]$ whose $k$th entry approximates $P(Y = k \mid X = x)$.
 
@@ -79,14 +79,14 @@ Common pitfalls when evaluating models include:
 For unbiased evaluation without any overfitting, the examples used for evaluation should **only** be used for computing evaluation scores, **not** for any modeling decisions like choosing: model parameters/hyperparameters,  which type of model to use, which subset of features to use, how to preprocess the data, ...
 - Some observed labels may be incorrect due to annotation error [[NAM21]](#NAM21).
 - Reporting only the average evaluation score over many examples may under-represent severe failure cases for rare examples/subpopulations.
-    
+
 
 
 # Underperforming Subpopulations
 
 In a 2018 study [[H18]](#H18), commercial face recognition services were found to have error rates of 0.8% for photos of light-skinned men but 34.7% for dark-skinned women. Similar inequities are present in medical applications of ML [[VFK21]](#VFK21).
 
-These are examples where a trained model performed poorly on some particular *data slice*, a subset of the dataset that shares a common characteristic. Examples include data captured using one sensor vs. another, or factors in human-centric data like race, gender, socioeconomics, age, or location. Slices are also referred to as: *cohorts*, *subpopulations*, or *subgroups* of the data. 
+These are examples where a trained model performed poorly on some particular *data slice*, a subset of the dataset that shares a common characteristic. Examples include data captured using one sensor vs. another, or factors in human-centric data like race, gender, socioeconomics, age, or location. Slices are also referred to as: *cohorts*, *subpopulations*, or *subgroups* of the data.
 Often we do **not** want model predictions to depend on which slice a datapoint belongs to. **Can you guess if this can be solved by just deleting slice information from our feature values before model training?**
 
 Even when it is explicitly omitted, slice information can be correlated with other feature values still being used as predictors. Thus we should at least consider slice information when  evaluating models rather than disregarding it entirely. A simple way to break down how well the model performs for each slice is to average the per-example $\text{Loss}$ over the subset of held-out data belonging to the slice.
@@ -94,11 +94,11 @@ Even when it is explicitly omitted, slice information can be correlated with oth
 Here are ways to improve model performance for a particular slice [[CJS18]](#CJS18):
 
 1. Try a more flexible ML model that has higher fitting capacity (e.g. neural network with more parameters). To understand why this might help, consider a linear model fit to  data from two subgroups that do not overlap in the feature space. If the underlying relationship between features and labels is nonlinear, this low-capacity model must tradeoff accuracy in one subgroup against the other subgroup, even though a nonlinear model could fit both groups just fine. One variant of this is to train a separate model on just the subgroup where our original model underperforms and then ensemble the two models [[KGZ19]](#KGZ19).
-![More flexible ML model](/static/assets/moreflexiblemodel.png)
+![More flexible ML model](/lectures/files/data-centric-evaluation/moreflexiblemodel.png)
 The figure above illustrates an example binary classification task where a linear model must strictly tradeoff between producing worse predictions for data inside the slice vs. outside it. A more flexible neural net model does not have to make this tradeoff and is able to to produce accurate predictions both inside and outside the slice.
 
 2.  Over-sample or up-weight the examples from a minority subgroup that is currently receiving poor predictions. To understand why this might help, consider data from two subgroups which overlap in feature space but tend to have different labels. No model can perform well on such data; a classifier must tradeoff between modeling one class well vs. the other and we can obtain better performance for examples from one subgroup by up-weighting them during training (at the cost of potentially harming performance for other subgroups).
-![Subgroups that overlap in feature space](/static/assets/overlappinggroups.png)
+![Subgroups that overlap in feature space](/lectures/files/data-centric-evaluation/overlappinggroups.png)
 The figure above illustrates an example dataset where the orange and blue subgroups have overlapping feature values. If the labels for these two subgroups tend to differ, then any model will have to tradeoff between producing worse predictions for one subgroup vs. the other. If you assign higher weights to the orange datapoints, then the resulting model should produce better predictions for them at the cost of potentially worse predictions for the blue subgroup.
 
 3. Collect additional data from the subgroup of interest. To assess whether this is a promising approach: you can re-fit your model to many alternative versions of your dataset in which you have down-subsampled this subgroup to varying degrees, and then extrapolate the resulting model performance that would be expected if you had more data from this subgroup.
@@ -108,35 +108,35 @@ The figure above illustrates an example dataset where the orange and blue subgro
 
 
 ## Discovering underperforming subpopulations
-    
+
 Some data may not have obvious slices, for example a collection of documents or images. In this case, how can we identify subgroups where our model underperforms?
 
 Here is one general strategy:
 1. Sort examples in the validation data by their loss value, and look at the examples with high loss for which your model is making the worst predictions (*Error Analysis*).
 2. Apply *clustering* to these examples with high loss to uncover clusters that share common themes amongst these examples.
 
-Many clustering techniques only require that you to define a distance metric between two examples [[C22]](#C22). By inspecting the resulting clusters, you may be able to identify patterns that your model struggles with. Step 2 can also use clustering algorithms that are label or loss-value *aware*, which is done in the *Domino slice discovery method* [[E22]](#E22) pictured below. 
+Many clustering techniques only require that you to define a distance metric between two examples [[C22]](#C22). By inspecting the resulting clusters, you may be able to identify patterns that your model struggles with. Step 2 can also use clustering algorithms that are label or loss-value *aware*, which is done in the *Domino slice discovery method* [[E22]](#E22) pictured below.
 
-![Slice discovery](/static/assets/slicediscovery.png)
+![Slice discovery](/lectures/files/data-centric-evaluation/slicediscovery.png)
 
 
 
 # Why did my model get a particular prediction wrong?
 
-Reasons a classifier might output an erroneous prediction for an example $x$ [[S22]](#S22): 
+Reasons a classifier might output an erroneous prediction for an example $x$ [[S22]](#S22):
 
 1. The given label is incorrect (and our model actually made the right prediction).
-2. This example does not belong to any of the $K$ classes (or is fundamentally not predictable, e.g. a blurry image). 
+2. This example does not belong to any of the $K$ classes (or is fundamentally not predictable, e.g. a blurry image).
 3. This example is an outlier (there are no similar examples in the training data).
 4. This type of model is suboptimal for such examples. To diagnose this, you can up-weight this example or duplicate it many times in the dataset, and then and see if the model is still unable to correctly predict it after being retrained. This scenario is hard to resolve via dataset improvement, instead try: fitting different types of models, hyperparameter tuning, and feature engineering.
 5. The dataset contains other examples with (nearly) identical features that have a different label. In this scenario, there is little you can do to improve model accuracy besides measuring  additional features to enrich the data. *Calibration* techniques may be useful to obtain more useful predicted probabilities from your model.
 
 
-Recommended actions to construct a better train/test dataset under the first three scenarios above include: 
+Recommended actions to construct a better train/test dataset under the first three scenarios above include:
 
 1. Correct the labels of incorrectly annotated examples.
 2. Toss unpredictable examples and those that do not belong to any of the $K$ classes (or consider adding an "Other" class if there are many such examples).
-3. Toss examples which are outliers in training data if similar examples would never be encountered during deployment. For other outliers, collect additional training data that looks similar if you can. If not, consider a data preprocessing operation that makes outliers' features more similar to other examples (e.g. quantile normalization of numeric feature, or deleting a feature). You can also use *Data Augmentation* to encourage your model to be *invariant* to the difference that makes this outlier stand out from other examples. 
+3. Toss examples which are outliers in training data if similar examples would never be encountered during deployment. For other outliers, collect additional training data that looks similar if you can. If not, consider a data preprocessing operation that makes outliers' features more similar to other examples (e.g. quantile normalization of numeric feature, or deleting a feature). You can also use *Data Augmentation* to encourage your model to be *invariant* to the difference that makes this outlier stand out from other examples.
 If these options are infeasible, you can emphasize an outlier in the dataset by up-weighting it or duplicating it multiple times (perhaps with slight variants of its feature values). To catch outliers encountered during deployment, include Out-of-Distribution detection in your ML pipeline [[KM22](#KM22), [TMN22](#TMN22)].
 
 
@@ -144,24 +144,24 @@ If these options are infeasible, you can emphasize an outlier in the dataset by 
 
 As somebody aiming to practice data-centric AI, you may wonder: how would my ML model **change** if I retrain it after **omitting** a particular datapoint $(x,y)$ from the dataset?
 
-This question is answered by the *influence function* $I(x)$. There are many variants of *influence* that quantify slightly different things, depending on how we define *change* [[J21]](#J21). 
+This question is answered by the *influence function* $I(x)$. There are many variants of *influence* that quantify slightly different things, depending on how we define *change* [[J21]](#J21).
 For instance, the change in the model's predictions vs. the change in its loss (i.e. predictive performance), typically evaluated over held-out data. Here we focus on the latter type of change.
 
 The above is called *Leave-one-out (LOO) influence*, but another form of influence exists called the *Data Shapely* value which asks: What is the LOO influence of datapoint $(x,y)$ in any **subset** of the dataset that contains $(x,y)$? Averaging this quantity over all possible data subsets leads to an influence value that may better reflect the value of $(x,y)$ in broader contexts [[J21]](#J21). For instance, if there are two identical datapoints in a dataset where omitting both severely harms model accuracy, LOO influence may still conclude that neither is too important (unlike the Data Shapely value).
 
 Influence reveals which datapoints have greatest impact on the model. For instance, correcting the label of a mislabeled datapoint with high influence can produce much better model improvement than correcting a mislabeled datapoint that has low influence. $I(x)$ can also be used to assign literal value to data as illustrated in the following figure from [[W21]](#W21):
 
-![Data valuation](/static/assets/datavaluation.png)
+![Data valuation](/lectures/files/data-centric-evaluation/datavaluation.png)
 
 
 Unfortunately, influence can be expensive to compute for an arbitrary ML model.
 For an arbitrary black-box classifier, you can **approximate influence** via these Monte-Carlo sampling steps:
 
 1. Subsample $T$ different data subsets $\mathcal{D}_t$ from the original training dataset (without replacement).
-2. Train a separate copy of your model $M_t$ on each subset $\mathcal{D}_t$ and report its accuracy on  held-out validation data: $a_t$. 
+2. Train a separate copy of your model $M_t$ on each subset $\mathcal{D}_t$ and report its accuracy on  held-out validation data: $a_t$.
 3. To assess the value of a datapoint $(x_i,y_i)$, compare the average accuracy of models for those subsets that contained $(x_i,y_i)$ vs. those that did not. More formally:
 
-$$ 
+$$
  I(x_i) = \frac{1}{|D_\text{in}|} \sum_{t \in D_\text{in}} a_t \ - \ \frac{1}{|D_\text{out}|} \sum_{t \in D_\text{out}} a_t
 $$
 
@@ -171,12 +171,12 @@ $$
 &nbsp;&nbsp;&nbsp;&nbsp; Accuracy here could be replaced by any other loss of interest.
 
 
-For special families of models, we can efficiently compute the exact influence function. 
+For special families of models, we can efficiently compute the exact influence function.
 In a regression setting where we use a linear regression model and the mean squared error loss  to evaluate predictions, the fitted parameters of the trained model are a closed form function of the dataset. Thus for linear regresssion, the LOO influence $I(x)$ can be calculated via a simple formula and is also known as *Cook's Distance* in this special case [[N20]](#N20).
 
 In classification, the influence function can be computed in reasonable $O(n \log n)$ time for a K Nearest Neighbors (KNN) model. For valuation of unstructured data, a general recipe is to use a pretrained neural network to embed all the data, and then apply a KNN classifier on the embeddings, such that the influence of each datapoint can be efficiently computed [[J21]](#J21). These two steps are illustrated in the following figure from [[K18]](#K18):
 
-![K Nearest Neighbors Applied to Deep Embeddings of the Data](/static/assets/embedneighbors.png)
+![K Nearest Neighbors Applied to Deep Embeddings of the Data](/lectures/files/data-centric-evaluation/embedneighbors.png)
 
 # Lab
 
