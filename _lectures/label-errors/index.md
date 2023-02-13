@@ -8,8 +8,8 @@ video:
   aspect: 56.25
   id: AzU-G1Vww3c
 slides:
-  - /lectures/files/lec2.pdf
-  - /lectures/files/lec2.pptx
+  - /lectures/label-errors/label-errors.pdf
+  - /lectures/label-errors/label-errors.pptx
 ---
 
 Detailed lecture notes coming soon. For now, check out the video and slides.

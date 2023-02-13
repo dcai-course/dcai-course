@@ -52,7 +52,7 @@ Key questions to ask when looking for training data include:
 
 Consider the following example from Beery et al. [[BGP18]](#BGP18). The left-hand image is correctly predicted to contain a cow by a trained image classifier, whereas this model fails to produce the same prediction for the right-hand image. **Can you say why?**
 
-![Spurious correlation](/lectures/files/dataset-creation-curation/spuriouscow.png)
+![Spurious correlation](/lectures/dataset-creation-curation/spuriouscow.png)
 
 This is likely due to the fact that cows were always pictured in grass fields in the dataset used to train the classifier. When training models, we must always be aware of different types of correlations between features of the data and the labels. High-capacity ML models are like cheaters looking for shortcuts to their goal: they will try to exploit any correlation they can to produce high accuracy predictions on your dataset, even when these are *spurious correlations* that will fail to generalize when the model is deployed in the real-world.
 
@@ -110,7 +110,7 @@ $$
 
 We can estimate the scalar parameters $a, b$ of this simple model by minimizing the mean squared error over observations $ \\{ (n_j, 1 - a_{ij}) \\}$. Subsequently just plug in $n'$ to the above formula to predict the error expected for a model trained on a larger dataset of this size.
 
-![Model scaling](/lectures/files/dataset-creation-curation/modelscaling.png)
+![Model scaling](/lectures/dataset-creation-curation/modelscaling.png)
 
 For small datasets without a pre-defined validation split, you can alternatively use cross-validation to get more stable measurements of $a_{ij}$ on subsets of the dataset.
 
@@ -141,7 +141,7 @@ Given such a dataset, here we consider how to estimate three quantities:
 
 We consider three algorithms to estimate 1-3 above: Majority Vote + Inter-Annotator Agreement, Dawid-Skene, and CROWDLAB.
 
-![Multiannotator estimation](/lectures/files/dataset-creation-curation/multiannotator_pug.png)
+![Multiannotator estimation](/lectures/dataset-creation-curation/multiannotator_pug.png)
 
 
 ## Majority Vote and Inter-Annotator Agreement

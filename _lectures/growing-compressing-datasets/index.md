@@ -8,8 +8,8 @@ video:
   aspect: 56.25
   id: XssFXStigTU
 slides:
-  - /lectures/files/lec6.pdf
-  - /lectures/files/lec6.pptx
+  - /lectures/growing-compressing-datasets/growing-compressing-datasets.pdf
+  - /lectures/growing-compressing-datasets/growing-compressing-datasets.pptx
 ---
 
 Detailed lecture notes and slides coming soon. For now, check out the lecture video.

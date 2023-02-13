@@ -8,8 +8,8 @@ video:
   aspect: 56.25
   id: m1tEl7a1atQ
 slides:
-  - /lectures/files/lec4.pdf
-  - /lectures/files/lec4.pptx
+  - /lectures/data-centric-evaluation/data-centric-evaluation.pdf
+  - /lectures/data-centric-evaluation/data-centric-evaluation.pptx
 ---
 
 Most Machine Learning applications involve these steps:
@@ -94,11 +94,11 @@ Even when it is explicitly omitted, slice information can be correlated with oth
 Here are ways to improve model performance for a particular slice [[CJS18]](#CJS18):
 
 1. Try a more flexible ML model that has higher fitting capacity (e.g. neural network with more parameters). To understand why this might help, consider a linear model fit to  data from two subgroups that do not overlap in the feature space. If the underlying relationship between features and labels is nonlinear, this low-capacity model must tradeoff accuracy in one subgroup against the other subgroup, even though a nonlinear model could fit both groups just fine. One variant of this is to train a separate model on just the subgroup where our original model underperforms and then ensemble the two models [[KGZ19]](#KGZ19).
-![More flexible ML model](/lectures/files/data-centric-evaluation/moreflexiblemodel.png)
+![More flexible ML model](/lectures/data-centric-evaluation/moreflexiblemodel.png)
 The figure above illustrates an example binary classification task where a linear model must strictly tradeoff between producing worse predictions for data inside the slice vs. outside it. A more flexible neural net model does not have to make this tradeoff and is able to to produce accurate predictions both inside and outside the slice.
 
 2.  Over-sample or up-weight the examples from a minority subgroup that is currently receiving poor predictions. To understand why this might help, consider data from two subgroups which overlap in feature space but tend to have different labels. No model can perform well on such data; a classifier must tradeoff between modeling one class well vs. the other and we can obtain better performance for examples from one subgroup by up-weighting them during training (at the cost of potentially harming performance for other subgroups).
-![Subgroups that overlap in feature space](/lectures/files/data-centric-evaluation/overlappinggroups.png)
+![Subgroups that overlap in feature space](/lectures/data-centric-evaluation/overlappinggroups.png)
 The figure above illustrates an example dataset where the orange and blue subgroups have overlapping feature values. If the labels for these two subgroups tend to differ, then any model will have to tradeoff between producing worse predictions for one subgroup vs. the other. If you assign higher weights to the orange datapoints, then the resulting model should produce better predictions for them at the cost of potentially worse predictions for the blue subgroup.
 
 3. Collect additional data from the subgroup of interest. To assess whether this is a promising approach: you can re-fit your model to many alternative versions of your dataset in which you have down-subsampled this subgroup to varying degrees, and then extrapolate the resulting model performance that would be expected if you had more data from this subgroup.
@@ -117,7 +117,7 @@ Here is one general strategy:
 
 Many clustering techniques only require that you to define a distance metric between two examples [[C22]](#C22). By inspecting the resulting clusters, you may be able to identify patterns that your model struggles with. Step 2 can also use clustering algorithms that are label or loss-value *aware*, which is done in the *Domino slice discovery method* [[E22]](#E22) pictured below.
 
-![Slice discovery](/lectures/files/data-centric-evaluation/slicediscovery.png)
+![Slice discovery](/lectures/data-centric-evaluation/slicediscovery.png)
 
 
 
@@ -151,7 +151,7 @@ The above is called *Leave-one-out (LOO) influence*, but another form of influen
 
 Influence reveals which datapoints have greatest impact on the model. For instance, correcting the label of a mislabeled datapoint with high influence can produce much better model improvement than correcting a mislabeled datapoint that has low influence. $I(x)$ can also be used to assign literal value to data as illustrated in the following figure from [[W21]](#W21):
 
-![Data valuation](/lectures/files/data-centric-evaluation/datavaluation.png)
+![Data valuation](/lectures/data-centric-evaluation/datavaluation.png)
 
 
 Unfortunately, influence can be expensive to compute for an arbitrary ML model.
@@ -176,7 +176,7 @@ In a regression setting where we use a linear regression model and the mean squa
 
 In classification, the influence function can be computed in reasonable $O(n \log n)$ time for a K Nearest Neighbors (KNN) model. For valuation of unstructured data, a general recipe is to use a pretrained neural network to embed all the data, and then apply a KNN classifier on the embeddings, such that the influence of each datapoint can be efficiently computed [[J21]](#J21). These two steps are illustrated in the following figure from [[K18]](#K18):
 
-![K Nearest Neighbors Applied to Deep Embeddings of the Data](/lectures/files/data-centric-evaluation/embedneighbors.png)
+![K Nearest Neighbors Applied to Deep Embeddings of the Data](/lectures/data-centric-evaluation/embedneighbors.png)
 
 # Lab
 

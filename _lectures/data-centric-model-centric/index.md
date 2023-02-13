@@ -8,8 +8,8 @@ video:
   aspect: 56.25
   id: ayzOzZGHZy4
 slides:
-  - /lectures/files/lec1.pdf
-  - /lectures/files/lec1.pptx
+  - /lectures/data-centric-model-centric/data-centric-model-centric.pdf
+  - /lectures/data-centric-model-centric/data-centric-model-centric.pptx
 ---
 
 Detailed lecture notes coming soon. For now, check out the video and slides.

@@ -38,7 +38,7 @@ For any given system, fully specifying a security goal and threat model can requ
 
 ## Image prediction API
 
-{% include scaled_image.html alt="Google Cloud Vision prediction" src="/lectures/files/data-privacy-security/gcv.png" width="415" %}
+{% include scaled_image.html alt="Google Cloud Vision prediction" src="/lectures/data-privacy-security/gcv.png" width="415" %}
 
 Consider a cloud-based image prediction API like the [Google Cloud Vision API](https://cloud.google.com/vision), which takes in an image and returns a prediction of labels and associated probabilities. A security goal might include that an attacker should not be able to extract the ML model. The model is proprietary, and collecting a large dataset and training a model is expensive, so a cloud provider might not want an adversary to be able to extract model architecture/weights. In threat modeling, the cloud provider might assume that the adversary can:
 
@@ -139,7 +139,7 @@ Intuition: similar to the above, this exploits the property that models are ofte
 
 Extraction attacks extract training data directly from a trained model. Neural networks unintentionally memorize portions of their input data ([Carlini et al., 2019](https://www.usenix.org/system/files/sec19-carlini.pdf)), and there are techniques for extracting this data, for example, from large language models ([Carlini et al., 2021][carlini-2021]).
 
-{% include scaled_image.html alt="Data extraction attack against GPT-2" src="/lectures/files/data-privacy-security/extraction.png" width="282" %}
+{% include scaled_image.html alt="Data extraction attack against GPT-2" src="/lectures/data-privacy-security/extraction.png" width="282" %}
 
 <p class="small center">This is a real-world example. Some text is obscured to protect the victim's privacy.</p>
 
