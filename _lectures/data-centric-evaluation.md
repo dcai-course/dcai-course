@@ -104,7 +104,7 @@ The figure below illustrates an example binary classification task where a linea
 
 The figure below illustrates an example dataset where the orange and blue subgroups have overlapping  feature values. If the labels for these two subgroups tend to differ, then any model will have to tradeoff between producing worse predictions for one subgroup vs. the other. If you assign higher weights to the orange datapoints, then the resulting model should produce better predictions for them at the cost of potentially worse predictions for the blue subgroup.
 
-![Subgroups that overlap in feature space](/static/assets/overlappinggroups.png)
+![Subgroups that overlap in feature space](static/assets/overlappinggroups.png)
 
 
 3. Collect additional data from the subgroup of interest. To assess whether this is a promising approach: you can re-fit your model to many alternative versions of your dataset in which you have down-subsampled this subgroup to varying degrees, and then extrapolate the resulting model performance that would be expected if you had more data from this subgroup.
