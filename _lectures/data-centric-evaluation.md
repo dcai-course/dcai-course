@@ -94,17 +94,12 @@ Even when it is explicitly omitted, slice information can be correlated with oth
 Here are ways to improve model performance for a particular slice [[CJS18]](#CJS18):
 
 1. Try a more flexible ML model that has higher fitting capacity (e.g. neural network with more parameters). To understand why this might help, consider a linear model fit to  data from two subgroups that do not overlap in the feature space. If the underlying relationship between features and labels is nonlinear, this low-capacity model must tradeoff accuracy in one subgroup against the other subgroup, even though a nonlinear model could fit both groups just fine. One variant of this is to train a separate model on just the subgroup where our original model underperforms and then ensemble the two models [[KGZ19]](#KGZ19).
-
-The figure below illustrates an example binary classification task where a linear model must strictly tradeoff between producing worse predictions for data inside the slice vs. outside it. A more flexible neural net model does not have to make this tradeoff and is able to to produce accurate predictions both inside and outside the slice.
-
 ![More flexible ML model](/static/assets/moreflexiblemodel.png)
-
+The figure above illustrates an example binary classification task where a linear model must strictly tradeoff between producing worse predictions for data inside the slice vs. outside it. A more flexible neural net model does not have to make this tradeoff and is able to to produce accurate predictions both inside and outside the slice.
 
 2.  Over-sample or up-weight the examples from a minority subgroup that is currently receiving poor predictions. To understand why this might help, consider data from two subgroups which overlap in feature space but tend to have different labels. No model can perform well on such data; a classifier must tradeoff between modeling one class well vs. the other and we can obtain better performance for examples from one subgroup by up-weighting them during training (at the cost of potentially harming performance for other subgroups).
-
-The figure below illustrates an example dataset where the orange and blue subgroups have overlapping feature values. If the labels for these two subgroups tend to differ, then any model will have to tradeoff between producing worse predictions for one subgroup vs. the other. If you assign higher weights to the orange datapoints, then the resulting model should produce better predictions for them at the cost of potentially worse predictions for the blue subgroup.
-
 ![Subgroups that overlap in feature space](/static/assets/overlappinggroups.png)
+The figure above illustrates an example dataset where the orange and blue subgroups have overlapping feature values. If the labels for these two subgroups tend to differ, then any model will have to tradeoff between producing worse predictions for one subgroup vs. the other. If you assign higher weights to the orange datapoints, then the resulting model should produce better predictions for them at the cost of potentially worse predictions for the blue subgroup.
 
 3. Collect additional data from the subgroup of interest. To assess whether this is a promising approach: you can re-fit your model to many alternative versions of your dataset in which you have down-subsampled this subgroup to varying degrees, and then extrapolate the resulting model performance that would be expected if you had more data from this subgroup.
 
