@@ -32,9 +32,7 @@ Sign up for the IAP class by filling out this [**registration form**](https://fo
 {% endfor %}
 </ul>
 
-{% comment %}
-Video recordings of the lectures are available <a href="https://www.youtube.com/@dcai-course">on YouTube</a>.
-{% endcomment %}
+Video recordings of the lectures are available <a href="https://www.youtube.com/watch?v=ayzOzZGHZy4&list=PLnSYPjg2dHQKdig0vVbN-ZnEU0yNJ1mo5">on YouTube</a>.
 
 Each lecture has an accompanying [lab
 assignment](https://github.com/dcai-course/dcai-lab), a hands-on programming
