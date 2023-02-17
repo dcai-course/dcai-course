@@ -39,6 +39,7 @@ see the references in individual lecture notes.
 
 # Links
 
+- [Data-Centric AI Competition 2023](https://machinehack.com/tournaments/data_centric_ai_competition_2023)
 - [Data-centric AI Resource Hub](https://datacentricai.org/)
 - [Label Errors in ML Benchmarks](https://labelerrors.com/)
 - [MLOps Course](https://github.com/GokuMohandas/mlops-course)
