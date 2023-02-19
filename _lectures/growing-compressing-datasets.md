@@ -107,10 +107,17 @@ The lab assignment for this lecture is in [`growing_datasets/Lab - Growing Datas
 # References
 
 <span id="S18"></span> [S18] Sener and Savarese. "[Active Learning for Convolutional Neural Networks: A Core-Set Approach](https://openreview.net/forum?id=H1aIuk-RW)". *ICLR*, 2018.
+
 <span id="C22"></span> [C22] Coleman et al. “[Similarity Search for Efficient Active Learning and Search of Rare Concepts](https://ojs.aaai.org/index.php/AAAI/article/view/20591).” *AAAI*, 2022.
+
 <span id="C02"></span> [C02] Charikar. “[Similarity Estimation Techniques from Rounding Algorithms](https://www.cs.princeton.edu/courses/archive/spr04/cos598B/bib/CharikarEstim.pdf).” *STOC*, 2002.
+
 <span id="J19"></span> [J19] Johnson, Douze, Jégou. “[Billion-scale similarity search with GPUs](https://arxiv.org/abs/1702.08734).” *IEEE Transactions on Big Data*, 2019.
+
 <span id="D19"></span> [D19] Devlin et al. “[BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://aclanthology.org/N19-1423.pdf).” *NAACL-HLT*, 2019.
+
 <span id="CK20"></span> [CK20] Chen et al. “[A Simple Framework for Contrastive Learning of Visual Representations](https://proceedings.mlr.press/v119/chen20j/chen20j.pdf).” *ICML*, 2020.
+
 <span id="C21"></span> [C21] Caron et al. “[Emerging Properties in Self-Supervised Vision Transformers](https://openaccess.thecvf.com/content/ICCV2021/papers/Caron_Emerging_Properties_in_Self-Supervised_Vision_Transformers_ICCV_2021_paper.pdf).” *ICCV*, 2021.
+
 <span id="CY20"></span> [CY20] Coleman et al. “[Selection via Proxy: Efficient Data Selection for Deep Learning](https://openreview.net/forum?id=HJg2b0VYDr).” *ICLR*, 2020.
