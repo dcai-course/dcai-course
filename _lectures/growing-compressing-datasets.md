@@ -64,7 +64,7 @@ In such settings, you can instead employ batch active learning, where we select 
 
 
 ![Overview of batch active learning](/lectures/growing-compressing-datasets/lec6.004.png)
-<p style="text-align: center; font-style: italic;">Figure from “<a href='http://proceedings.mlr.press/v16/settles11a/settles11a.pdf'>From Theories to Queries: Active Learning in Practice</a>” by Burr Settles</p>
+<p style="text-align: center; font-style: italic;">Figure from “<a href='https://proceedings.mlr.press/v16/settles11a/settles11a.pdf'>From Theories to Queries: Active Learning in Practice</a>” by Burr Settles</p>
 
 However, this approach may fail to consider the *diversity* of the batch of examples being labeled next, because the acquisition function may take top values for unlabeled datapoints that all look similar. To ensure the batch of examples to label next are more representative of the remaining unlabeled pool, *batch active learning* strategies select $J$ examples with high information value that are also jointly diverse. For example, the **greedy k-centers** approach [[S18](#S18)] aims to find a small subset of examples that covers the dataset and minimizes the maximum distance from any unlabeled point to its closest labeled example.
 
