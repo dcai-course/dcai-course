@@ -23,3 +23,5 @@ jobs:
             https://www.codycoleman.com/
           ignore_url_re: |
             ^https://machinelearningmastery.com/
+          swap_urls: |
+            {"^https://dcai.csail.mit.edu/": "/"}
