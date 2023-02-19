@@ -1,6 +1,9 @@
 ---
 layout: lecture
 title: "Encoding Human Priors: Data Augmentation and Prompt Engineering"
+description: >
+  Learn about how to encode human priors into machine learning models through data.
+thumbnail: /lectures/human-priors/thumbnail.png
 date: 2023-01-26
 ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=45670839-428a-449a-bdff-af85012d2c30"

@@ -1,6 +1,9 @@
 ---
 layout: page
 title: "Lectures"
+description: >
+  Lecture videos for Introduction to Data-Centric AI, MIT IAP 2023.
+thumbnail: /static/assets/thumbnail.png
 ---
 
 <ul class="double-spaced">

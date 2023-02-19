@@ -1,6 +1,9 @@
 ---
 layout: lecture
 title: "Label Errors"
+description: >
+  Learn how to algorithmically identify mislabeled data.
+thumbnail: /lectures/label-errors/thumbnail.png
 date: 2023-01-18
 ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1773586c-361c-40d9-b972-af85012d2b78"

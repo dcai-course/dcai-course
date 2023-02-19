@@ -2,6 +2,10 @@
 layout: page
 title: Introduction to Data-Centric AI
 subtitle: IAP 2023
+description: >
+  The first-ever course on data-centric AI. Learn how you can train better ML
+  models by improving the data.
+thumbnail: /static/assets/thumbnail.png
 ---
 
 Typical machine learning classes teach techniques to produce effective models for a given dataset. In real-world applications, data is messy and improving models is not the only way to get better performance. You can also improve the dataset itself rather than treating it as fixed. **Data-Centric AI** (DCAI) is an emerging science that studies techniques to improve datasets, which is often the best way to improve performance in practical ML applications. While good data scientists have long practiced this manually via ad hoc trial/error and intuition, DCAI considers the improvement of data as a systematic engineering discipline.
@@ -12,9 +16,11 @@ This is the first-ever course on DCAI. This class covers algorithms to find and
 
 <p class="small center">Inspired by <a href="https://xkcd.com/2494/">XKCD 2494</a> &ldquo;Flawed Data&rdquo;</p>
 
+{% comment %}
 # Registration
 
 Sign up for the IAP class by filling out this [**registration form**](https://forms.gle/iYB9bQeDgwVySpCp8).
+{% endcomment %}
 
 # Syllabus
 

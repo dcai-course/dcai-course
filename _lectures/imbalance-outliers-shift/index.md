@@ -1,6 +1,9 @@
 ---
 layout: lecture
 title: "Class Imbalance, Outliers, and Distribution Shift"
+description: >
+  Learn about three common problems in real-world ML data (and how to address them).
+thumbnail: /lectures/imbalance-outliers-shift/thumbnail.png
 date: 2023-01-23
 ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c97d2732-19b5-461d-a961-af85012d2bcb"

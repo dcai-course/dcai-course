@@ -1,6 +1,9 @@
 ---
 layout: lecture
 title: "Interpretability in Data-Centric ML"
+description: >
+  Learn how interpretable features can help you create more trustworthy and performant ML models.
+thumbnail: /lectures/interpretable-features/thumbnail.png
 date: 2023-01-25
 ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=96283f4a-e751-40f3-9136-af85012d2c14"

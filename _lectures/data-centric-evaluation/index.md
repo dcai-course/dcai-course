@@ -1,6 +1,9 @@
 ---
 layout: lecture
 title: "Data-centric Evaluation of ML Models"
+description: >
+  Learn how to evaluate the performance of ML models and address shortcomings from a data-centric point of view.
+thumbnail: /lectures/data-centric-evaluation/thumbnail.png
 date: 2023-01-20
 ready: true
 panopto: https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4985c10c-f2c5-493c-bc35-af85012d2bb0

@@ -1,6 +1,9 @@
 ---
 layout: lecture
 title: "Dataset Creation and Curation"
+description: >
+  Learn how to source and label data to create a dataset for supervised learning.
+thumbnail: /lectures/dataset-creation-curation/thumbnail.png
 date: 2023-01-19
 ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=98777e08-0f49-43ec-8580-af85012d2b92"
