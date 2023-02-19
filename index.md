@@ -3,8 +3,8 @@ layout: page
 title: Introduction to Data-Centric AI
 subtitle: IAP 2023
 description: >
-  The first-ever course on data-centric AI. Learn how you can train better ML
-  models by improving the data.
+  The first-ever course on data-centric AI, available freely for all. Learn how
+  you can train better ML models by improving the data.
 thumbnail: /static/assets/thumbnail.png
 ---
 
