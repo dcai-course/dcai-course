@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Introduction to Data-Centric AI
+nositetitle: true
 subtitle: IAP 2023
 description: >
   The first-ever course on data-centric AI, available freely for all. Learn how
