@@ -43,9 +43,13 @@ Video recordings of the lectures are available <a href="https://www.youtube.com/
 
 Each lecture has an accompanying [lab
 assignment](https://github.com/dcai-course/dcai-lab), a hands-on programming
-exercise in Python / Jupyter Notebook. You can work on these on your own, in
+exercise in Python / Jupyter Notebook.
+
+{% comment %}
+You can work on these on your own, in
 groups, and/or in office hours. This is a not-for-credit IAP class, so you
 don't need to hand in homework.
+{% endcomment %}
 
 # General information
 
