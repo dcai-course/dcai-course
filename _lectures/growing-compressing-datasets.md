@@ -20,7 +20,7 @@ For supervised learning applications where training data have been annotated by 
 1. Active learning as a way to intelligently select examples to label and grow datasets
 2. Core-set selection to compress datasets down to a representative subset.
 
-We will focus on classification tasks, but these ideas apply to other supervised learning tasks (regression, image segmentation, entity recognition, etc.) and some unsupervised learning tasks (e.g., summarization). 
+We will focus on classification tasks, but these ideas apply to other supervised learning tasks (regression, image segmentation, entity recognition, etc.) and some unsupervised learning tasks (e.g., summarization).
 
 
 # Active learning
@@ -29,11 +29,11 @@ The goal of active learning is to select the best examples to label next in orde
 
 Often we can use these outputs from an already-trained model to adaptively decide what additional data should be labeled and added to the training dataset, such that retraining this model on the expanded dataset will lead to greatest boost in model accuracy. Using active learning, you can train a model with much fewer labeled data and still achieve the same accuracy as a model trained on a much larger dataset where what data to label was selected randomly.
 
-In *pool*-based active learning, there exists a pool of currently unlabeled examples $U$. We label this data iteratively in multiple rounds $r = 1,2, ..., T$. Each round involves the following steps: 
+In *pool*-based active learning, there exists a pool of currently unlabeled examples $U$. We label this data iteratively in multiple rounds $r = 1,2, ..., T$. Each round involves the following steps:
 
 1. Compute outputs from our model trained on the currently-labeled data from the previous round $A_r$ (for example obtaining probabilistic predictions for each unlabaled example).
 2. Use these model outputs together with an active learning algorithm $\phi$ that scores each unlabeled example $x \in U$ in order to determine which data would be most informative to label next.  Here the *acquisition function* $\phi(x, A_r)$  estimates the potential value of labeling a particular datapoint (i.e. how much is adding this datapoint to our current training set expected to improve the model), based on its feature value and the output of the trained model from the previous round $A_r(x)$.
-3. Actually collect the labels for the data suggested by our active learning algorithm and add these labels  examples to our training data for the next round: $D_{r+1}$ (removing these examples from $U$ once they are labeled). 
+3. Actually collect the labels for the data suggested by our active learning algorithm and add these labels  examples to our training data for the next round: $D_{r+1}$ (removing these examples from $U$ once they are labeled).
 4. Train our model on the expanded dataset $D_{r+1}$ to get a new model $M_{r+1}$.
 
 ![!Overview of active learning](/lectures/growing-compressing-datasets/lec6.001.png)
@@ -64,7 +64,7 @@ In such settings, you can instead employ batch active learning, where we select 
 
 
 ![Overview of batch active learning](/lectures/growing-compressing-datasets/lec6.004.png)
-<p style="text-align: center; font-style: italic;">Figure from “<a href='https://proceedings.mlr.press/v16/settles11a/settles11a.pdf'>From Theories to Queries: Active Learning in Practice</a>” by Burr Settles</p>
+<p class="small center">Figure from <a href="https://proceedings.mlr.press/v16/settles11a/settles11a.pdf">From Theories to Queries: Active Learning in Practice</a> by Burr Settles.</p>
 
 However, this approach may fail to consider the *diversity* of the batch of examples being labeled next, because the acquisition function may take top values for unlabeled datapoints that all look similar. To ensure the batch of examples to label next are more representative of the remaining unlabeled pool, *batch active learning* strategies select $J$ examples with high information value that are also jointly diverse. For example, the **greedy k-centers** approach [[S18](#S18)] aims to find a small subset of examples that covers the dataset and minimizes the maximum distance from any unlabeled point to its closest labeled example.
 
@@ -92,7 +92,7 @@ There are a wide variety of core-set selection methods in the literature, but ma
 Luckily we don't need to use the target model for the initial core-set selection process. Instead, we can make the selection with a smaller, less resource-hungry model, as proposed in **Selection via Proxy** [[CY20](#CY20)]. For example, by simply reducing the number of layers in a model, we can create a proxy that is much faster to train but still provides a helpful signal for filtering data, leading to end-to-end training-time speed-ups:
 
 ![End-to-end training time for core-set selection with selection via proxy on CIFAR10](/lectures/growing-compressing-datasets/lec6.005.png)
-<p style="text-align: center; font-style: italic;">Training curves of a ResNet164 convolutional neural network classifier with pre-activation on CIFAR10 with and without data selection via proxy. The light red line shows training the proxy model (a smaller ResNet20 network). The solid red line shows training the target model (ResNet164) on a subset of images selected by the proxy. Using the proxy, we removed 50% of the data without impacting the final accuracy of ResNet164, reducing the end-to-end training time from 3 hours and 49 minutes to 2 hours and 23 minutes.</p>
+<p class="small center">Training curves of a ResNet164 convolutional neural network classifier with pre-activation on CIFAR10 with and without data selection via proxy. The light red line shows training the proxy model (a smaller ResNet20 network). The solid red line shows training the target model (ResNet164) on a subset of images selected by the proxy. Using the proxy, we removed 50% of the data without impacting the final accuracy of ResNet164, reducing the end-to-end training time from 3 hours and 49 minutes to 2 hours and 23 minutes.</p>
 
 
 # Lab
