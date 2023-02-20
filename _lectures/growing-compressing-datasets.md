@@ -118,6 +118,6 @@ The lab assignment for this lecture is in [`growing_datasets/Lab - Growing Datas
 
 <span id="CK20"></span> [CK20] Chen et al. [A Simple Framework for Contrastive Learning of Visual Representations](https://proceedings.mlr.press/v119/chen20j/chen20j.pdf). *ICML*, 2020.
 
-<span id="C21"></span> [C21] Caron et al. [Emerging Properties in Self-Supervised Vision Transformers](https://openaccess.thecvf.com/content/ICCV2021/papers/Caron_Emerging_Properties_in_Self-Supervised_Vision_Transformers_ICCV_2021_paper.pdf). *ICCV*, 2021.
+<span id="C21"></span> [C21] Caron et al. [Emerging Properties in Self-Supervised Vision Transformers](https://arxiv.org/abs/2104.14294). *ICCV*, 2021.
 
 <span id="CY20"></span> [CY20] Coleman et al. [Selection via Proxy: Efficient Data Selection for Deep Learning](https://openreview.net/forum?id=HJg2b0VYDr). *ICLR*, 2020.
