@@ -48,12 +48,14 @@ don't need to hand in homework.
 
 # General information
 
+{% comment %}
 **Dates**: Tuesday, January 17 -- Friday, January 27, 2023<br>
 **Lecture**: [6-120](https://whereis.mit.edu/?go=6), 1pm--2pm<br>
 **Office hours**: [2-132](https://whereis.mit.edu/?go=2), 3pm--5pm (every day, after lecture)
+{% endcomment %}
 
 **Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Curtis](https://www.curtisnorthcutt.com/), [Jonas](https://people.csail.mit.edu/jonasmueller/), [Cody](https://www.codycoleman.com/), [Ola](https://olazytek.mit.edu/), and [Sharon](https://twitter.com/realSharonZhou).<br>
-**Questions**: Post on [Piazza](https://piazza.com/mit/spring2023/6dcai) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).<br>
+**Questions**: Join `#dcai-course` on this [Slack](https://cleanlab.ai/slack/).<br>
 **Twitter**: Follow us at [@dcai_course](https://twitter.com/dcai_course).
 
 # Prerequisites
