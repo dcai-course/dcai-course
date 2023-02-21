@@ -16,7 +16,7 @@ slides:
 ---
 
 
-If you've ever used datasets like [CIFAR](https://www.cs.toronto.edu/~kriz/cifar.html), [MNIST](http://yann.lecun.com/exdb/mnist/), [ImageNet](http://www.image-net.org/), or [IMDB](https://ai.stanford.edu/~amaas/data/sentiment/), you likely assumed the class labels are correct. Surprise: **there are likely at least 100,000 label issues in ImageNet.** Why did we not know this sooner? Principled approaches for characterizing and finding label errors in massive datasets is challenging and solutions are limited.
+If you've ever used datasets like [CIFAR](https://www.cs.toronto.edu/~kriz/cifar.html), [MNIST](http://yann.lecun.com/exdb/mnist/), [ImageNet](http://www.image-net.org/), or [IMDB](https://ai.stanford.edu/~amaas/data/sentiment/), you likely assumed the class labels are correct. Surprise: **there are 100,000+ label issues in ImageNet.** In this lecture, we'll show a principled and theoretically grounded framework called confident learning (open-sourced in the [cleanlab](https://github.com/cleanlab/cleanlab) package) that can be used to identify label issues/errors in most classification datasets.
 
 
 <!-- But if you checked the labels of all 1.28 million ImageNet training examples (taking about 100 days assuming 7 seconds per image), you would find a significant fraction of the dataset is actually mislabeled. -->
