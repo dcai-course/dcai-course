@@ -21,7 +21,9 @@ jobs:
             {"https://github.com": "${{ secrets.GITHUB_TOKEN }}"}
           ignore_url: |
             https://www.codycoleman.com/
+            https://jmcauley.ucsd.edu/data/amazon/
           ignore_url_re: |
             ^https://machinelearningmastery.com/
           swap_urls: |
             {"^https://dcai.csail.mit.edu/": "/"}
+          enforce_https: false

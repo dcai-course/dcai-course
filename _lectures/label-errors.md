@@ -16,7 +16,7 @@ slides:
 ---
 
 
-If you've ever used datasets like [CIFAR](https://www.cs.toronto.edu/~kriz/cifar.html), [MNIST](https://yann.lecun.com/exdb/mnist/), [ImageNet](https://www.image-net.org/), or [IMDB](https://ai.stanford.edu/~amaas/data/sentiment/), you likely assumed the class labels are correct. Surprise: **there are 100,000+ label issues in ImageNet.** In this lecture, we introduce a principled and theoretically grounded framework called confident learning (open-sourced in the [cleanlab](https://github.com/cleanlab/cleanlab) package) that can be used to identify label issues/errors, characterize label noise, and learn with noisy labels automatically for most classification datasets.
+If you've ever used datasets like [CIFAR](https://www.cs.toronto.edu/~kriz/cifar.html), [MNIST](https://web.archive.org/web/20230219004208/http://yann.lecun.com/exdb/mnist/), [ImageNet](https://www.image-net.org/), or [IMDB](https://ai.stanford.edu/~amaas/data/sentiment/), you likely assumed the class labels are correct. Surprise: **there are 100,000+ label issues in ImageNet.** In this lecture, we introduce a principled and theoretically grounded framework called confident learning (open-sourced in the [cleanlab](https://github.com/cleanlab/cleanlab) package) that can be used to identify label issues/errors, characterize label noise, and learn with noisy labels automatically for most classification datasets.
 
 {% comment %}
 **There are label errors in ImageNet**. First, let's take a look at a few of the label issues confident learning finds in the standard 2012 ILSVRC ImageNet training set.
@@ -46,7 +46,7 @@ Using confident learning, we can find label errors in any dataset using any appr
 
 ![Three label errors from different datasets.](three_label_errors_example.png)
 
-<p class="small center">Examples of label errors that currently exist in <a href="https://jmcauley.ucsd.edu/data/amazon/">Amazon Reviews</a>, <a href="https://yann.lecun.com/exdb/mnist/">MNIST</a>, and <a href="https://github.com/googlecreativelab/quickdraw-dataset">Quickdraw</a> datasets identified using confident learning for varying data modalities and models.</p>
+<p class="small center">Examples of label errors that currently exist in <a href="https://jmcauley.ucsd.edu/data/amazon/">Amazon Reviews</a>, <a href="https://web.archive.org/web/20230219004208/http://yann.lecun.com/exdb/mnist/">MNIST</a>, and <a href="https://github.com/googlecreativelab/quickdraw-dataset">Quickdraw</a> datasets identified using confident learning for varying data modalities and models.</p>
 
 
 
@@ -110,7 +110,7 @@ CL builds on principles developed across the literature dealing with noisy label
 
 * **Prune** to search for label errors, e.g. following the example of [Natarajan et al. (2013)](https://papers.nips.cc/paper/5073-learning-with-noisy-labels.pdf); [van Rooyen et al. (2015)](https://arxiv.org/abs/1505.07634); [Patrini et al. (2017)](https://arxiv.org/abs/1609.03683), using soft-pruning via loss-reweighting, to avoid the convergence pitfalls of iterative re-labeling.
 * **Count** to train on clean data, avoiding error-propagation in learned model weights from reweighting the loss [(Natarajan et al., 2017)](https://www.jmlr.org/papers/volume18/15-226/15-226.pdf) with imperfect predicted probabilities, generalizing seminal work [Forman (2005, 2008)](https://dl.acm.org/citation.cfm?id=1403849); [Lipton et al. (2018)](https://arxiv.org/abs/1802.03916).
-* **Rank** which examples to use during training, to allow learning with unnormalized probabilities or SVM decision boundary distances, building on well-known robustness findings of [PageRank (Page et al., 1997)](https://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) and ideas of curriculum learning in [MentorNet (Jiang et al.,2018)](https://arxiv.org/abs/1712.05055).
+* **Rank** which examples to use during training, to allow learning with unnormalized probabilities or SVM decision boundary distances, building on well-known robustness findings of [PageRank (Page et al., 1997)](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) and ideas of curriculum learning in [MentorNet (Jiang et al.,2018)](https://arxiv.org/abs/1712.05055).
 
 
 # Theoretical Findings in Confident Learning
