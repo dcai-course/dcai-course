@@ -18,28 +18,35 @@ slides:
 
 If you've ever used datasets like [CIFAR](https://www.cs.toronto.edu/~kriz/cifar.html), [MNIST](https://yann.lecun.com/exdb/mnist/), [ImageNet](https://www.image-net.org/), or [IMDB](https://ai.stanford.edu/~amaas/data/sentiment/), you likely assumed the class labels are correct. Surprise: **there are 100,000+ label issues in ImageNet.** In this lecture, we introduce a principled and theoretically grounded framework called confident learning (open-sourced in the [cleanlab](https://github.com/cleanlab/cleanlab) package) that can be used to identify label issues/errors, characterize label noise, and learn with noisy labels automatically for most classification datasets.
 
-<!-- **There are label errors in ImageNet**. First, let's take a look at a few of the label issues confident learning finds in the standard 2012 ILSVRC ImageNet training set. -->
+{% comment %}
+**There are label errors in ImageNet**. First, let's take a look at a few of the label issues confident learning finds in the standard 2012 ILSVRC ImageNet training set.
+{% endcomment %}
 
 
 
+![Label issues in ImageNet training set](imagenet_train_label_errors_32.jpg)
 
-{% include image-caption.html imageurl="/lectures/label-errors/images/imagenet_train_label_errors_32.jpg#wide" 
-title="Label issues in ImageNet training set" caption="Top 32 label issues in the 2012 ILSVRC ImageNet train set identified using confident learning. Label Errors are boxed in red. Ontological issues in green. Multi-label images in blue." %}
+<p class="small center">Top 32 label issues in the 2012 ILSVRC ImageNet train set identified using confident learning. Label Errors are boxed in red. Ontological issues in green. Multi-label images in blue.</p>
 
 
 The figure above shows examples of label errors in the 2012 ILSVRC ImageNet training set found using confident learning. For interpretability, we group label issues found in ImageNet using CL into three categories:
 1. *Multi-label images* (<span style="color:teal">blue</span>) have more than one label in the image.
 2. *Ontological issues* (<span style="color:lime">green</span>) comprise *is-a* (*bathtub* labeled *tub*) or *has-a* (*oscilloscope* labeled *CRT screen*) relationships. In these cases, the dataset should include one of the classes.
-3. *Label errors* (<span style="color:red">red</span>) occur when a class exists in the dataset that is more appropriate for an example than its given class label.  
+3. *Label errors* (<span style="color:red">red</span>) occur when a class exists in the dataset that is more appropriate for an example than its given class label.
 
-<!-- Accurately finding label errors in a dataset like ImageNet is tricky because there are 1000 classes, 1.28 million images, and typical accuracy is around 73%.  -->
+{% comment %}
+Accurately finding label errors in a dataset like ImageNet is tricky because there are 1000 classes, 1.28 million images, and typical accuracy is around 73%.
+{% endcomment %}
 
-<!-- The creators of ImageNet, Russakovsky et al. (2015), suggest label errors exist due to human error, no attempt has been made to find them in the training set, characterize them, and re-train without them.  -->
+{% comment %}
+The creators of ImageNet, Russakovsky et al. (2015), suggest label errors exist due to human error, no attempt has been made to find them in the training set, characterize them, and re-train without them.
+{% endcomment %}
 
 Using confident learning, we can find label errors in any dataset using any appropriate model for that dataset. Here are three other real-world examples in common datasets.
 
-{% include image-caption.html imageurl="/lectures/label-errors/images/three_label_errors_example.png" 
-title="Three label errors from different datasets." caption="Examples of label errors that currently exist in <a href='https://jmcauley.ucsd.edu/data/amazon/'>Amazon Reviews</a>, <a href='https://yann.lecun.com/exdb/mnist/'>MNIST</a>, and <a href='https://github.com/googlecreativelab/quickdraw-dataset'>Quickdraw</a> datasets identified using confident learning for varying data modalities and models." %}
+![Three label errors from different datasets.](three_label_errors_example.png)
+
+<p class="small center">Examples of label errors that currently exist in <a href="https://jmcauley.ucsd.edu/data/amazon/">Amazon Reviews</a>, <a href="https://yann.lecun.com/exdb/mnist/">MNIST</a>, and <a href="https://github.com/googlecreativelab/quickdraw-dataset">Quickdraw</a> datasets identified using confident learning for varying data modalities and models.</p>
 
 
 
@@ -56,8 +63,9 @@ CL is based on the principles of [**pruning** noisy data](https://arxiv.org/abs/
 
 
 
-{% include image-caption.html imageurl="/lectures/label-errors/images/confident_learning_digram_final.jpg" 
-title="CL Diagram" caption="The confident learning process and examples of the confident joint and estimated joint distribution between noisy (given) labels and uncorrupted (unknown) labels. \(\tilde{y}\) denotes an observed noisy label and \(y^*\) denotes a latent uncorrupted label." %}
+![CL Diagram](confident_learning_digram_final.jpg)
+
+<p class="small center">The confident learning process and examples of the confident joint and estimated joint distribution between noisy (given) labels and uncorrupted (unknown) labels. \(\tilde{y}\) denotes an observed noisy label and \(y^*\) denotes a latent uncorrupted label.</p>
 
 
 From the figure above, we see that CL requires two inputs:
@@ -84,12 +92,12 @@ Unlike most machine learning approaches, confident learning requires no hyperpar
 * extends naturally to multi-label datasets
 * is free and open-sourced as the [`cleanlab` Python package](https://github.com/cgnorthcutt/cleanlab) for characterizing, finding, and learning with label errors.
 
-<!-- A summary of these features compared with recent common benchmarks in noisy labels is shown in the table below.
+{% comment %}
+A summary of these features compared with recent common benchmarks in noisy labels is shown in the table below.
 
-
-
-{% include image-caption.html imageurl="/lectures/label-errors/images/table.png" 
-title="related_works" caption="Comparison of commonly benchmarked approaches for learning with noisy labels. Comparison is limited to model-agnostic approaches that do not require a subset of true labels." %} -->
+{% include image-caption.html imageurl="table.png"
+title="related_works" caption="Comparison of commonly benchmarked approaches for learning with noisy labels. Comparison is limited to model-agnostic approaches that do not require a subset of true labels." %}
+{% endcomment %}
 
 
 
@@ -115,16 +123,15 @@ Theoretically, we show realistic conditions where CL (Theorem 2: *General Per-Ex
 
 To understand how CL works, let's imagine we have a dataset with images of dogs, foxes, and cows. CL works by estimating the joint distribution of noisy and true labels (the Q matrix on the right in the figure below).
 
-{% include image-caption.html imageurl="/lectures/label-errors/images/example_matrices.png" 
-title="Example matrices" caption="Left: Example of confident counting examples. This is an unnormalized estimate of the joint. 
-Right: Example joint distribution of noisy and true labels for a dataset with three classes." %}
+![Example matrices](example_matrices.png)
+<p class="small center">Left: Example of confident counting examples. This is an unnormalized estimate of the joint. Right: Example joint distribution of noisy and true labels for a dataset with three classes.</p>
 
 
 Continuing with our example, CL counts 100 images labeled *dog* with high probability of belonging to class *dog*, shown by the C matrix in the left of the figure above. CL also counts 56 images labeled *fox* with high probability of belonging to class *dog* and 32 images labeled *cow* with high probability of belonging to class *dog*.
 
 For the mathematically curious, this counting process takes the following form.
 
-![Confident Joint Equation](/lectures/label-errors/images/cj.png)
+![Confident Joint Equation](cj.png)
 
 For an in-depth explanation of the notation, check out [the CL paper](https://arxiv.org/abs/1911.00068). The central idea is that when the predicted probability of an example is greater than a per-class-threshold, we *confidently count* that example as actually belonging to that threshold's class. The thresholds for each class are the average predicted probability of examples in that class. This form of thresholding generalizes [well-known robustness results in PU Learning (Elkan & Noto, 2008)](https://cseweb.ucsd.edu/~elkan/posonly.pdf) to multi-class weak supervision.
 
@@ -134,7 +141,7 @@ From the matrix on the right in the figure above, to estimate label issues:
 1. Multiply the joint distribution matrix by the number of examples. Let's assume 100 examples in our dataset. So, by the figure above (*Q* matrix on the right), there are 10 images labeled *dog* that are actually images of *foxes*.
 2. Mark the 10 images labeled dog with *largest* probability of belonging to class *fox* as label issues.
 3. Repeat for all non-diagonal entries in the matrix.
- 
+
 Note: this simplifies the methods used in [our paper](https://arxiv.org/abs/1911.00068), but captures the essence.
 
 
@@ -145,50 +152,56 @@ Note: this simplifies the methods used in [our paper](https://arxiv.org/abs/1911
 
 ### CL Improves State-of-the-Art in Learning with Noisy Labels by over 10% on average and by over 30% in high noise and high sparsity regimes
 
-![Confident Joint Equation](/lectures/label-errors/images/benchmarks.png)
+![Confident Joint Equation](benchmarks.png)
 
 The table above shows a comparison of CL versus recent state-of-the-art approaches for multiclass learning with noisy labels on CIFAR-10. At high sparsity (see next paragraph) and 40% and 70% label noise, CL outperforms [Google's](https://ai.google/research/pubs/pub47110/) top-performing [MentorNet](https://github.com/google/mentornet), [Co-Teaching](https://github.com/bhanML/Co-teaching), and [Facebook Research's](https://research.fb.com/downloads/mixup-cifar10/) [Mix-up](https://github.com/facebookresearch/mixup-cifar10) by over 30%. Prior to confident learning, improvements on this benchmark were significantly smaller (on the order of a few percentage points).
 
 *Sparsity* (the fraction of zeros in *Q*) encapsulates the notion that real-world datasets like ImageNet have classes that are unlikely to be mislabeled as other classes, e.g. p(tiger,oscilloscope) ~ 0 in *Q*. Shown by the highlighted cells in the table above, CL exhibits significantly increased robustness to sparsity compared to state-of-the-art methods like [Mixup](https://github.com/facebookresearch/mixup-cifar10), [MentorNet](https://github.com/google/mentornet), [SCE-loss](https://github.com/YisenWang/symmetric_cross_entropy_for_noisy_labels), and [Co-Teaching](https://github.com/bhanML/Co-teaching). This robustness comes from directly modeling *Q*, the joint distribution of noisy and true labels.
 
-<!-- {% include image-caption.html imageurl="/lectures/label-errors/images/benchmarks.png" 
+{% comment %}
+{% include image-caption.html imageurl="benchmarks.png"
 title="related_works" caption=" Comparison of CL versus prior art for multiclass learning with noisy labels in CIFAR-10. At 40% and 70% label noise, Cl outperforms the top-performing MentorNet by 30%." %}
- -->
+{% endcomment %}
 
 ### Training on ImageNet cleaned with CL Improves ResNet Test Accuracy
 
-![Improve ResNet training](/lectures/label-errors/images/imagenet.png)
+![Improve ResNet training](imagenet.png)
 
 In the figure above, each point on the line for each method, from left to right, depicts the accuracy of training with 20%, 40%..., 100% of estimated label errors removed. The black dotted line depicts accuracy when training with all examples. Observe increased ResNet validation accuracy using CL to train on a cleaned ImageNet train set (no synthetic noise added) when less than 100k training examples are removed. When over 100k training examples are removed, observe the relative improvement using CL versus random removal, shown by the red dash-dotted line.
 
 
 
 
-<!-- {% include image-caption.html imageurl="/lectures/label-errors/images/imagenet.png" 
-title="related_works" caption=" Increased ResNet validation accuracy using CL methods on ImageNet with original labels (no synthetic noise added). Each point on the line for each method, from left to right, depicts the accuracy of training with 20%, 40%..., 100% of estimated label errors removed. The red dash-dotted baseline captures when examples are removed uniformly randomly. The black dotted line depicts accuracy when training with all examples." %} -->
+{% comment %}
+{% include image-caption.html imageurl="imagenet.png"
+title="related_works" caption=" Increased ResNet validation accuracy using CL methods on ImageNet with original labels (no synthetic noise added). Each point on the line for each method, from left to right, depicts the accuracy of training with 20%, 40%..., 100% of estimated label errors removed. The red dash-dotted baseline captures when examples are removed uniformly randomly. The black dotted line depicts accuracy when training with all examples." %}
+{% endcomment %}
 
 
 ### Good Characterization of Label Noise in CIFAR with Added Label Noise
 
-![Accurate joint estimation](/lectures/label-errors/images/joint_estimation.png)
+![Accurate joint estimation](joint_estimation.png)
 
 The figure above shows CL estimation of the joint distribution of label noise for CIFAR with 40% added label noise. Observe how close the CL estimate in (b) is to the true distribution in (a) and the low error of the absolute difference of every entry in the matrix in (c). Probabilities are scaled up by 100.
 
-<!-- {% include image-caption.html imageurl="/lectures/label-errors/images/joint_estimation.png" 
+{% comment %}
+{% include image-caption.html imageurl="joint_estimation.png"
 title="related_works" caption="CL estimation of the joint distribution of label noise for CIFAR with 40% label noise and 60% sparsity. *Sparsity* is a proxy for the magnitude of non-uniformity of the label noise. Observe the similarity of values between (a) and (b) and the low error of the absolute difference of every entry in the matrix in (c). Probabilities are scaled up by 100." %}
- -->
+{% endcomment %}
 
 
 ### Automatic Discovery of Onotological (Class-Naming) Issues in ImageNet
 
-![Ontological issues](/lectures/label-errors/images/ontology.png)
+![Ontological issues](ontology.png)
 
 CL automatically discovers ontological issues of classes in a dataset by estimating the joint distribution of label noise directly. In the table above, we show the largest off diagonals in our estimate of the joint distribution of label noise for ImageNet, a single-class dataset. Each row lists the noisy label, true label, image id, counts, and joint probability. Because these are off-diagonals, the noisy class and true class must be different, but in row 7, we see ImageNet actually has two **different** classes that are both called *maillot*. Also observe the existence of misnomers: *projectile* and *missile* in row 1, *is-a* relationships: *bathtub* is a *tub* in row 2, and issues caused by words with multiple definitions: *corn* and *ear* in row 9.
 
 
 
-<!-- {% include image-caption.html imageurl="/lectures/label-errors/images/ontology.png" 
-title="related_works" caption="ImageNet is supposed to only contain single-class images. Using CL, we automatically discover ontological issues with the classes in ImageNet. For example, the class maillot appears twice, the existence of is-a relationships like bathtub is a tub, misnomers like projectile and missile, and unanticipated issues caused by words with multiple definitions like corn and ear." %} -->
+{% comment %}
+{% include image-caption.html imageurl="ontology.png"
+title="related_works" caption="ImageNet is supposed to only contain single-class images. Using CL, we automatically discover ontological issues with the classes in ImageNet. For example, the class maillot appears twice, the existence of is-a relationships like bathtub is a tub, misnomers like projectile and missile, and unanticipated issues caused by words with multiple definitions like corn and ear." %}
+{% endcomment %}
 
 
 # Final Thoughts
