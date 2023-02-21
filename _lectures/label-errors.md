@@ -208,8 +208,8 @@ Our theoretical and experimental results emphasize the practical nature of confi
 # Resources
 * This lecture overviews the paper (JAIR 2021) [Confident Learning: Estimating Uncertainty in Dataset Labels](https://arxiv.org/abs/1911.00068)
 * This lecture also covers the label errors paper (NeurIPS 2021): [Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks](https://arxiv.org/abs/2103.14749)
-* Results of this method on the ten most commonly cited test sets in ML: https://labelerrors.com
-* Try these methods yourself (open-sourced via cleanlab): https://github.com/cleanlab/cleanlab
+* Results of this method on the ten most commonly cited test sets in ML: [https://labelerrors.com](https://labelerrors.com)
+* Try these methods yourself (open-sourced via cleanlab): [https://github.com/cleanlab/cleanlab](https://github.com/cleanlab/cleanlab)
 
 
 
