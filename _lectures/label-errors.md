@@ -16,7 +16,7 @@ slides:
 ---
 
 
-If you've ever used datasets like [CIFAR](https://www.cs.toronto.edu/~kriz/cifar.html), [MNIST](http://yann.lecun.com/exdb/mnist/), [ImageNet](http://www.image-net.org/), or [IMDB](https://ai.stanford.edu/~amaas/data/sentiment/), you likely assumed the class labels are correct. Surprise: **there are 100,000+ label issues in ImageNet.** In this lecture, we introduce a principled and theoretically grounded framework called confident learning (open-sourced in the [cleanlab](https://github.com/cleanlab/cleanlab) package) that can be used to identify label issues/errors, characterize label noise, and learn with noisy labels automatically for most classification datasets.
+If you've ever used datasets like [CIFAR](https://www.cs.toronto.edu/~kriz/cifar.html), [MNIST](https://yann.lecun.com/exdb/mnist/), [ImageNet](https://www.image-net.org/), or [IMDB](https://ai.stanford.edu/~amaas/data/sentiment/), you likely assumed the class labels are correct. Surprise: **there are 100,000+ label issues in ImageNet.** In this lecture, we introduce a principled and theoretically grounded framework called confident learning (open-sourced in the [cleanlab](https://github.com/cleanlab/cleanlab) package) that can be used to identify label issues/errors, characterize label noise, and learn with noisy labels automatically for most classification datasets.
 
 <!-- **There are label errors in ImageNet**. First, let's take a look at a few of the label issues confident learning finds in the standard 2012 ILSVRC ImageNet training set. -->
 
@@ -39,7 +39,7 @@ The figure above shows examples of label errors in the 2012 ILSVRC ImageNet trai
 Using confident learning, we can find label errors in any dataset using any appropriate model for that dataset. Here are three other real-world examples in common datasets.
 
 {% include image-caption.html imageurl="/lectures/label-errors/images/three_label_errors_example.png" 
-title="Three label errors from different datasets." caption="Examples of label errors that currently exist in <a href='http://jmcauley.ucsd.edu/data/amazon/'>Amazon Reviews</a>, <a href='http://yann.lecun.com/exdb/mnist/'>MNIST</a>, and <a href='https://github.com/googlecreativelab/quickdraw-dataset'>Quickdraw</a> datasets identified using confident learning for varying data modalities and models." %}
+title="Three label errors from different datasets." caption="Examples of label errors that currently exist in <a href='https://jmcauley.ucsd.edu/data/amazon/'>Amazon Reviews</a>, <a href='https://yann.lecun.com/exdb/mnist/'>MNIST</a>, and <a href='https://github.com/googlecreativelab/quickdraw-dataset'>Quickdraw</a> datasets identified using confident learning for varying data modalities and models." %}
 
 
 
@@ -52,7 +52,7 @@ Confident learning (CL) has emerged as a subfield within [supervised learning](h
 * find ontological issues
 
 
-CL is based on the principles of [**pruning** noisy data](https://arxiv.org/abs/1705.01936) (as opposed to [fixing label errors](https://en.wikipedia.org/wiki/Error_correction_code) or [modifying the loss function](https://papers.nips.cc/paper/5073-learning-with-noisy-labels)), [**counting** to estimate noise](https://www.semanticscholar.org/paper/Quantifying-Counts-%2C-Costs-%2C-and-Trends-Accurately-Forman/b00ce7c4d8a29071dd70ef9d944bdc73e53d4f78) (as opposed to [jointly learning noise rates](https://arxiv.org/abs/1406.2080) during training), and [**ranking** examples](https://en.wikipedia.org/wiki/Learning_to_rank) to train with confidence (as opposed to [weighting by exact probabilities](https://www.semanticscholar.org/paper/Training-deep-neural-networks-using-a-noise-layer-Goldberger-Ben-Reuven/bc550ee45f4194f86c52152c10d302965c3563ca)). Here, we generalize CL, building on the assumption of [Angluin and Laird's classification noise process](http://homepages.math.uic.edu/~lreyzin/papers/angluin88b.pdf) , to directly estimate the joint distribution between noisy (given) labels and uncorrupted (unknown) labels.
+CL is based on the principles of [**pruning** noisy data](https://arxiv.org/abs/1705.01936) (as opposed to [fixing label errors](https://en.wikipedia.org/wiki/Error_correction_code) or [modifying the loss function](https://papers.nips.cc/paper/5073-learning-with-noisy-labels)), [**counting** to estimate noise](https://www.semanticscholar.org/paper/Quantifying-Counts-%2C-Costs-%2C-and-Trends-Accurately-Forman/b00ce7c4d8a29071dd70ef9d944bdc73e53d4f78) (as opposed to [jointly learning noise rates](https://arxiv.org/abs/1406.2080) during training), and [**ranking** examples](https://en.wikipedia.org/wiki/Learning_to_rank) to train with confidence (as opposed to [weighting by exact probabilities](https://www.semanticscholar.org/paper/Training-deep-neural-networks-using-a-noise-layer-Goldberger-Ben-Reuven/bc550ee45f4194f86c52152c10d302965c3563ca)). Here, we generalize CL, building on the assumption of [Angluin and Laird's classification noise process](https://homepages.math.uic.edu/~lreyzin/papers/angluin88b.pdf) , to directly estimate the joint distribution between noisy (given) labels and uncorrupted (unknown) labels.
 
 
 
@@ -101,8 +101,8 @@ title="related_works" caption="Comparison of commonly benchmarked approaches for
 CL builds on principles developed across the literature dealing with noisy labels:
 
 * **Prune** to search for label errors, e.g. following the example of [Natarajan et al. (2013)](https://papers.nips.cc/paper/5073-learning-with-noisy-labels.pdf); [van Rooyen et al. (2015)](https://arxiv.org/abs/1505.07634); [Patrini et al. (2017)](https://arxiv.org/abs/1609.03683), using soft-pruning via loss-reweighting, to avoid the convergence pitfalls of iterative re-labeling.
-* **Count** to train on clean data, avoiding error-propagation in learned model weights from reweighting the loss [(Natarajan et al., 2017)](http://www.jmlr.org/papers/volume18/15-226/15-226.pdf) with imperfect predicted probabilities, generalizing seminal work [Forman (2005, 2008)](https://dl.acm.org/citation.cfm?id=1403849); [Lipton et al. (2018)](https://arxiv.org/abs/1802.03916).
-* **Rank** which examples to use during training, to allow learning with unnormalized probabilities or SVM decision boundary distances, building on well-known robustness findings of [PageRank (Page et al., 1997)](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) and ideas of curriculum learning in [MentorNet (Jiang et al.,2018)](https://arxiv.org/abs/1712.05055).
+* **Count** to train on clean data, avoiding error-propagation in learned model weights from reweighting the loss [(Natarajan et al., 2017)](https://www.jmlr.org/papers/volume18/15-226/15-226.pdf) with imperfect predicted probabilities, generalizing seminal work [Forman (2005, 2008)](https://dl.acm.org/citation.cfm?id=1403849); [Lipton et al. (2018)](https://arxiv.org/abs/1802.03916).
+* **Rank** which examples to use during training, to allow learning with unnormalized probabilities or SVM decision boundary distances, building on well-known robustness findings of [PageRank (Page et al., 1997)](https://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) and ideas of curriculum learning in [MentorNet (Jiang et al.,2018)](https://arxiv.org/abs/1712.05055).
 
 
 # Theoretical Findings in Confident Learning
@@ -126,7 +126,7 @@ For the mathematically curious, this counting process takes the following form.
 
 ![Confident Joint Equation](/lectures/label-errors/images/cj.png)
 
-For an in-depth explanation of the notation, check out [the CL paper](https://arxiv.org/abs/1911.00068). The central idea is that when the predicted probability of an example is greater than a per-class-threshold, we *confidently count* that example as actually belonging to that threshold's class. The thresholds for each class are the average predicted probability of examples in that class. This form of thresholding generalizes [well-known robustness results in PU Learning (Elkan & Noto, 2008)](http://cseweb.ucsd.edu/~elkan/posonly.pdf) to multi-class weak supervision.
+For an in-depth explanation of the notation, check out [the CL paper](https://arxiv.org/abs/1911.00068). The central idea is that when the predicted probability of an example is greater than a per-class-threshold, we *confidently count* that example as actually belonging to that threshold's class. The thresholds for each class are the average predicted probability of examples in that class. This form of thresholding generalizes [well-known robustness results in PU Learning (Elkan & Noto, 2008)](https://cseweb.ucsd.edu/~elkan/posonly.pdf) to multi-class weak supervision.
 
 ## Find label issues using the joint distribution of label noise
 
