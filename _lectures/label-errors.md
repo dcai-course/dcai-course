@@ -16,16 +16,7 @@ slides:
 ---
 
 
-If you've ever used datasets like [CIFAR](https://www.cs.toronto.edu/~kriz/cifar.html), [MNIST](http://yann.lecun.com/exdb/mnist/), [ImageNet](http://www.image-net.org/), or [IMDB](https://ai.stanford.edu/~amaas/data/sentiment/), you likely assumed the class labels are correct. Surprise: **there are 100,000+ label issues in ImageNet.** In this lecture, we'll show a principled and theoretically grounded framework called confident learning (open-sourced in the [cleanlab](https://github.com/cleanlab/cleanlab) package) that can be used to identify label issues/errors in most classification datasets.
-
-
-<!-- But if you checked the labels of all 1.28 million ImageNet training examples (taking about 100 days assuming 7 seconds per image), you would find a significant fraction of the dataset is actually mislabeled. -->
-
-In this lecture, I discuss an emerging, principled framework to identify label errors, characterize label noise, and learn with noisy labels known as ***confident learning*** (CL), open-sourced as the [`cleanlab` Python package](https://github.com/cgnorthcutt/cleanlab).
-
-[`cleanlab`](https://github.com/cgnorthcutt/cleanlab) is a framework for machine learning and deep learning with label errors like how [`PyTorch`](https://pytorch.org/) is a framework for deep learning. Learn more in the [`cleanlab` documentation](https://l7.curtisnorthcutt.com/cleanlab-python-package). <br> [`cleanlab`](https://github.com/cgnorthcutt/cleanlab/tree/79035913dad2cc178eda5417f4a8bf03e011ddaf) + the [confidentlearning-reproduce](https://github.com/cgnorthcutt/confidentlearning-reproduce)
-repo reproduce results in the [CL
-paper](https://arxiv.org/abs/1911.00068).
+If you've ever used datasets like [CIFAR](https://www.cs.toronto.edu/~kriz/cifar.html), [MNIST](http://yann.lecun.com/exdb/mnist/), [ImageNet](http://www.image-net.org/), or [IMDB](https://ai.stanford.edu/~amaas/data/sentiment/), you likely assumed the class labels are correct. Surprise: **there are 100,000+ label issues in ImageNet.** In this lecture, we introduce a principled and theoretically grounded framework called confident learning (open-sourced in the [cleanlab](https://github.com/cleanlab/cleanlab) package) that can be used to identify label issues/errors, characterize label noise, and learn with noisy labels automatically for most classification datasets.
 
 <!-- **There are label errors in ImageNet**. First, let's take a look at a few of the label issues confident learning finds in the standard 2012 ILSVRC ImageNet training set. -->
 
@@ -209,7 +200,8 @@ Our theoretical and experimental results emphasize the practical nature of confi
 * This lecture overviews the paper (JAIR 2021) [Confident Learning: Estimating Uncertainty in Dataset Labels](https://arxiv.org/abs/1911.00068)
 * This lecture also covers the label errors paper (NeurIPS 2021): [Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks](https://arxiv.org/abs/2103.14749)
 * Results of this method on the ten most commonly cited test sets in ML: [https://labelerrors.com](https://labelerrors.com)
-* Try these methods yourself (open-sourced via cleanlab): [https://github.com/cleanlab/cleanlab](https://github.com/cleanlab/cleanlab)
+* Try these methods yourself (open-sourced via cleanlab): [https://github.com/cleanlab/cleanlab](https://github.com/cleanlab/cleanlab).
+* The [cleanlab](https://github.com/cleanlab/cleanlab) package is a data-centric AI package for improving ML models by improving datasets and supports things like training ML models and deep learning models with noisy labels, outliers, and data labeled by multiple annotators. Learn more in the [`cleanlab` documentation](https://docs.cleanlab.ai). [`cleanlab`](https://github.com/cgnorthcutt/cleanlab/tree/79035913dad2cc178eda5417f4a8bf03e011ddaf) + the [confidentlearning-reproduce](https://github.com/cgnorthcutt/confidentlearning-reproduce) repo reproduces results in the [CL paper](https://arxiv.org/abs/1911.00068).
 
 
 
