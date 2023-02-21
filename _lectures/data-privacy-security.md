@@ -1,6 +1,9 @@
 ---
 layout: lecture
 title: "Data Privacy and Security"
+description: >
+  Learn about how ML models can leak sensitive information about their training data.
+thumbnail: /lectures/data-privacy-security/thumbnail.png
 date: 2023-01-27
 ready: true
 video:

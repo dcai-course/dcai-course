@@ -1,6 +1,10 @@
 ---
 layout: lecture
 title: "Data-Centric AI vs. Model-Centric AI"
+description: >
+  Learn about the motivation for why we are teaching this class, along with the
+  difference between data-centric AI vs model-centric AI.
+thumbnail: /lectures/data-centric-model-centric/thumbnail.png
 date: 2023-01-17
 ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=edd1be69-b3de-4302-ac2b-af85012d2b18"
@@ -26,7 +30,7 @@ In both examples above, determining which data is easy or mislabeled is estimate
 
 # A practical recipe for supervised Machine Learning
 
-To recap: **model-centric AI** is based on goal of *producing the best model for a given dataset*, whereas **data-centric AI** is based on the goal of *systematically & algorithmically producing the best dataset to feed a given ML model*. To deploy the best supervised learning systems in practice, one should do both. A *data-centric AI* pipeline can look like this:
+To recap: **model-centric AI** is based on the goal of *producing the best model for a given dataset*, whereas **data-centric AI** is based on the goal of *systematically & algorithmically producing the best dataset to feed a given ML model*. To deploy the best supervised learning systems in practice, one should do both. A *data-centric AI* pipeline can look like this:
 
 1. Explore the data, fix fundamental issues, and transform it to be ML appropriate.
 

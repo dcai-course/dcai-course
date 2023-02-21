@@ -1,6 +1,9 @@
 ---
 layout: page
 title: "Resources"
+description: >
+  Resources related to machine learning and data-centric AI that we recommend.
+thumbnail: /static/assets/thumbnail.png
 ---
 
 General resources related to machine learning and data-centric AI that we

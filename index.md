@@ -1,7 +1,12 @@
 ---
 layout: page
 title: Introduction to Data-Centric AI
+nositetitle: true
 subtitle: IAP 2023
+description: >
+  The first-ever course on data-centric AI. Learn how you can train better ML
+  models by improving the data.
+thumbnail: /static/assets/thumbnail.png
 ---
 
 Typical machine learning classes teach techniques to produce effective models for a given dataset. In real-world applications, data is messy and improving models is not the only way to get better performance. You can also improve the dataset itself rather than treating it as fixed. **Data-Centric AI** (DCAI) is an emerging science that studies techniques to improve datasets, which is often the best way to improve performance in practical ML applications. While good data scientists have long practiced this manually via ad hoc trial/error and intuition, DCAI considers the improvement of data as a systematic engineering discipline.
@@ -12,9 +17,11 @@ This is the first-ever course on DCAI. This class covers algorithms to find and
 
 <p class="small center">Inspired by <a href="https://xkcd.com/2494/">XKCD 2494</a> &ldquo;Flawed Data&rdquo;</p>
 
+{% comment %}
 # Registration
 
 Sign up for the IAP class by filling out this [**registration form**](https://forms.gle/iYB9bQeDgwVySpCp8).
+{% endcomment %}
 
 # Syllabus
 
@@ -36,18 +43,24 @@ Video recordings of the lectures are available <a href="https://www.youtube.com/
 
 Each lecture has an accompanying [lab
 assignment](https://github.com/dcai-course/dcai-lab), a hands-on programming
-exercise in Python / Jupyter Notebook. You can work on these on your own, in
+exercise in Python / Jupyter Notebook.
+
+{% comment %}
+You can work on these on your own, in
 groups, and/or in office hours. This is a not-for-credit IAP class, so you
 don't need to hand in homework.
+{% endcomment %}
 
 # General information
 
+{% comment %}
 **Dates**: Tuesday, January 17 -- Friday, January 27, 2023<br>
 **Lecture**: [6-120](https://whereis.mit.edu/?go=6), 1pm--2pm<br>
 **Office hours**: [2-132](https://whereis.mit.edu/?go=2), 3pm--5pm (every day, after lecture)
+{% endcomment %}
 
 **Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Curtis](https://www.curtisnorthcutt.com/), [Jonas](https://people.csail.mit.edu/jonasmueller/), [Cody](https://www.codycoleman.com/), [Ola](https://olazytek.mit.edu/), and [Sharon](https://twitter.com/realSharonZhou).<br>
-**Questions**: Post on [Piazza](https://piazza.com/mit/spring2023/6dcai) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).<br>
+**Questions**: Join `#dcai-course` on this [Slack](https://cleanlab.ai/slack/).<br>
 **Twitter**: Follow us at [@dcai_course](https://twitter.com/dcai_course).
 
 # Prerequisites
