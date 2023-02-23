@@ -61,7 +61,6 @@ don't need to hand in homework.
 
 **Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Curtis](https://www.curtisnorthcutt.com/), [Jonas](https://people.csail.mit.edu/jonasmueller/), [Cody](https://www.codycoleman.com/), [Ola](https://olazytek.mit.edu/), and [Sharon](https://twitter.com/realSharonZhou).<br>
 **Questions**: Join `#dcai-course` on this [Slack](https://cleanlab.ai/slack/).<br>
-**Twitter**: Follow us at [@dcai_course](https://twitter.com/dcai_course).
 
 # Prerequisites
 
@@ -71,15 +70,16 @@ get the most out of this course, we recommend that you:
 - Completed an introductory course in machine learning (like [6.036 / 6.390](https://introml.mit.edu/)). To learn this on your own, check out [Andrew Ng's ML course](https://www.coursera.org/learn/machine-learning), [fast.ai's ML course](https://course.fast.ai/), or [Dive into Deep Learning](https://d2l.ai/).
 - Are familiar with Python and its basic data science ecosystem (pandas, NumPy, scikit-learn, and Jupyter Notebook). To learn this on your own, check out [Jupyter Notebook 101](https://github.com/fastai/fastbook/blob/master/app_jupyter.ipynb), [Introduction to Pandas](https://walkwithfastai.com/Pandas), and [Python for Data Analysis](https://www.coursera.org/projects/python-for-data-analysis-numpy).
 
-{% comment %}
 # Beyond MIT
 
 We've also shared this class beyond MIT in the hopes that others may
-benefit from these resources. You can find posts and discussion on
+benefit from these resources. You can find posts and discussions on:
 
-TODO links, once we publish the class
-
-{% endcomment %}
+- [r/MachineLearning](https://www.reddit.com/r/MachineLearning/comments/1194wm0/p_mit_introduction_to_datacentric_ai/)
+- [r/learnmachinelearning](https://www.reddit.com/r/learnmachinelearning/comments/1194vsn/mit_introduction_to_datacentric_ai/)
+- [Twitter](https://twitter.com/anishathalye/status/1628437244464992256)
+- [LinkedIn](https://www.linkedin.com/pulse/teaching-first-data-centric-ai-course-mit-curtis-northcutt/)
+- [Lobsters](https://lobste.rs/s/qtaba8/mit_introduction_data_centric_ai)
 
 ## Acknowledgements
 
