@@ -55,7 +55,7 @@ Methodologies that fall within the purview of this field include:
 
 Recent high-profile ML applications have clearly shown how the *reliability of ML models* deployed in the real-world depends on the *quality of their training data*.
 
-OpenAI has openly stated that one of the biggest issues in training famous ML models like Dall-E, GPT-3, and ChatGPT were errors in the data and labels. Here are some stills from their [video demo of Dall-E 2](https://openai.com/dall-e-2/#demos):
+OpenAI has openly stated that one of the biggest issues in training famous ML models like Dall-E, GPT-3, and ChatGPT were errors in the data and labels. Here are some stills from their video demo of [Dall-E 2](https://openai.com/dall-e-2/):
 
 ![!Stills from Dalle-E 2 Video by OpenAI](/lectures/data-centric-model-centric/dalle.png)
 
