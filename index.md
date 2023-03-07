@@ -87,8 +87,8 @@ benefit from these resources. You can find posts and discussions on:
 We thank Elaine Mello / [MIT Open Learning](https://openlearning.mit.edu/) for
 making it possible for us to record lecture videos, Kate Weishaar / [MIT Office
 of Experiential Learning](https://elo.mit.edu/) for supporting this class, and
-Ashay Athalye / [MIT SOUL](https://mitsoul.org/) for editing the lecture
-videos.
+Ashay Athalye / [MIT SOUL](https://mitsoul.org/) for editing and subtitling the
+lecture videos.
 
 ---
 
