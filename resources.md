@@ -16,7 +16,7 @@ see the references in individual lecture notes.
 - [snorkel](https://github.com/snorkel-team/snorkel) - generate training data with weak supervision and programmatic labeling
 - [refinery](https://github.com/code-kern-ai/refinery) - assess and maintain natural language data
 - [great expectations](https://github.com/great-expectations/great_expectations) - validate, document, and profile data for quality testing
-- [pandas-profiling](https://github.com/ydataai/pandas-profiling) - generate  summary reports of tabular datasets stored as pandas DataFrame
+- [ydata-profiling](https://github.com/ydataai/ydata-profiling) - generate summary reports of tabular datasets stored as pandas DataFrame
 - [albumentations](https://github.com/albumentations-team/albumentations) - data augmentation for computer vision
 - [label-studio](https://github.com/heartexlabs/label-studio) - interfaces to label and annotate data for many ML tasks
 
