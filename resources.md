@@ -24,8 +24,9 @@ see the references in individual lecture notes.
 - [Unbiggen AI](https://spectrum.ieee.org/andrew-ng-data-centric-ai)
 - [Andrew Ng Launches A Campaign For Data-Centric AI](https://www.forbes.com/sites/gilpress/2021/06/16/andrew-ng-launches-a-campaign-for-data-centric-ai/)
 - [Tips for a Data-Centric AI Approach](https://landing.ai/tips-for-a-data-centric-ai-approach/)
-- [Boosting Model Performance through Error Analysis](https://landing.ai/boosting-model-performance-through-error-analysis/)
 - [Data-Centric Approach vs Model-Centric Approach in Machine Learning](https://neptune.ai/blog/data-centric-vs-model-centric-machine-learning)
+- [Handling Mislabeled Data to Improve Your Model](https://cleanlab.ai/blog/label-errors-tabular-datasets/)
+- [Boosting Model Performance through Error Analysis](https://landing.ai/boosting-model-performance-through-error-analysis/)
 - [Intro to Exploratory data analysis (EDA) in Python](https://www.kaggle.com/code/imoore/intro-to-exploratory-data-analysis-eda-in-python)
 
 # Papers
