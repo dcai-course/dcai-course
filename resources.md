@@ -13,7 +13,6 @@ see the references in individual lecture notes.
 # Open-Source Software Tools
 
 - [cleanlab](https://github.com/cleanlab/cleanlab) - automatically detect problems in a dataset to facilitate ML with messy, real-world data
-- [snorkel](https://github.com/snorkel-team/snorkel) - generate training data with weak supervision and programmatic labeling
 - [refinery](https://github.com/code-kern-ai/refinery) - assess and maintain natural language data
 - [great expectations](https://github.com/great-expectations/great_expectations) - validate, document, and profile data for quality testing
 - [ydata-profiling](https://github.com/ydataai/ydata-profiling) - generate summary reports of tabular datasets stored as pandas DataFrame
@@ -25,7 +24,6 @@ see the references in individual lecture notes.
 - [Unbiggen AI](https://spectrum.ieee.org/andrew-ng-data-centric-ai)
 - [Andrew Ng Launches A Campaign For Data-Centric AI](https://www.forbes.com/sites/gilpress/2021/06/16/andrew-ng-launches-a-campaign-for-data-centric-ai/)
 - [Tips for a Data-Centric AI Approach](https://landing.ai/tips-for-a-data-centric-ai-approach/)
-- [Making AI Work with Small Data](https://landing.ai/making-ai-work-with-small-data-2/)
 - [Boosting Model Performance through Error Analysis](https://landing.ai/boosting-model-performance-through-error-analysis/)
 - [Data-Centric Approach vs Model-Centric Approach in Machine Learning](https://neptune.ai/blog/data-centric-vs-model-centric-machine-learning)
 - [Intro to Exploratory data analysis (EDA) in Python](https://www.kaggle.com/code/imoore/intro-to-exploratory-data-analysis-eda-in-python)
