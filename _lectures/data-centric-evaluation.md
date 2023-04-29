@@ -193,7 +193,7 @@ A hands-on lab assignment to accompany this lecture is available in the [dcai-la
 
 <span id="Z15"></span> [Z15] Zheng, A. [Evaluating Machine Learning Models](https://www.oreilly.com/content/evaluating-machine-learning-models/). 2015.
 
-<span id="VC22"></span> [VC22]  Varoquaux, G., Colliot, O. [Evaluating machine learning models and their diagnostic value](https://hal.science/hal-03682454/file/main.pdf). *Machine Learning for Brain Disorders*, 2022.
+<span id="VC22"></span> [VC22]  Varoquaux, G., Colliot, O. [Evaluating machine learning models and their diagnostic value](https://hal.science/hal-03682454v5/file/Chapter%2020%20-%20Final.pdf). *Machine Learning for Brain Disorders*, 2022.
 
 <span id="KN22"></span> [KN22] Kapoor, S., Narayanan, A. [Leakage and the Reproducibility Crisis in ML-based Science](https://reproducible.cs.princeton.edu/). 2022.
 
