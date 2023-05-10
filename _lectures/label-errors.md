@@ -1,6 +1,6 @@
 ---
 layout: lecture
-title: "Label Errors"
+title: "Label Errors and Confident Learning"
 description: >
   Learn how to algorithmically identify mislabeled data.
 thumbnail: /lectures/label-errors/thumbnail.png
