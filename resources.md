@@ -10,7 +10,7 @@ General resources related to machine learning and data-centric AI that we
 recommend. For additional resources on the topics covered in lectures,
 see the references in individual lecture notes.
 
-# Open-Source Software Tools
+# Open-Source Software Tools for Data-Centric AI
 
 - [cleanlab](https://github.com/cleanlab/cleanlab) - automatically detect problems in a dataset to facilitate ML with messy, real-world data
 - [refinery](https://github.com/code-kern-ai/refinery) - assess and maintain natural language data
