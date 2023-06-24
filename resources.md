@@ -16,6 +16,7 @@ see the references in individual lecture notes.
 - [refinery](https://github.com/code-kern-ai/refinery) - assess and maintain natural language data
 - [great expectations](https://github.com/great-expectations/great_expectations) - validate, document, and profile data for quality testing
 - [ydata-profiling](https://github.com/ydataai/ydata-profiling) - generate summary reports of tabular datasets stored as pandas DataFrame
+- [cleanvision](https://github.com/cleanlab/cleanvision) - automatically detect low-quality images in computer vision datasets
 - [albumentations](https://github.com/albumentations-team/albumentations) - data augmentation for computer vision
 - [label-studio](https://github.com/heartexlabs/label-studio) - interfaces to label and annotate data for many ML tasks
 
