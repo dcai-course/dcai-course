@@ -23,6 +23,9 @@ jobs:
             https://www.codycoleman.com/
             https://jmcauley.ucsd.edu/data/amazon/
             http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf
+            https://dl.acm.org/doi/10.1145/1273496.1273614
+            https://dl.acm.org/citation.cfm?id=1403849
+            https://dl.acm.org/doi/abs/10.1145/3534678.3542604
           ignore_url_re: |
             ^https://machinelearningmastery.com/
           swap_urls: |
