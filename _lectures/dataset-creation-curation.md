@@ -10,6 +10,9 @@ panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=98777e08-0
 video:
   aspect: 56.25
   id: R9CHc1acGtk
+slides:
+  - /lectures/dataset-creation-curation/dataset-creation-curation.pdf
+  - /lectures/dataset-creation-curation/dataset-creation-curation.pptx
 ---
 
 Creating a dataset for supervised learning requires the collection of examples and labels. This lecture will focus on classication tasks, but these ideas are applicable to other supervised learning tasks as well (regression, image segmentation, entity recognition, etc). This lecture covers three themes:
