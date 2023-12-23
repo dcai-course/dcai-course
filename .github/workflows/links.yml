@@ -27,7 +27,8 @@ jobs:
             https://dl.acm.org/citation.cfm?id=1403849
             https://dl.acm.org/doi/abs/10.1145/3534678.3542604
           ignore_url_re: |
-            ^https://machinelearningmastery.com/
+            ^https:\/\/machinelearningmastery\.com\/
+            ^https:\/\/www\.reddit\.com\/
           swap_urls: |
             {"^https://dcai.csail.mit.edu/": "/"}
           enforce_https: false
