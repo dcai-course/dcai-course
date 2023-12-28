@@ -73,7 +73,7 @@ These techniques can be combined. For example, the SMOTE authors note that the c
 
 # Outliers
 
-{% include scaled_image.html alt="Outlier" src="/lectures/imbalance-outliers-shift/outlier.svg" width="350" %}
+{% include scaled_image.html alt="Outlier" src="outlier.svg" width="350" %}
 
 <p class="small center">An example of an outlier. Two classes in two-dimensional feature space are shown, labeled as "+" and "-", and an outlier is circled in red.</p>
 
@@ -121,7 +121,7 @@ You'll notice that many outlier detection techniques involve computing a score f
 
 # Distribution shift
 
-{% include scaled_image.html alt="Distribution shift" src="/lectures/imbalance-outliers-shift/distribution-shift.svg" width="450" %}
+{% include scaled_image.html alt="Distribution shift" src="distribution-shift.svg" width="450" %}
 
 <p class="small center">An example of extreme distribution shift (in particular, covariate shift / data shift) in a hand-written digit classification task. A classifier is trained on Arabic numerals labeled 0&ndash;9, while it is evaluated on the Roman numerals 0&ndash;9. It is likely to have extremely poor performance.</p>
 
@@ -133,7 +133,7 @@ Distribution shift is a challenging problem that occurs when the joint distribut
 
 Covariate shift occurs when $$p(\mathbf{x})$$ changes between train and test, but $$p(y \mid \mathbf{x})$$ does not. In other words, the distribution of inputs changes between train and test, but the relationship between inputs and outputs does not change.
 
-{% include scaled_image.html alt="Covariate shift" src="/lectures/imbalance-outliers-shift/covariate-shift.svg" width="500" %}
+{% include scaled_image.html alt="Covariate shift" src="covariate-shift.svg" width="500" %}
 
 <p class="small center">When the distribution of training data and test data differ significantly, a learned model can fit training data well but perform poorly on test data.</p>
 
@@ -147,7 +147,7 @@ Examples of covariate shift:
 
 Concept shift occurs when $$p(y \mid \mathbf{x})$$ changes between train and test, but $$p(\mathbf{x})$$ does not. In other words, the input distribution does not change, but the relationship between inputs and outputs does. This can be one of the most difficult types of distribution shift to detect and correct.
 
-{% include scaled_image.html alt="Concept shift" src="/lectures/imbalance-outliers-shift/concept-shift.svg" width="500" %}
+{% include scaled_image.html alt="Concept shift" src="concept-shift.svg" width="500" %}
 
 <p class="small center">Concept shift in a two-class dataset with two-dimensional features. Data points, drawn as "x"s are color-coded by class (red/green), and the decision boundary is shown in purple. The input distribution is exactly identical between train and test, but the relationship between input and output has changed.</p>
 
