@@ -12,7 +12,10 @@ nav:
     url: /resources/
 
 collections:
-  lectures:
+  'lectures':
+    # redirects to not break links from last year
+    output: true
+  '2023':
     output: true
 
 # Settings

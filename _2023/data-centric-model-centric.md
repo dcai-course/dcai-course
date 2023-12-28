@@ -4,7 +4,7 @@ title: "Data-Centric AI vs. Model-Centric AI"
 description: >
   Learn about the motivation for why we are teaching this class, along with the
   difference between data-centric AI vs model-centric AI.
-thumbnail: /lectures/data-centric-model-centric/thumbnail.png
+thumbnail: /2023/data-centric-model-centric/thumbnail.png
 date: 2023-01-17
 ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=edd1be69-b3de-4302-ac2b-af85012d2b18"
@@ -12,8 +12,8 @@ video:
   aspect: 56.25
   id: ayzOzZGHZy4
 slides:
-  - /lectures/data-centric-model-centric/data-centric-model-centric.pdf
-  - /lectures/data-centric-model-centric/data-centric-model-centric.pptx
+  - data-centric-model-centric.pdf
+  - data-centric-model-centric.pptx
 ---
 
 When you learn Machine Learning in school, a dataset is given to you that is fairly clean & well-curated (e.g. dog/cat images), and your job is to produce the best model for this dataset. All techniques taught in most ML classes are centered around this aim, covering different types of: models (neural networks, decision trees, etc.), training techniques (regularization, optimizaton algorithms, loss functions, etc.), and model/hyperparameter selection (plus model ensembling). We call this paradigm **model-centric AI**.
@@ -57,13 +57,13 @@ Recent high-profile ML applications have clearly shown how the *reliability of M
 
 OpenAI has openly stated that one of the biggest issues in training famous ML models like Dall-E, GPT-3, and ChatGPT were errors in the data and labels. Here are some stills from their video demo of [Dall-E 2](https://openai.com/dall-e-2/):
 
-![!Stills from Dalle-E 2 Video by OpenAI](/lectures/data-centric-model-centric/dalle.png)
+![!Stills from Dalle-E 2 Video by OpenAI](dalle.png)
 
 Through relentless model-assisted dataset improvement (Step 3 above), Tesla could produce autonomous driving systems far more advanced than similar competitors. They point to their *Data Engine* as the key reason from this success, depicted in the following [slides from Andrej Karpathy](https://vimeo.com/274274744), the Tesla Director of AI (2021):
 
-![Tesla Data Engine](/lectures/data-centric-model-centric/dataengine.png)
+![Tesla Data Engine](dataengine.png)
 
-![Amount of sleep lost over data in PhD vs at Tesla](/lectures/data-centric-model-centric/teslasleep.png)
+![Amount of sleep lost over data in PhD vs at Tesla](teslasleep.png)
 
 # Why we need data-centric AI
 
@@ -71,7 +71,7 @@ Bad data costs the U.S. alone around $3 Trillion every year [[R16](#R16)]. Data 
 
 Recent research is highlighting the value of data-centric AI for various applications. For image classification with noisily labeled data, a recent benchmark studied various methods to train models under increasing noise rates in the famous Cifar-10 dataset [[NJC21](#NJC21)]. The findings revealed that simple methods which adaptively change the dataset can lead to much more accurate models than methods which aim to account for the noise through sophisticated modeling strategies.
 
-![Cifar10 image classification with noisy labels](/lectures/data-centric-model-centric/cifar10benchmarks.png)
+![Cifar10 image classification with noisy labels](cifar10benchmarks.png)
 
 
 

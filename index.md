@@ -30,16 +30,18 @@ Sign up for the IAP class by filling out this [**registration form**](https://fo
 # Syllabus
 
 <ul>
-{% assign lectures = site['lectures'] | sort: 'date' %}
+{% assign lectures = site['2023'] | sort: 'date' %}
 {% for lecture in lectures %}
-    <li>
-    <strong>{{ lecture.date | date: '%-m/%d/%y' }}</strong>:
-    {% if lecture.ready %}
-        <a href="{{ lecture.url }}">{{ lecture.title }}</a>
-    {% else %}
-        {{ lecture.title }}
+    {% if lecture.phony != true %}
+        <li>
+        <strong>{{ lecture.date | date: '%-m/%d/%y' }}</strong>:
+        {% if lecture.ready %}
+            <a href="{{ lecture.url }}">{{ lecture.title }}</a>
+        {% else %}
+            {{ lecture.title }}
+        {% endif %}
+        </li>
     {% endif %}
-    </li>
 {% endfor %}
 </ul>
 

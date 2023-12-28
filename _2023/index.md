@@ -1,26 +1,30 @@
 ---
 layout: page
-title: "Lectures"
+title: "2023 Lectures"
+permalink: /2023/
 description: >
   Lecture videos for Introduction to Data-Centric AI, MIT IAP 2023.
 thumbnail: /static/assets/thumbnail.png
+phony: true
 ---
 
 <ul class="double-spaced">
-  {% assign lectures = site['lectures'] | sort: 'date' %}
+  {% assign lectures = site['2023'] | sort: 'date' %}
   {% for lecture in lectures %}
-    <li>
-      <strong>{{ lecture.date | date: '%-m/%d/%y' }}</strong>:
-      {% if lecture.ready %}
-        <a href="{{ lecture.url }}">{{ lecture.title }}</a>
-      {% else %}
-        {{ lecture.title }} [coming soon]
-      {% endif %}
-      {% if lecture.details %}
-        <br>
-        ({{ lecture.details }})
-      {% endif %}
-    </li>
+    {% if lecture.phony != true %}
+      <li>
+        <strong>{{ lecture.date | date: '%-m/%d/%y' }}</strong>:
+        {% if lecture.ready %}
+          <a href="{{ lecture.url }}">{{ lecture.title }}</a>
+        {% else %}
+          {{ lecture.title }} [coming soon]
+        {% endif %}
+        {% if lecture.details %}
+          <br>
+          ({{ lecture.details }})
+        {% endif %}
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>
 

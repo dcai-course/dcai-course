@@ -3,7 +3,7 @@ layout: lecture
 title: "Encoding Human Priors: Data Augmentation and Prompt Engineering"
 description: >
   Learn about how to encode human priors into machine learning models through data.
-thumbnail: /lectures/human-priors/thumbnail.png
+thumbnail: /2023/human-priors/thumbnail.png
 date: 2023-01-26
 ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=45670839-428a-449a-bdff-af85012d2c30"
@@ -11,8 +11,8 @@ video:
   aspect: 56.25
   id: z44vZ_9av-M
 slides:
-  - /lectures/human-priors/human-priors.pdf
-  - /lectures/human-priors/human-priors.pptx
+  - human-priors.pdf
+  - human-priors.pptx
 ---
 
 This lecture covers encoding human priors into machine learning models through data! Two popular ways are data augmentation for training data, and at test-time with large language models (LLMs) using prompt engineering.
@@ -29,7 +29,7 @@ This lecture is structured as follows:
 
 First, let’s start with why this all matters. ML models, if you played with them outside a perfectly manicured ML class environment, will fail in sometimes seemingly simple ways. They seem not just simple, but often silly or stupid to us at first glance. For example, a model that is trained on pictures of dogs that are upright, won’t recognize a sideways rotated dog!
 
-![Model misclassifying a rotated dog](/lectures/human-priors/lec8.004.jpeg)
+![Model misclassifying a rotated dog](lec8.004.jpeg)
 
 That seems ridiculous. But that’s because we know something that the model doesn’t. We know that dogs, while often upright, are sometimes rotated too. We didn’t gather the data because we didn’t think that would be a problem. But we took that for granted. That, in essence, is an example of a human prior.
 
@@ -41,13 +41,13 @@ In the case of the rotated dog, it’s a special type of human prior that is par
 
 Specifically, we’re looking at adapting the data today. It’s a very effective place to be doing this and much easier than making architectural or loss function adaptations. It’s a common technique that we ML researchers and practitioners all do.
 
-![Model correctly classifying a rotated dog](/lectures/human-priors/lec8.009.jpeg)
+![Model correctly classifying a rotated dog](lec8.009.jpeg)
 
 So with rotated dogs, we get a model that can detect dogs when rotated too. It’s not as simple as just rotating a few dogs. You have to literally do a few, not all of them, and it’s more of an empirical task of figuring out how much of your data you should flip or not to get the desired result.
 
 In more technical language, this touches on the problem of overfitting. When a model overfits, it overindexes on the features it has seen a lot of and starts to memorize patterns as opposed to learning and generalizing. This is also relevant to underfitting as underfitting often means a lack of data in the first place, so adding more data when collecting that data is hard can be very valuable.
 
-![Overfitting vs underfitting](/lectures/human-priors/lec8.010.jpeg)
+![Overfitting vs underfitting](lec8.010.jpeg)
 
 # Human Priors to Augment Training Data
 
@@ -61,13 +61,13 @@ So what data augmentation can do is it enables you to encode your human priors o
 
 Now, those are pretty simple. There are far more advanced methods, such as Mobius transformations ([Zhou et al., 2020](https://arxiv.org/abs/2002.02917)). If you have classes, you can also use an effective method called Mixup, where you can mix your different classes together to be used as interpolated examples in alpha space ([Zhang et al., 2017](https://arxiv.org/abs/1710.09412)). What does that mean? If you have dog pictures and cat pictures, you can overlay these images together (e.g. by varying the alpha or A parameter in RGBA). For example, you can change the alpha of a cat image to 60% and the dog image to 40%. You’d get a blended cat-dog, and as a human, you’d agree that there is a cat and dog in it. Then, you could actually change your class label to be 60% cat and 40% dog for your model to predict. You can vary this however you want across your data to produce more training examples with precise labels. This is actually a very effective technique and used pretty widely now.
 
-![Mixup](/lectures/human-priors/lec8.015.jpeg)
+![Mixup](lec8.015.jpeg)
 
 Data augmentation can also be taken to the extreme of synthetic data augmentation. This means using the data you already have, you can even train a model to generate more of that kind or class of data. For this, you can train your own model or you can use [foundation models](https://arxiv.org/abs/2108.07258), such as [DALL-E](https://openai.com/dall-e-2/) or [Stable Diffusion](https://stability.ai/blog/stable-diffusion-public-release) in the image scenario, to generate more data from them. Just know that you have to think about how this impacts your test set, if the foundation model has been trained on samples in your test set.
 
 Data augmentation can also be useful for robotics. Because it is so expensive to run experiments in the physical world, we often use simulation to train robotics algorithms. So, we can transfer styles from a simulated environment into the styles of a real environment using a generative model. In this case, this was work from Google on RetinaGAN ([Ho et al., 2020](https://arxiv.org/abs/2011.03148)).
 
-![RetinaGAN](/lectures/human-priors/lec8.017.jpeg)
+![RetinaGAN](lec8.017.jpeg)
 
 Data augmentation works across a lot of different modalities. It's not just on images. For text, there's a really interesting technique called back-translation, where you can take an English sentence, such as “I have no time”, and use a translation model into French (“je n’ai pas le temps”), then translate back into English for “I don’t have time.”  What's really interesting is now your translation back into English aren’t in the same words that you used before, but it has the same meaning. So you can use this new example as augmentation on your data set to help the model understand different ways of phrasing the same thing, and avoid overfitting on the original example. Of course, you can use this on any source and target languages.
 
@@ -79,11 +79,11 @@ LLMs are special because they have an easy interface for humans to use, and that
 
 Prompt engineering really depends on the model. Different models have been trained to do different things. For example you can see here that GPT-3 ([Brown et al., 2020](https://arxiv.org/abs/2005.14165)) has been trained to just predict the next thing and right here it is just assuming, for example, that you're in a form and you're writing different questions for a form. It's likely that it’s seen a lot of forms. Now, [GPT-3.5 (ChatGPT)](https://openai.com/blog/chatgpt/) acts very differently: it's able to take in commands, because it's been trained additionally on a lot of dialogue and commands data. So when asked a question, it actually answers it rather than propose a new question.
 
-![GPT-3 vs GPT-3.5 (ChatGPT)](/lectures/human-priors/lec8.023.jpeg)
+![GPT-3 vs GPT-3.5 (ChatGPT)](lec8.023.jpeg)
 
 A very powerful method for adapting these models is giving them examples. Examples help nudge not only what you want but also provides context into what type of scenario the model should be operating under. For example, you can give GPT-3 some context that you are actually answering questions, as opposed to writing questions for a form. You can give examples of asking and answering questions to then be able to answer your questions now.
 
-![Prompt engineering GPT-3](/lectures/human-priors/lec8.024.jpeg)
+![Prompt engineering GPT-3](lec8.024.jpeg)
 
 You’ll have the opportunity to explore this in the lab assignment for this lecture. There, you'll get to build a context template for scalability and reusability. You'll be able to add examples to boost the model’s performance. You'll get to just tweak the prompt to see how that changes the output.
 

@@ -3,7 +3,7 @@ layout: lecture
 title: "Interpretability in Data-Centric ML"
 description: >
   Learn how interpretable features can help you create more trustworthy and performant ML models.
-thumbnail: /lectures/interpretable-features/thumbnail.png
+thumbnail: /2023/interpretable-features/thumbnail.png
 date: 2023-01-25
 ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=96283f4a-e751-40f3-9136-af85012d2c14"
@@ -11,8 +11,8 @@ video:
   aspect: 56.25
   id: w0Nn-SVYCL0
 slides:
-  - /lectures/interpretable-features/interpretable-features.pdf
-  - /lectures/interpretable-features/interpretable-features.pptx
+  - interpretable-features.pdf
+  - interpretable-features.pptx
 ---
 
 # Introduction to Interpretable ML
@@ -31,15 +31,15 @@ Consider the following examples of explanations on the [California Housing Datas
 
 Take a look at the image below, which visualizes a [decision tree model](https://scikit-learn.org/stable/modules/tree.html) trained for this purpose. Decision trees are usually considered very interpretable models, because you can follow their logic through a series of simple yes/no questions. Do you feel like this visualization offers you anything towards understanding how the model makes predictions about house prices?
 
-![Decision tree classifier](/lectures/interpretable-features/decision_tree.png)
+![Decision tree classifier](decision_tree.png)
 
 The visualization above displays features generated from running a [principal component analysis](https://builtin.com/data-science/step-step-explanation-principal-component-analysis) on the original feature set. This is a powerful algorithm that reduces the size of a feature space and can improve generalizability of models, but also reduces the interpretability of their features.
 
 Next, consider the two images below, both offering *feature importance* explanations of models trained on the California Housing Dataset. The first was trained on a set of automatically engineered features, while the second uses the basic features that come with the dataset. Both models have similar performance (r<sup>2</sup> ~ 0.85), but you may find the second explanation much easier to reason about.
 
-![Automatically engineered features are not interpretable](/lectures/interpretable-features/engineered_importance.png)
+![Automatically engineered features are not interpretable](engineered_importance.png)
 
-![Original basic features are interpretable](/lectures/interpretable-features/interpret_importance.png)
+![Original basic features are interpretable](interpret_importance.png)
 
 ## Performance and Interpretability
 
@@ -64,7 +64,7 @@ There are many properties that relate to feature interpretability ([Zytek et al.
 
 The table below shows some examples of features and their properties.
 
-![Characteristics of interpretable features](/lectures/interpretable-features/table.png)
+![Characteristics of interpretable features](table.png)
 
 # How do we get interpretable features?
 
@@ -87,7 +87,7 @@ In this lecture, we introduce two systems for Collaborative Feature Engineering 
 
 Let's walk through an example, where our task is to differeniate paintings by two artistis with similar styles: Monet versus Sisley.
 
-1. Show users one painting by each artist, and ask them to identify which artist they believe painted each: <br><br><img src="/lectures/interpretable-features/monet_lillies_vs_sisley.jpg" alt="A painting by Monet and a painting by someone else"/><br>
+1. Show users one painting by each artist, and ask them to identify which artist they believe painted each: <br><br><img src="monet_lillies_vs_sisley.jpg" alt="A painting by Monet and a painting by someone else"/><br>
 2. Ask for a natural-language description of why they chose their classification:
 > The first painting is probably a Monet because it has lilies in it, and looks like Monet’s style. The second probably isn’t Monet because Monet doesn’t normally put people in his paintings.
 3. Split up the description at conjuctions (and/or) and punctuation, and cluster the resulting phrases:
@@ -113,7 +113,7 @@ To generate more interpretable features even in situations where models require 
 
 Pyreal automatically "undoes" data transformations that reduce the interpretability of features at the explanation level, as well as adding additional transformations that can improve the interpretability of features in explanations. For example, consider the image below, showing an explanation before and after being transformed by Pyreal. In particular, notice that one-hot encoded features are combined into a single categorical feature (`ocean proximity`), less interpretable features are transformed to more readable versions (`lat/long` -> `city`), and features are unstandardized (`median income`).
 
-![Pyreal transforming raw features into interpretable features](/lectures/interpretable-features/pyreal_transforms.png)
+![Pyreal transforming raw features into interpretable features](pyreal_transforms.png)
 
 ## Interpretable Feature Generation
 
@@ -123,11 +123,11 @@ One example of such an algorithm is the Mind the Gap (MTG) algorithm ([Kim et al
 
 MTG begins by randomly assigning features to "feature groups", defined by one or more features concatenated with "AND" or "OR". It then determines which of these groups results in the largest "gap" between true and false instances, and iterates. For example, in the image below, the yellow and blue dots represent instances that are True or False for a given feature group. Here, the left feature group results in a bigger *gap* than the right feature group. Through this process, MTG creates a small set of features that maximally separate classes.
 
-![Mind the Gap algorithm, showing a bigger gap in the left feature group](/lectures/interpretable-features/gap_example.png)
+![Mind the Gap algorithm, showing a bigger gap in the left feature group](gap_example.png)
 
 And here are some examples of the kinds of feature groups we could generate using MTG. For a specific set of values for each of these groups, we get a cluster that we could describe as "mammals".
 
-![MTG example feature groups](/lectures/interpretable-features/mtg.png)
+![MTG example feature groups](mtg.png)
 
 # Conclusion
 The key takeaways from this lecture:

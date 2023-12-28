@@ -3,7 +3,7 @@ layout: lecture
 title: "Class Imbalance, Outliers, and Distribution Shift"
 description: >
   Learn about three common problems in real-world ML data (and how to address them).
-thumbnail: /lectures/imbalance-outliers-shift/thumbnail.png
+thumbnail: /2023/imbalance-outliers-shift/thumbnail.png
 date: 2023-01-23
 ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c97d2732-19b5-461d-a961-af85012d2bcb"
@@ -17,7 +17,7 @@ imbalance](#class-imbalance), [outliers](#outliers), and [distribution shift](#d
 
 # Class imbalance
 
-{% include scaled_image.html alt="Class imbalance in credit card fraud" src="/lectures/imbalance-outliers-shift/fraud.svg" width="500" %}
+{% include scaled_image.html alt="Class imbalance in credit card fraud" src="fraud.svg" width="500" %}
 
 Many real-world classification problems have the property that certain classes
 are more prevalent than others. For example:
