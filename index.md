@@ -86,7 +86,7 @@ benefit from these resources. You can find posts and discussions on:
 
 ## Acknowledgements
 
-We thank Elaine Mello / [MIT Open Learning](https://openlearning.mit.edu/) for making it possible for us to record lecture videos, Lisa Bella / [MIT EECS](https://www.eecs.mit.edu/) for supporting the 2024 offering of this class, Kate Weishaar / [MIT Office of Experiential Learning](https://elo.mit.edu/) for supporting the 2023 offering of this class, and Ashay Athalye / [MIT SOUL](https://mitsoul.org/) for editing and subtitling the lecture videos.
+We thank Elaine Mello / [MIT Open Learning](https://openlearning.mit.edu/) for making it possible for us to record lecture videos, Ellen Reid and Lisa Bella / [MIT EECS](https://www.eecs.mit.edu/) for supporting the 2024 offering of this class, Kate Weishaar / [MIT Office of Experiential Learning](https://elo.mit.edu/) for supporting the 2023 offering of this class, and Ashay Athalye / [MIT SOUL](https://mitsoul.org/) for editing and subtitling the lecture videos.
 
 ---
 
