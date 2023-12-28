@@ -29,6 +29,8 @@ Sign up for the IAP class by filling out this [**registration form**](https://fo
 
 # Syllabus
 
+The lecture topics are subject to change: the syllabus for the 2024 offering is still being finalized.
+
 <ul>
 {% assign lectures = site['2024'] | sort: 'date' %}
 {% for lecture in lectures %}
