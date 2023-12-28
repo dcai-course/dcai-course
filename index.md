@@ -2,7 +2,7 @@
 layout: page
 title: Introduction to Data-Centric AI
 nositetitle: true
-subtitle: IAP 2023
+subtitle: IAP 2024
 description: >
   The first-ever course on data-centric AI. Learn how you can train better ML
   models by improving the data.
@@ -11,11 +11,15 @@ thumbnail: /static/assets/thumbnail.png
 
 Typical machine learning classes teach techniques to produce effective models for a given dataset. In real-world applications, data is messy and improving models is not the only way to get better performance. You can also improve the dataset itself rather than treating it as fixed. **Data-Centric AI** (DCAI) is an emerging science that studies techniques to improve datasets, which is often the best way to improve performance in practical ML applications. While good data scientists have long practiced this manually via ad hoc trial/error and intuition, DCAI considers the improvement of data as a systematic engineering discipline.
 
-This is the first-ever course on DCAI. This class covers algorithms to find and fix common issues in ML data and to construct better datasets, concentrating on data used in supervised learning tasks like classification. All material taught in this course is highly practical, focused on impactful aspects of real-world ML applications, rather than mathematical details of how particular models work.  You can take this course to learn practical techniques not covered in most ML classes, which will help mitigate the “garbage in, garbage out” problem that plagues many real-world ML applications.
+This is the first-ever course on DCAI. This class covers algorithms to find and fix common issues in ML data and to construct better datasets, concentrating on data used in supervised learning tasks like classification. All material taught in this course is highly practical, focused on impactful aspects of real-world ML applications, rather than mathematical details of how particular models work.  You can take this course to learn practical techniques not covered in most ML classes, which will help mitigate the "garbage in, garbage out" problem that plagues many real-world ML applications.
 
 ![Flawed Data](/static/assets/flawed_data.png)
 
 <p class="small center">Inspired by <a href="https://xkcd.com/2494/">XKCD 2494</a> &ldquo;Flawed Data&rdquo;</p>
+
+# Registration
+
+Sign up for the IAP 2024 class by filling out this [**registration form**](https://forms.gle/TC5XCkaA99LKVRsp6).
 
 {% comment %}
 # Registration
@@ -41,26 +45,18 @@ Sign up for the IAP class by filling out this [**registration form**](https://fo
 
 Video recordings of the lectures are available <a href="https://www.youtube.com/watch?v=ayzOzZGHZy4&list=PLnSYPjg2dHQKdig0vVbN-ZnEU0yNJ1mo5">on YouTube</a>.
 
-Each lecture has an accompanying [lab
-assignment](https://github.com/dcai-course/dcai-lab), a hands-on programming
-exercise in Python / Jupyter Notebook.
-
-{% comment %}
-You can work on these on your own, in
-groups, and/or in office hours. This is a not-for-credit IAP class, so you
-don't need to hand in homework.
-{% endcomment %}
+Each lecture has an accompanying [lab assignment](https://github.com/dcai-course/dcai-lab), a hands-on programming exercise in Python / Jupyter Notebook. You can work on these on your own or in groups. This is a not-for-credit IAP class, so you don't need to hand in homework.
 
 # General information
 
-{% comment %}
-**Dates**: Tuesday, January 17 -- Friday, January 27, 2023<br>
-**Lecture**: [6-120](https://whereis.mit.edu/?go=6), 1pm--2pm<br>
-**Office hours**: [2-132](https://whereis.mit.edu/?go=2), 3pm--5pm (every day, after lecture)
-{% endcomment %}
+**Dates**: Tuesday, January 16 -- Friday, January 26, 2024<br>
+**Lecture**: [2-190](https://whereis.mit.edu/?go=6), 12pm--1pm<br>
 
-**Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Curtis](https://www.curtisnorthcutt.com/), [Jonas](https://people.csail.mit.edu/jonasmueller/), [Cody](https://www.codycoleman.com/), [Ola](https://olazytek.mit.edu/), and [Sharon](https://twitter.com/realSharonZhou).<br>
+**Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Ashay](https://www.csail.mit.edu/person/ashay-athalye), [Curtis](https://www.curtisnorthcutt.com/), and [Jonas](https://people.csail.mit.edu/jonasmueller/)<br>
+**Questions**: Post on [Piazza](https://piazza.com/mit/spring2024/6dcai) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).
+{% comment %}
 **Questions**: Join `#dcai-course` on this [Slack](https://cleanlab.ai/slack/).<br>
+{% endcomment %}
 
 # Prerequisites
 
@@ -84,11 +80,7 @@ benefit from these resources. You can find posts and discussions on:
 
 ## Acknowledgements
 
-We thank Elaine Mello / [MIT Open Learning](https://openlearning.mit.edu/) for
-making it possible for us to record lecture videos, Kate Weishaar / [MIT Office
-of Experiential Learning](https://elo.mit.edu/) for supporting this class, and
-Ashay Athalye / [MIT SOUL](https://mitsoul.org/) for editing and subtitling the
-lecture videos.
+We thank Elaine Mello / [MIT Open Learning](https://openlearning.mit.edu/) for making it possible for us to record lecture videos, Lisa Bella / [MIT EECS](https://www.eecs.mit.edu/) for supporting the 2024 offering of this class, Kate Weishaar / [MIT Office of Experiential Learning](https://elo.mit.edu/) for supporting the 2023 offering of this class, and Ashay Athalye / [MIT SOUL](https://mitsoul.org/) for editing and subtitling the lecture videos.
 
 ---
 
