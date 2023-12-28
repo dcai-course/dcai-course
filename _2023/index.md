@@ -33,6 +33,10 @@ phony: true
 **Office hours**: [2-132](https://whereis.mit.edu/?go=2), 3pm--5pm (every day, after lecture)
 {% endcomment %}
 
+---
+
+The 2023 offering of this class was co-taught by [Anish](https://www.anish.io/), [Curtis](https://www.curtisnorthcutt.com/), [Jonas](https://people.csail.mit.edu/jonasmueller/), [Cody](https://www.codycoleman.com/), [Ola](https://olazytek.mit.edu/), and [Sharon](https://twitter.com/realSharonZhou).
+
 Video recordings of the lectures are available <a href="https://www.youtube.com/watch?v=ayzOzZGHZy4&list=PLnSYPjg2dHQKdig0vVbN-ZnEU0yNJ1mo5">on YouTube</a>.
 
 If you have questions about the lecture material or the labs, please ask in

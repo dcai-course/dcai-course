@@ -58,7 +58,7 @@ Each lecture has an accompanying [lab assignment](https://github.com/dcai-course
 **Dates**: Tuesday, January 16 -- Friday, January 26, 2024<br>
 **Lecture**: [2-190](https://whereis.mit.edu/?go=6), 12pm--1pm<br>
 
-**Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Ashay](https://www.csail.mit.edu/person/ashay-athalye), [Curtis](https://www.curtisnorthcutt.com/), and [Jonas](https://people.csail.mit.edu/jonasmueller/)<br>
+**Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Ashay](https://www.csail.mit.edu/person/ashay-athalye), [Curtis](https://www.curtisnorthcutt.com/), and [Jonas](https://people.csail.mit.edu/jonasmueller/).<br>
 **Questions**: Post on [Piazza](https://piazza.com/mit/spring2024/6dcai) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).
 {% comment %}
 **Questions**: Join `#dcai-course` on this [Slack](https://cleanlab.ai/slack/).<br>
