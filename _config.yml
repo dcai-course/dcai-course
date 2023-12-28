@@ -17,6 +17,8 @@ collections:
     output: true
   '2023':
     output: true
+  '2024':
+    output: true
 
 # Settings
 markdown: kramdown

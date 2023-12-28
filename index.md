@@ -30,13 +30,15 @@ Sign up for the IAP class by filling out this [**registration form**](https://fo
 # Syllabus
 
 <ul>
-{% assign lectures = site['2023'] | sort: 'date' %}
+{% assign lectures = site['2024'] | sort: 'date' %}
 {% for lecture in lectures %}
     {% if lecture.phony != true %}
         <li>
         <strong>{{ lecture.date | date: '%-m/%d/%y' }}</strong>:
         {% if lecture.ready %}
             <a href="{{ lecture.url }}">{{ lecture.title }}</a>
+        {% elsif lecture.last_year %}
+            {{ lecture.title }} (<a href="{{ lecture.last_year }}">see last year's version</a>)
         {% else %}
             {{ lecture.title }}
         {% endif %}
@@ -45,7 +47,9 @@ Sign up for the IAP class by filling out this [**registration form**](https://fo
 {% endfor %}
 </ul>
 
+{% comment %}
 Video recordings of the lectures are available <a href="https://www.youtube.com/watch?v=ayzOzZGHZy4&list=PLnSYPjg2dHQKdig0vVbN-ZnEU0yNJ1mo5">on YouTube</a>.
+{% endcomment %}
 
 Each lecture has an accompanying [lab assignment](https://github.com/dcai-course/dcai-lab), a hands-on programming exercise in Python / Jupyter Notebook. You can work on these on your own or in groups. This is a not-for-credit IAP class, so you don't need to hand in homework.
 
