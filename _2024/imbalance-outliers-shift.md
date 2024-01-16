@@ -4,7 +4,7 @@ title: "Class Imbalance, Outliers, and Distribution Shift"
 description: >
   Learn about three common problems in real-world ML data (and how to address them).
 thumbnail: /2024/imbalance-outliers-shift/thumbnail.png
-date: 2024-01-22
+date: 2024-01-18
 ready: false
 # panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c97d2732-19b5-461d-a961-af85012d2bcb"
 video:
