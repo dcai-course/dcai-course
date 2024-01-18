@@ -5,8 +5,8 @@ description: >
   Learn how to algorithmically identify mislabeled data.
 thumbnail: /2024/label-errors/thumbnail.png
 date: 2024-01-17
-ready: false
-# panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1773586c-361c-40d9-b972-af85012d2b78"
+ready: true
+panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=84f7f96e-0a7a-4a87-816b-b0f100d4d3b2"
 video:
   aspect: 56.25
   # id: AzU-G1Vww3c
