@@ -79,6 +79,152 @@ Recent research is highlighting the value of data-centric AI for various applica
 
 Now that you've seen the importance of data-centric AI, this class will teach you techniques to improve *any* ML model by improving its data. The techniques taught here are applicable to most supervised ML models and training techniques, such that you will be able to continue applying them in the future even as better ML models and training techniques are invented. The better models of the future will better help you find and fix issues in datasets when combined with the techniques from this course, in order to help you produce even better versions of them!
 
+# The perceptron of data-centric AI: PU learning
+
+## The perceptron of machine learning
+
+In many machine learning courses, in the first lecture you learn about the perceptron algorithm, a simplified version of SGD that produces a linear classifier for the binary classification task of predicting whether an example $x_i$ has a label $y_i$ belonging to class $0$ or class $1$.
+
+**Our goal**: estimate the binary classifier $f(x) = p(y = 1 \mid x)$ from data $(x_i, y_i): x \in \mathcal{R}^d, y \in \{0, 1\}, i \in \{1 \ldots n\}$
+
+**The algorithm**: the perceptron algorithm is an iterative algorithm (time-step $t$) that trains $f(x, t)$ repeatedly on the entire dataset $x_i, y_i : i \in \{1 \ldots n\}$
+
+For weights $z: 0 \ldots d$ and training example $(x_i, y_i)$ and learning rate $0 \leq \eta \leq 1$, the predicted label $\hat{y}_i(t)$ for $x_i$ is:
+
+$$
+\begin{split}
+        \hat{y}_i(t) & = f(w(t) \cdot x_i)  \\
+                     & = f\left(w_0 (t) x_{i, 0} + w_1 (t) x_{i, 1} + \ldots + w_z (t) x_{i, d}\right)
+\end{split}
+$$
+
+where the training algorithm to compute $w(t)$ is iteratively computed
+
+$$w_z(t+1) = w_z(t) + \eta (y_i - \hat{y}_i(t)) x_{i, z}$$
+
+where the term $(y_i - \hat{y}\_i(t)) x_{i, z}$ is often referred to as the objective function and the negative of this $-((y_i - \hat{y}\_i(t)) \cdot x_{i, z})$ is referred to as the loss function.
+
+We learn the preceptron algorithm at the start of machine learning courses and books because it is a great way to introduce folks to deep learning, since that training algorithm above is very similar to the training algorithm for neural networks and deep learning, called Stochastic Gradient Descent, or for short, SGD:
+
+$$w(t+1) = w(t) - \eta \nabla L(w(t)))=w-\eta{\frac {1 }{n}}\sum _{i=1}^{n}\nabla L_{i}(w(t)) \qquad \text{(SGD)}$$
+
+where $L$ is the loss function of a neural network and $n$ is the total number of examples in your training dataset. The rest of the variables are essentially the same as in the perceptron training step.
+
+If you are unfamiliar with SGD and perceptron, the rest of this course will likely be too challenging and you are encouraged to pick up an ML book and start reading (e.g. Christopher Bishop's [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf) book).
+
+## PU learning: The "perceptron" of DCAI
+
+One of the easiest ways to get our feet wet with DCAI is with Positive-Unlabeled (PU) Learning [[EN08](#EN08)], one of the first algorithms for systematically improving a binary classifier trained on noisy labels.
+
+Positive-unlabeled (PU) learning is a binary classification task in which a subset of positive training examples is labeled, and the rest are unlabeled. In practice, we assume the positive class is class $1$ and the unlabeled class is class $0$ where some of the labels are noisy (the underlying true label might be $1$ but we just assume everything that is unlabeled is class $0$ when we train our classifier on the training data).
+
+Notationally, for PU learning, each datapoint is a triplet of random variables $(x_i, \tilde{y}_i, y^*_i)$, where
+
+- $x_i \in \mathcal{R}^d$ is the $i^{th}$ example (an image embedding, a text embedding, tabular data, etc) in a dataset of $n$ examples,
+
+- $\tilde{y}_i$ is the noisy observed label associated with example $x_i$, and
+
+- $y^*_i$ is the (unobserved, not known!) latent true label of example $x_i$.
+
+**Our goal**: is the same as standard binary classification: estimate the binary classifier $f(x) = p(y^* = 1 \mid x)$ from data $(x_i, y^\*_i): x \in \mathcal{R}^d, y^* \in \{0, 1\}, i \in \{1 \ldots n\}$. Unfortunately, we do not have the true labels $y^*$, we only observe the noisy, erroneous labels $\tilde{y}$. Thus, instead when we train on our observed data $(x_i, \tilde{y}_i) \in \{1 \ldots n\}$, we estimate the erroneous binary classifier $\tilde{f}(x) = p(\tilde{y} = 1 \mid x)$ instead!
+
+**Intermediate goal**: Estimate $f(x) = p(y^* = 1 \mid x)$ from $\tilde{f}(x) = p(\tilde{y} = 1 \mid x)$ without observing $y^*$.
+
+The above should seem somewhat magical to you without any assumptions. We estimate the true classifier as if it were trained on perfect labels, even though the labels that are given to us contain wrong labels!
+
+**Key Idea**: $p(y^* = 1 \mid x) \; = \; p(\tilde{y} = 1 \mid x) \cdot p(\tilde{y} = 1 \mid x, y^* = 1)$
+
+**Assumptions**: PU learning has a couple of major simplifying assumption that makes it easy to get closed form solutions and makes it a great place to get started learning about the algorithms behind Data-centric AI and data curation.
+
+**Assumption 1 (no error in positive labels)**: PU learning* assumes perfect (error-free) positive labels. Formally, $$p(\tilde{y}=1 \mid x, y^*=0) = 0$$
+
+**Assumption 2 (Conditional Independence)**: PU learning assumes that the probability of the label being flipped from $1$ to $0$ in the unlabeled ($0$ class) does not depend on the data itself.
+
+Formally:
+
+$$p(\tilde{y} = 0 \mid x, y^* = 1) = p(\tilde{y} = 0 \mid y^* = 1)$$
+
+which we can also express in the following way:
+
+$$p(\tilde{y} = 1 \mid x, y^* = 1) = p(\tilde{y} = 1 \mid y^* = 1)$$
+
+because $p(\tilde{y} = 1 \mid y^* = 1) + p(\tilde{y} = 0 \mid y^* = 1) = 1$
+
+and similarly $p(\tilde{y} = 1 \mid x, y^* = 1) + p(\tilde{y} = 0 \mid x, y^* = 1) = 1$.
+
+### Key insight
+
+**Lemma 1**: Suppose the "conditional independence" assumption holds. Then $p(y^\* = 1 \mid x) = \frac{p(\tilde{y} = 1 \mid x)}{c}$ where $c = p(\tilde{y} = 1 \mid y^\* = 1)$.
+
+**Proof**: Remember that the assumption is $p(\tilde{y} = 1 \mid y^\* = 1, x) = p(\tilde{y} = 1 \mid y^\* = 1)$. Now consider $p(\tilde{y} = 1 \mid x)$. We have that
+
+$$\begin{aligned}
+p(\tilde{y} = 1 \mid x) &= p(y^* = 1 , \tilde{y} = 1 \mid x) + p(y^* = 0 , \tilde{y} = 1 \mid x) \\
+&= p(y^* = 1 , \tilde{y} = 1 \mid x) + 0 \qquad \qquad \text{(Assumption 1)}\\
+&= p(y^* = 1 \mid x)p(\tilde{y} = 1 \mid y^* = 1, x) \\
+&= p(y^* = 1 \mid x)p(\tilde{y} = 1 \mid y^* = 1)  \qquad \text{(Assumption 2)}.
+\end{aligned}$$
+
+**Basics of the PU Learning Algorithm**: This is a constructive proof: by computing $c = p(\tilde{y} = 1 \mid y^* = 1)$, you can estimate the more accurate binary classifier you want $f(x) = p(y^* = 1 \mid x)$ from the noisy binary classifier you end up with $\tilde{f}(x) = p(\tilde{y} = 1 \mid x)$ from training on erroneous labels.
+
+### Estimating $c = p(\tilde{y} = 1 \mid y^* = 1)$
+
+To obtain $f(x) = p(y^* = 1 \mid x)$ from $\tilde{f}(x) = p(\tilde{y} = 1 \mid x)$ requires a single constant factor $c = p(\tilde{y} = 1 \mid y^* = 1)$. There are multiples ways to estimate $c$. One way (that's simple, performs well, and is one line of code to implement), is as follows:
+
+$$
+\tilde{c} = \frac{1}{\mid \mathcal{P} \mid} \sum_{x \in \mathcal{P}} \hat{p}(\tilde{y} = 1 \mid x)
+$$
+
+where $\tilde{c}$ is an estimator of the true $c$ and $\mathcal{P}$ is the set of positively labeled data (which by definition does not have errors in PU learning).
+
+The intuition for the above is: $\hat{p}(\tilde{y} = 1 \mid x \in \mathcal{P})  \to \hat{p}(\tilde{y} = 1 \mid y^* = 1)$ in the limit as $x \to \infty$. Keep in mind that $\hat{p}$ is the output of a model and is just an estimate of $p$ so the resulting $\tilde{c}$ is just an estimate averaged over the error in the predicted probabilities of the model.
+
+We can verify this formally as follows:
+
+**Show that**:
+
+$$\text{if } x \in \mathcal{P} \text{ then } p(\tilde{y} = 1 \mid x) = p(\tilde{y} = 1 \mid y^* = 1) = c.$$
+
+**Proof**:
+
+$$\begin{aligned}
+p(\tilde{y} = 1 \mid x) &= p(y^* = 1 , \tilde{y} = 1 \mid x) + p(y^* = 0 , \tilde{y} = 1 \mid x) \\
+&= p(y^* = 1 \mid x, \tilde{y} = 1) p(\tilde{y} = 1 \mid x) + p(y^* = 0 \mid x, \tilde{y} = 0) p(\tilde{y} = 0 \mid x) \\
+&= p(y^* = 1 \mid x, \tilde{y} = 1) \cdot 1 + 0 \cdot 0 \qquad \text{(because $x \in \mathcal{P}$)} \\
+&= p(y^* = 1 \mid \tilde{y} = 1) \qquad \qquad \qquad \quad \; \text{(Assumption 2)}
+\end{aligned}$$
+
+### Putting it all together: PU Learning Algorithm
+
+To implement PU learning on a computer yourself, the steps are as follows:
+
+##### Train step
+
+Obtain out-of-sample predicted probabilities from your binary classifier by training on your dataset out of sample (you can do this using cross-validation... i.e., train on all of the data except a slice, then predict on that slice, then repeat for all slices, then `np.concat` the predicted probabilities back together.
+
+Now you should have $\hat{p}(\tilde{y} = 1 \mid x)$ for all your training data. It is important to train out of sample otherwise the predicted probabilities will overfit to 0 and 1 since the classifier has already seen the data.
+
+##### Characterize error (DCAI) step
+
+Compute $\tilde{c} = \frac{1}{\mid \mathcal{P} \mid} \sum_{x \in \mathcal{P}} \hat{p}(\tilde{y} = 1 \mid x)$
+
+##### Final training step
+
+Toss out all previous predicted probabilities and classifiers. Starting from scratch, train a new classifier on your entire dataset (no need to do cross-validation here; just train on all the data at once). The point here is to get a classifier trained on 100% of your data to maximize performance. Let us call this trained model $\tilde{f}$.
+
+##### Inference step
+
+$f(x_{\text{new}}) =   p(y^\* = 1 \mid x_{\text{new}}) = \frac{p(\tilde{y} = 1 \mid x_{\text{new}})}{c}$.
+
+The classification of new data is the rule: if $f(x_{\text{new}}) >= 0.5$ then predict $x_{\text{new}}$ is class *1* else predict $x_{\text{new}}$ is class *0* .
+
+## Next up: Confident Learning
+
+The PU learning approach introduced by [[EN08](#EN08)] is an insightful first leap into the world of systematic model improvement on imperfect data. But this approach isn't without its caveats. It is a highly restricted case (one of the classes must be perfect and it only works for binary classification).
+
+This method is also sensitive to the accuracy of the model's predicted probabilities since $c = p(\tilde{y} = 1 \mid y^* = 1)$ is calculated by averaging predicted probabilities.
+
+Next lecture, we will unveil how you can estimate $f(x)$ without these assumptions for the general case (multi-class classification -- applicable to most real-world datasets (e.g. language models, computer vision models, etc.). This is an area of machine learning that automatically finds label errors in any multi-class ML dataset known as "confident learning" developed here at MIT [[NJC21](#NJC21)]. Confident learning introduces robustness to imperfect model predicted probabilities, generalized to any number of classes, and allow any class to be mislabeled as any other class.
 
 # Lab
 
@@ -95,6 +241,8 @@ The first lab assignment, in [`data_centric_model_centric/Lab - Data-Centric AI 
 
 
 # References
+
+<span id="EN08"></span> [EN08] Elkan, C. and Noto, K. [Learning Classifiers from Only Positive and Unlabeled Data](https://cseweb.ucsd.edu/~elkan/posonly.pdf). *KDD*, 2008.
 
 <span id="G21"></span> [G21] Press, G. [Andrew Ng Launches A Campaign For Data-Centric AI](https://www.forbes.com/sites/gilpress/2021/06/16/andrew-ng-launches-a-campaign-for-data-centric-ai/?sh=664bf56374f5). *Forbes*, 2021.
 
