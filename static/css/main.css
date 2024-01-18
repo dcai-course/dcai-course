@@ -182,9 +182,12 @@ blockquote {
   text-align: center;
 }
 
-.gap {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+.padded {
+  padding: 10rem 0;
+}
+
+.bordered {
+  border: 1px solid #ccc;
 }
 
 .accent {
