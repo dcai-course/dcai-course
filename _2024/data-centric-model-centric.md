@@ -6,8 +6,8 @@ description: >
   difference between data-centric AI vs model-centric AI.
 thumbnail: /2024/data-centric-model-centric/thumbnail.png
 date: 2024-01-16
-ready: false
-# panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=edd1be69-b3de-4302-ac2b-af85012d2b18"
+ready: true
+panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b134a44b-5e69-4193-b9d6-b0f100d4d396"
 video:
   aspect: 56.25
   # id: ayzOzZGHZy4
