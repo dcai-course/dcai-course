@@ -5,8 +5,8 @@ description: >
   Learn about three common problems in real-world ML data (and how to address them).
 thumbnail: /2024/imbalance-outliers-shift/thumbnail.png
 date: 2024-01-19
-ready: false
-# panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c97d2732-19b5-461d-a961-af85012d2bcb"
+ready: true
+panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=cf7efa5c-13dd-4440-a314-b0f100d4d3eb"
 video:
   aspect: 56.25
   # id: xnSFpswWm_k
