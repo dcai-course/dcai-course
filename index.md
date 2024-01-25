@@ -43,6 +43,23 @@ Sign up for the IAP 2024 class by filling out this [**registration form**](https
 {% endfor %}
 </ul>
 
+## Special topics from previous years
+
+<ul>
+{% for lecture in site.data.special %}
+    {% for maybe_match in site[lecture.collection] %}
+        {% assign name = maybe_match.path | split:'/' | last | split:'.' | first %}
+        {% if name == lecture.path %}
+            {% assign match = maybe_match %}
+            <li>
+            <strong>{{ match.date | date: '%-m/%d/%y' }}</strong>:
+            <a href="{{ match.url }}">{{ match.title }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+</ul>
+
 {% comment %}
 Video recordings of the lectures are available <a href="https://www.youtube.com/watch?v=ayzOzZGHZy4&list=PLnSYPjg2dHQKdig0vVbN-ZnEU0yNJ1mo5">on YouTube</a>.
 {% endcomment %}

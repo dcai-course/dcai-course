@@ -1,0 +1,10 @@
+# should be manually sorted by date ascending
+
+- collection: "2023"
+  path: growing-compressing-datasets
+- collection: "2023"
+  path: interpretable-features
+- collection: "2023"
+  path: human-priors
+- collection: "2023"
+  path: data-privacy-security
