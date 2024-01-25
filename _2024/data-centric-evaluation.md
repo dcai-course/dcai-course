@@ -5,8 +5,8 @@ description: >
   Learn how to evaluate the performance of ML models and address shortcomings from a data-centric point of view.
 thumbnail: /2024/data-centric-evaluation/thumbnail.png
 date: 2024-01-23
-ready: false
-# panopto: https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4985c10c-f2c5-493c-bc35-af85012d2bb0
+ready: true
+panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bcffb374-84f8-4bbf-ab42-b0f100d4d424"
 video:
   aspect: 56.25
   # id: m1tEl7a1atQ

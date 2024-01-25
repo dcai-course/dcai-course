@@ -5,14 +5,11 @@ description: >
   Learn how to source and label data to create a dataset for supervised learning.
 thumbnail: /2024/dataset-creation-curation/thumbnail.png
 date: 2024-01-22
-ready: false
-# panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=98777e08-0f49-43ec-8580-af85012d2b92"
+ready: true
+panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c20b4c45-348d-4d4a-a704-b0f100d4d407"
 video:
   aspect: 56.25
   # id: R9CHc1acGtk
-slides:
-  - dataset-creation-curation.pdf
-  - dataset-creation-curation.pptx
 last_year: /2023/dataset-creation-curation/
 ---
 
