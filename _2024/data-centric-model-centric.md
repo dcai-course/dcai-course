@@ -177,7 +177,7 @@ $$
 
 where $\tilde{c}$ is an estimator of the true $c$ and $\mathcal{P}$ is the set of positively labeled data (which by definition does not have errors in PU learning).
 
-The intuition for the above is: $\hat{p}(\tilde{y} = 1 \mid x \in \mathcal{P})  \to \hat{p}(\tilde{y} = 1 \mid y^* = 1)$ in the limit as $x \to \infty$. Keep in mind that $\hat{p}$ is the output of a model and is just an estimate of $p$ so the resulting $\tilde{c}$ is just an estimate averaged over the error in the predicted probabilities of the model.
+The intuition for the above is: $\hat{p}(\tilde{y} = 1 \mid x \in \mathcal{P})  \to \hat{p}(\tilde{y} = 1 \mid y^* = 1)$ in the limit as $\vert \mathcal{P} \vert \to \infty$. Keep in mind that $\hat{p}$ is the output of a model and is just an estimate of $p$ so the resulting $\tilde{c}$ is just an estimate averaged over the error in the predicted probabilities of the model.
 
 We can verify this formally as follows:
 
