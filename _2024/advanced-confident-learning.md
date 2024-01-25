@@ -9,6 +9,9 @@ panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5f4915ee-9
 video:
   aspect: 56.25
   # id: AzU-G1Vww3c
+slides:
+  - advanced-confident-learning.pdf
+  - advanced-confident-learning.pptx
 ---
 
-Lecture notes and slides coming soon!
+This class has no lecture notes, only video/slides. Notes on Confident Learning are available in the [Label Errors lecture notes](/2024/label-errors/).
