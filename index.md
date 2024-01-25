@@ -17,13 +17,13 @@ This is the first-ever course on DCAI. This class covers algorithms to find and
 
 <p class="small center">Inspired by <a href="https://xkcd.com/2494/">XKCD 2494</a> &ldquo;Flawed Data&rdquo;</p>
 
+{% comment %}
 # Registration
 
 Sign up for the IAP 2024 class by filling out this [**registration form**](https://forms.gle/TC5XCkaA99LKVRsp6).
+{% endcomment %}
 
 # Syllabus
-
-The lecture topics are subject to change: the syllabus for the 2024 offering is still being finalized.
 
 <ul>
 {% assign lectures = site['2024'] | sort: 'date' %}
