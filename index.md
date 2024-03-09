@@ -72,10 +72,7 @@ Each lecture has an accompanying [lab assignment](https://github.com/dcai-course
 **Lecture**: [2-190](https://whereis.mit.edu/?go=6), 12pm--1pm<br>
 
 **Staff**: This class is co-taught by [Anish](https://www.anish.io/), [Curtis](https://www.curtisnorthcutt.com/), and [Jonas](https://people.csail.mit.edu/jonasmueller/).<br>
-**Questions**: Post on [Piazza](https://piazza.com/mit/spring2024/6dcai) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).
-{% comment %}
-**Questions**: Join `#dcai-course` on this [Slack](https://cleanlab.ai/slack/).<br>
-{% endcomment %}
+**Questions**: Post in the `#dcai-course` channel on [this community Slack team](https://cleanlab.ai/slack) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).
 
 # Prerequisites
 

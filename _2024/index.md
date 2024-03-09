@@ -32,7 +32,7 @@ phony: true
 
 <br>
 **Lecture**: [2-190](https://whereis.mit.edu/?go=6), 12pm--1pm<br>
-**Questions**: Post on [Piazza](https://piazza.com/mit/spring2024/6dcai) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).
+**Questions**: Post in the `#dcai-course` channel on [this community Slack team](https://cleanlab.ai/slack) (preferred) or email us at [dcai@mit.edu](mailto:dcai@mit.edu).
 
 ---
 
