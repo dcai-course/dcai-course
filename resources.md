@@ -19,6 +19,8 @@ see the references in individual lecture notes.
 - [cleanvision](https://github.com/cleanlab/cleanvision) - automatically detect low-quality images in computer vision datasets
 - [albumentations](https://github.com/albumentations-team/albumentations) - data augmentation for computer vision
 - [label-studio](https://github.com/heartexlabs/label-studio) - interfaces to label and annotate data for many ML tasks
+- [llamaindex](https://github.com/run-llama/llama_index) - a data framework for LLM applications (Retrieval-Augmented Generation)
+- [dspy](https://github.com/stanfordnlp/dspy) - algorithmically optimize LLM prompts and bootstrap data
 
 # Short Articles
 
@@ -27,12 +29,14 @@ see the references in individual lecture notes.
 - [Tips for a Data-Centric AI Approach](https://landing.ai/tips-for-a-data-centric-ai-approach/)
 - [Data-Centric Approach vs Model-Centric Approach in Machine Learning](https://neptune.ai/blog/data-centric-vs-model-centric-machine-learning)
 - [A Linter for ML Datasets](https://cleanlab.ai/blog/datalab/)
-- [Handling Mislabeled Data to Improve Your Model](https://cleanlab.ai/blog/label-errors-tabular-datasets/)
+- [Handling Mislabeled Data to Improve Your Model](https://cleanlab.ai/blog/fine-tune-LLM/)
+- [Catch bad data in LLM datasets](https://cleanlab.ai/blog/filter-llm-tuning-data/)
 
 # Papers
 
 - [A Data Quality-Driven View of MLOps](https://arxiv.org/abs/2102.07750)
 - [Advances in Exploratory Data Analysis, Visualisation and Quality for Data Centric AI Systems](https://dl.acm.org/doi/abs/10.1145/3534678.3542604)
+- [A Survey on Data Selection for Language Models](https://github.com/alon-albalak/data-selection-survey)
 
 # Books
 
@@ -41,6 +45,7 @@ see the references in individual lecture notes.
 
 # Links
 
-- [Data-Centric AI Competition 2023](https://machinehack.com/tournaments/data_centric_ai_competition_2023)
 - [Data-centric AI Resource Hub](https://datacentricai.org/)
 - [Label Errors in ML Benchmarks](https://labelerrors.com/)
+- [RedPajama 30 Trillion Token Text Corpus with Data Quality Measures](https://www.together.ai/blog/redpajama-data-v2)
+- [Data-Centric AI Competition 2023](https://machinehack.com/tournaments/data_centric_ai_competition_2023)
