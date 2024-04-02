@@ -17,7 +17,7 @@ slides:
 last_year: /2023/data-centric-model-centric/
 ---
 
-When you learn Machine Learning in school, a dataset is given to you that is fairly clean & well-curated (e.g. dog/cat images), and your job is to produce the best model for this dataset. All techniques taught in most ML classes are centered around this aim, covering different types of: models (neural networks, decision trees, etc.), training techniques (regularization, optimizaton algorithms, loss functions, etc.), and model/hyperparameter selection (plus model ensembling). We call this paradigm **model-centric AI**.
+When you learn Machine Learning in school, a dataset is given to you that is fairly clean & well-curated (e.g. dog/cat images), and your job is to produce the best model for this dataset. All techniques taught in most ML classes are centered around this aim, covering different types of: models (neural networks, decision trees, etc.), training techniques (regularization, optimization algorithms, loss functions, etc.), and model/hyperparameter selection (plus model ensembling). We call this paradigm **model-centric AI**.
 
 When working on real-world ML, your company/users do not care what clever modeling tricks you know to produce accurate predictions on highly curated data. Contrary to the classroom, the **data are not fixed** in real-world applications! You are free to modify the dataset in order to get better modeling performance or even collect additional data as your budget allows. Real-world data tends to be highly messy and plagued with issues, such that improving the dataset is a prerequisite for producing an accurate model ("*garbage in, garbage out*"). Seasoned data scientists know it is more worthwhile to invest in exploring and fixing the data than tinkering with models, but this process can be cumbersome for large datasets. Improving data has been mostly done in an ad hoc manner via manual labor guided by human intuition/expertise.
 
@@ -104,7 +104,7 @@ $$w_z(t+1) = w_z(t) + \eta (y_i - \hat{y}_i(t)) x_{i, z}$$
 
 where the term $(y_i - \hat{y}\_i(t)) x_{i, z}$ is often referred to as the objective function and the negative of this $-((y_i - \hat{y}\_i(t)) \cdot x_{i, z})$ is referred to as the loss function.
 
-We learn the preceptron algorithm at the start of machine learning courses and books because it is a great way to introduce folks to deep learning, since that training algorithm above is very similar to the training algorithm for neural networks and deep learning, called Stochastic Gradient Descent, or for short, SGD:
+We learn the perceptron algorithm at the start of machine learning courses and books because it is a great way to introduce folks to deep learning, since that training algorithm above is very similar to the training algorithm for neural networks and deep learning, called Stochastic Gradient Descent, or for short, SGD:
 
 $$w(t+1) = w(t) - \eta \nabla L(w(t)))=w-\eta{\frac {1 }{n}}\sum _{i=1}^{n}\nabla L_{i}(w(t)) \qquad \text{(SGD)}$$
 
