@@ -55,7 +55,7 @@ Methodologies that fall within the purview of this field include:
 
 Recent high-profile ML applications have clearly shown how the *reliability of ML models* deployed in the real-world depends on the *quality of their training data*.
 
-OpenAI has openly stated that one of the biggest issues in training famous ML models like Dall-E, GPT-3, and ChatGPT were errors in the data and labels. Here are some stills from their video demo of [Dall-E 2](https://openai.com/dall-e-2/):
+OpenAI has openly stated that one of the biggest issues in training famous ML models like Dall-E, GPT-3, and ChatGPT were errors in the data and labels. Here are some stills from their video demo of [Dall-E 2](https://openai.com/index/dall-e-2/):
 
 ![!Stills from Dalle-E 2 Video by OpenAI](dalle.png)
 
@@ -67,7 +67,7 @@ Through relentless model-assisted dataset improvement (Step 3 above), Tesla coul
 
 # Why we need data-centric AI
 
-Bad data costs the U.S. alone around $3 Trillion every year [[R16](#R16)]. Data quality issues plague almost every industry and dealing with them manually imposes an immense burden. As datasets grow larger, it becomes infeasible to ensure their quality without the use of algorithms [[S22](#S22)]. Recent ML systems trained on massive datasets like [ChatGPT](https://openai.com/blog/chatgpt/) have relied on huge amounts of labor (human feedback) to try to overcome shortcomings arising from low-quality training data; however such efforts have been unable to fully overcome these shortcomings [[C23](#C23)]. Now more than ever, we need automated methods and systematic engineering principles to ensure ML models are being trained with clean  data. As ML becomes intertwined with our daily lives in healthcare, finance, transportation, it is imperative these systems are trained in a reliable manner.
+Bad data costs the U.S. alone around $3 Trillion every year [[R16](#R16)]. Data quality issues plague almost every industry and dealing with them manually imposes an immense burden. As datasets grow larger, it becomes infeasible to ensure their quality without the use of algorithms [[S22](#S22)]. Recent ML systems trained on massive datasets like [ChatGPT](https://openai.com/index/chatgpt/) have relied on huge amounts of labor (human feedback) to try to overcome shortcomings arising from low-quality training data; however such efforts have been unable to fully overcome these shortcomings [[C23](#C23)]. Now more than ever, we need automated methods and systematic engineering principles to ensure ML models are being trained with clean  data. As ML becomes intertwined with our daily lives in healthcare, finance, transportation, it is imperative these systems are trained in a reliable manner.
 
 Recent research is highlighting the value of data-centric AI for various applications. For image classification with noisily labeled data, a recent benchmark studied various methods to train models under increasing noise rates in the famous Cifar-10 dataset [[NJC21](#NJC21)]. The findings revealed that simple methods which adaptively change the dataset can lead to much more accurate models than methods which aim to account for the noise through sophisticated modeling strategies.
 
