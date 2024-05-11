@@ -29,6 +29,7 @@ jobs:
           ignore_url_re: |
             ^https:\/\/machinelearningmastery\.com\/
             ^https:\/\/www\.reddit\.com\/
+            ^https:\/\/openai\.com\/
           swap_urls: |
             {"^https://dcai.csail.mit.edu/": "/"}
           enforce_https: false
