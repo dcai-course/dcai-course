@@ -48,4 +48,3 @@ see the references in individual lecture notes.
 - [Data-centric AI Resource Hub](https://datacentricai.org/)
 - [Label Errors in ML Benchmarks](https://labelerrors.com/)
 - [RedPajama 30 Trillion Token Text Corpus with Data Quality Measures](https://www.together.ai/blog/redpajama-data-v2)
-- [Data-Centric AI Competition 2023](https://machinehack.com/tournaments/data_centric_ai_competition_2023)

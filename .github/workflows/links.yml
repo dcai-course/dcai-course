@@ -26,6 +26,7 @@ jobs:
             https://dl.acm.org/doi/10.1145/1273496.1273614
             https://dl.acm.org/citation.cfm?id=1403849
             https://dl.acm.org/doi/abs/10.1145/3534678.3542604
+            https://direct.mit.edu/books/book/3841/Dataset-Shift-in-Machine-Learning
           ignore_url_re: |
             ^https:\/\/machinelearningmastery\.com\/
             ^https:\/\/www\.reddit\.com\/
