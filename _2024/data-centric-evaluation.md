@@ -190,7 +190,7 @@ A hands-on lab assignment to accompany this lecture is available in the [dcai-la
 
 <span id="R08"></span> [R08] Rifkin, R. [MIT 9.520 Class Notes on Multiclass Classification](https://www.mit.edu/~9.520/spring09/Classes/multiclass.pdf). 2008.
 
-<span id="HTF17"></span> [HTF17] Hastie, T., Tibshirani, R. Friedman, J. [The Elements of Statistical Learning](https://hastie.su.domains/Papers/ESLII.pdf). 2017.
+<span id="HTF17"></span> [HTF17] Hastie, T., Tibshirani, R. Friedman, J. [The Elements of Statistical Learning](https://hastie.su.domains/ElemStatLearn/). 2017.
 
 <span id="Z15"></span> [Z15] Zheng, A. [Evaluating Machine Learning Models](https://www.oreilly.com/content/evaluating-machine-learning-models/). 2015.
 
