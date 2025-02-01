@@ -1,6 +1,6 @@
 # Introduction to Data-Centric AI
 
-[![Build Status](https://github.com/dcai-course/dcai-course/workflows/Build/badge.svg)](https://github.com/dcai-course/dcai-course/actions?query=workflow%3ABuild) [![Links Status](https://github.com/dcai-course/dcai-course/workflows/Links/badge.svg)](https://github.com/dcai-course/dcai-course/actions?query=workflow%3ALinks)
+[![Build Status](https://github.com/dcai-course/dcai-course/actions/workflows/build.yml/badge.svg)](https://github.com/dcai-course/dcai-course/actions/workflows/build.yml) [![Links Status](https://github.com/dcai-course/dcai-course/actions/workflows/links.yml/badge.svg)](https://github.com/dcai-course/dcai-course/actions/workflows/links.yml)
 
 Website for the [Introduction to Data-Centric AI](https://dcai.csail.mit.edu/) class! The lab assignments for the class are available in the [dcai-lab](https://github.com/dcai-course/dcai-lab) repo.
 
