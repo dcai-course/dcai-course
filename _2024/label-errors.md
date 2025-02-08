@@ -9,7 +9,7 @@ ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=84f7f96e-0a7a-4a87-816b-b0f100d4d3b2"
 video:
   aspect: 56.25
-  # id: AzU-G1Vww3c
+  id: dWXyu2e4yfk
 slides:
   - label-errors.pdf
   - label-errors.pptx

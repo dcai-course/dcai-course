@@ -8,7 +8,7 @@ ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5f4915ee-9fcc-4a04-bf8b-b0f100d4d3d0"
 video:
   aspect: 56.25
-  # id: AzU-G1Vww3c
+  id: hjbpRjr10Mc
 slides:
   - advanced-confident-learning.pdf
   - advanced-confident-learning.pptx

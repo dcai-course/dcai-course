@@ -9,7 +9,7 @@ ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c20b4c45-348d-4d4a-a704-b0f100d4d407"
 video:
   aspect: 56.25
-  # id: R9CHc1acGtk
+  id: wUpliyDY8_E
 last_year: /2023/dataset-creation-curation/
 ---
 

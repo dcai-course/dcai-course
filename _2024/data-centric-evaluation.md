@@ -9,7 +9,7 @@ ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bcffb374-84f8-4bbf-ab42-b0f100d4d424"
 video:
   aspect: 56.25
-  # id: m1tEl7a1atQ
+  id: t30ZtEnqcAo
 slides:
   - data-centric-evaluation.pdf
   - data-centric-evaluation.pptx

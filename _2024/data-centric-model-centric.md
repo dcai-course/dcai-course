@@ -10,7 +10,7 @@ ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b134a44b-5e69-4193-b9d6-b0f100d4d396"
 video:
   aspect: 56.25
-  # id: ayzOzZGHZy4
+  id: gEXGhlouwjM
 slides:
   - data-centric-model-centric.pdf
   - data-centric-model-centric.pptx

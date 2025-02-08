@@ -8,10 +8,10 @@ ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=14ccace4-3a59-4310-a481-b0f100d4d43c"
 video:
   aspect: 56.25
-  # id: z44vZ_9av-M
+  id: Zo8XRX88R8I
 slides:
   - data-curation-llms.pdf
   - data-curation-llms.key
 ---
 
-The lecture video and slides are linked above; lecture notes + lab assignment coming soon!
+This class has no lecture notes, only video/slides.

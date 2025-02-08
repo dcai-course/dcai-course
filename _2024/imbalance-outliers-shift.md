@@ -9,7 +9,7 @@ ready: true
 panopto: "https://mit.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=cf7efa5c-13dd-4440-a314-b0f100d4d3eb"
 video:
   aspect: 56.25
-  # id: xnSFpswWm_k
+  id: 9oXniqJKTqQ
 last_year: /2023/imbalance-outliers-shift/
 ---
 
