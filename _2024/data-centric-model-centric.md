@@ -189,9 +189,9 @@ $$\text{if } x \in \mathcal{P} \text{ then } p(\tilde{y} = 1 \mid x) = p(\tilde{
 
 $$\begin{aligned}
 p(\tilde{y} = 1 \mid x) &= p(y^* = 1 , \tilde{y} = 1 \mid x) + p(y^* = 0 , \tilde{y} = 1 \mid x) \\
-&= p(y^* = 1 \mid x, \tilde{y} = 1) p(\tilde{y} = 1 \mid x) + p(y^* = 0 \mid x, \tilde{y} = 0) p(\tilde{y} = 0 \mid x) \\
-&= p(y^* = 1 \mid x, \tilde{y} = 1) \cdot 1 + 0 \cdot 0 \qquad \text{(because $x \in \mathcal{P}$)} \\
-&= p(y^* = 1 \mid \tilde{y} = 1) \qquad \qquad \qquad \quad \; \text{(Assumption 2)}
+&= p(\tilde{y} = 1 \mid x, y^* = 1) p(y^* = 1 \mid x) + p(\tilde{y} = 1 \mid x, y^* = 0) p(y^* = 0 \mid x) \\
+&= p(\tilde{y} = 1 \mid x, y^* = 1) \cdot 1 + 0 \cdot 0 \qquad \text{(because $x \in \mathcal{P}$)} \\
+&= p(\tilde{y} = 1 \mid y^* = 1) \qquad \qquad \qquad \quad \; \text{(Assumption 2)}
 \end{aligned}$$
 
 ### Putting it all together: PU Learning Algorithm
